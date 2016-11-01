@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		171CF2621DC7C84C00CD4335 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171CF2611DC7C84C00CD4335 /* User.swift */; };
-		171CF2651DC7ECB500CD4335 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171CF2631DC7D57200CD4335 /* ObjectMapper.framework */; };
 		171CF26B1DC802DA00CD4335 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171CF2691DC802DA00CD4335 /* Alamofire.framework */; };
 		171CF26C1DC802DA00CD4335 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171CF26A1DC802DA00CD4335 /* SwiftyJSON.framework */; };
 		174BB8761DC665D000CDAE86 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BB8751DC665D000CDAE86 /* APIManager.swift */; };
@@ -24,7 +23,6 @@
 		1754899F1DC5222300993344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1754899E1DC5222300993344 /* Assets.xcassets */; };
 		175489A21DC5222300993344 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175489A01DC5222300993344 /* LaunchScreen.storyboard */; };
 		17B49F381DC803FD002FFA00 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 171CF2691DC802DA00CD4335 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		17B49F391DC803FD002FFA00 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171CF26A1DC802DA00CD4335 /* SwiftyJSON.framework */; };
 		17B49F3A1DC803FD002FFA00 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 171CF26A1DC802DA00CD4335 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		17B49F3B1DC803FD002FFA00 /* RxAlamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171CF2671DC7F12800CD4335 /* RxAlamofire.framework */; };
 		17B49F3C1DC803FD002FFA00 /* RxAlamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 171CF2671DC7F12800CD4335 /* RxAlamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -35,7 +33,6 @@
 		17B49F411DC803FD002FFA00 /* Pods_PartyTonight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213E09A20FF03D5C94A30589 /* Pods_PartyTonight.framework */; };
 		17B49F421DC803FD002FFA00 /* Pods_PartyTonight.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 213E09A20FF03D5C94A30589 /* Pods_PartyTonight.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		17B49F451DC80458002FFA00 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B49F441DC80458002FFA00 /* RxCocoa.framework */; };
-		17B49F461DC8045E002FFA00 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B49F441DC80458002FFA00 /* RxCocoa.framework */; };
 		17B49F471DC8045E002FFA00 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17B49F441DC80458002FFA00 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -98,9 +95,6 @@
 				171CF26C1DC802DA00CD4335 /* SwiftyJSON.framework in Frameworks */,
 				17B49F411DC803FD002FFA00 /* Pods_PartyTonight.framework in Frameworks */,
 				17B49F3B1DC803FD002FFA00 /* RxAlamofire.framework in Frameworks */,
-				17B49F391DC803FD002FFA00 /* SwiftyJSON.framework in Frameworks */,
-				17B49F461DC8045E002FFA00 /* RxCocoa.framework in Frameworks */,
-				171CF2651DC7ECB500CD4335 /* ObjectMapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +398,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -454,6 +449,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
