@@ -13,6 +13,9 @@
         <array key="Aguda Regular.ttf">
             <string>Aguda-Regular2</string>
         </array>
+        <array key="FalkinSansPERSONAL.ttf">
+            <string>FalkinSansPERSONAL</string>
+        </array>
         <array key="Sugar Plums.ttf">
             <string>Sugar_Plums</string>
         </array>
@@ -44,7 +47,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party Tonight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9q-gF-2Np">
-                                <fontDescription key="fontDescription" name="Sugar_Plums" family="Sugar Plums" pointSize="54"/>
+                                <fontDescription key="fontDescription" name="FalkinSansPERSONAL" family="Falkin Sans PERSONAL" pointSize="54"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -247,7 +250,7 @@
                                         <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="61e-Fg-DKO">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="61e-Fg-DKO">
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.37734374999999998" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Bot-cu-9WV"/>
@@ -256,7 +259,7 @@
                                         <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bsw-gf-vln">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bsw-gf-vln">
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="d8M-ty-o3L"/>
@@ -265,7 +268,7 @@
                                         <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Billing info" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pxj-2e-CPI">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Billing info" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pxj-2e-CPI">
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="QhJ-oN-26I"/>
@@ -274,7 +277,7 @@
                                         <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Emergency contact" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zJc-jB-rQU">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Emergency contact" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zJc-jB-rQU">
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="8ag-SD-aUr"/>
@@ -283,7 +286,7 @@
                                         <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ei-V0-ClH">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ei-V0-ClH">
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30242456896551723" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="aA3-Iu-f8b"/>
@@ -352,6 +355,7 @@
                         <outlet property="nameTextField" destination="Qac-KW-ZIK" id="UdM-dN-NX7"/>
                         <outlet property="passwordTextField" destination="9ei-V0-ClH" id="t43-lW-gTz"/>
                         <outlet property="phoneNumberTextField" destination="61e-Fg-DKO" id="HrY-or-G9R"/>
+                        <outlet property="signupButton" destination="tew-YB-77v" id="BWe-Qz-dkW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r8g-JL-0ri" userLabel="First Responder" sceneMemberID="firstResponder"/>

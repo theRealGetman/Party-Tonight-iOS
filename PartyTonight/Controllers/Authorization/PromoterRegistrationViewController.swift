@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class PromoterRegistrationViewController: UIViewController {
 
@@ -22,15 +23,45 @@ class PromoterRegistrationViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var signupButton: UIButton!
+    
+    let disposeBag = DisposeBag();
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let viewModel = RegistrationViewModel(
+            input: (
+                username: nameTextField.rx.text.orEmpty.asObservable(),
+                phone: phoneNumberTextField.rx.text.orEmpty.asObservable(),
+                email: emailTextField.rx.text.orEmpty.asObservable(),
+                billingInfo: billingInfoTextField.rx.text.orEmpty.asObservable(),
+                emergencyContact: emergencyContactTextField.rx.text.orEmpty.asObservable(),
+                password: passwordTextField.rx.text.orEmpty.asObservable(),
+                signupTaps: signupButton.rx.tap.asObservable()
+            ),
+            API: (APIManager.sharedAPI)
+        )
+        
+        addBindings(to: viewModel)
+        
         setTextFieldInsets()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func addBindings(to viewModel: RegistrationViewModel) {
+        //test
+        viewModel.userToken
+            .subscribe(onNext: { (user) in
+                print("User registered: \(user)")
+                }, onError: { (error) in
+                    print("Caught an error: \(error)")
+            } )
+            .addDisposableTo(disposeBag)
     }
     
     

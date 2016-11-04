@@ -21,7 +21,7 @@ class PromoterLoginViewController: UIViewController {
         super.viewDidLoad()
         let viewModel = LoginViewModel(
             input: (
-                username: loginTextField.rx.text.orEmpty.asObservable(),
+                email: loginTextField.rx.text.orEmpty.asObservable(),
                 password: passwordTextField.rx.text.orEmpty.asObservable(),
                 loginTaps: loginButton.rx.tap.asObservable()
             ),
@@ -49,10 +49,12 @@ class PromoterLoginViewController: UIViewController {
     
     func addBindings(to viewModel: LoginViewModel) {
         //test
-        viewModel.signedUser
-            .subscribe(onNext: { user in
-                print("User \(user)")
-            })
+        viewModel.userToken
+            .subscribe(onNext: { (user) in
+                print("User signed: \(user)")
+                }, onError: { (error) in
+                    print("Caught an error: \(error)")
+            } )
             .addDisposableTo(disposeBag)
     }
     

@@ -10,6 +10,7 @@
 		171CF2621DC7C84C00CD4335 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171CF2611DC7C84C00CD4335 /* User.swift */; };
 		171CF26B1DC802DA00CD4335 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171CF2691DC802DA00CD4335 /* Alamofire.framework */; };
 		171CF26C1DC802DA00CD4335 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171CF26A1DC802DA00CD4335 /* SwiftyJSON.framework */; };
+		174959D71DC9ED760004903D /* FalkinSansPERSONAL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 174959D61DC9ED760004903D /* FalkinSansPERSONAL.ttf */; };
 		174BB8761DC665D000CDAE86 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BB8751DC665D000CDAE86 /* APIManager.swift */; };
 		174BB87C1DC6726000CDAE86 /* PromoterLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BB87B1DC6726000CDAE86 /* PromoterLoginViewController.swift */; };
 		174BB87E1DC6729000CDAE86 /* PromoterRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BB87D1DC6729000CDAE86 /* PromoterRegistrationViewController.swift */; };
@@ -34,6 +35,9 @@
 		17B49F421DC803FD002FFA00 /* Pods_PartyTonight.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 213E09A20FF03D5C94A30589 /* Pods_PartyTonight.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		17B49F451DC80458002FFA00 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B49F441DC80458002FFA00 /* RxCocoa.framework */; };
 		17B49F471DC8045E002FFA00 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17B49F441DC80458002FFA00 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		17C5B1AE1DCBE6C40093BC07 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5B1AD1DCBE6C40093BC07 /* Token.swift */; };
+		17C5B1B01DCBF2240093BC07 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5B1AF1DCBF2240093BC07 /* RegistrationViewModel.swift */; };
+		17C5B1B31DCC6FB30093BC07 /* String+Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5B1B21DCC6FB30093BC07 /* String+Encoding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,6 +67,7 @@
 		171CF2671DC7F12800CD4335 /* RxAlamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAlamofire.framework; path = Carthage/Build/iOS/RxAlamofire.framework; sourceTree = "<group>"; };
 		171CF2691DC802DA00CD4335 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		171CF26A1DC802DA00CD4335 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		174959D61DC9ED760004903D /* FalkinSansPERSONAL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FalkinSansPERSONAL.ttf; path = ../../fonts/falkinsans/FalkinSansPERSONAL.ttf; sourceTree = "<group>"; };
 		174BB8751DC665D000CDAE86 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = REST/APIManager.swift; sourceTree = "<group>"; };
 		174BB87B1DC6726000CDAE86 /* PromoterLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoterLoginViewController.swift; path = Controllers/Authorization/PromoterLoginViewController.swift; sourceTree = "<group>"; };
 		174BB87D1DC6729000CDAE86 /* PromoterRegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoterRegistrationViewController.swift; path = Controllers/Authorization/PromoterRegistrationViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +83,9 @@
 		175489A11DC5222300993344 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		175489A31DC5222300993344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17B49F441DC80458002FFA00 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		17C5B1AD1DCBE6C40093BC07 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Token.swift; path = Entities/Token.swift; sourceTree = "<group>"; };
+		17C5B1AF1DCBF2240093BC07 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationViewModel.swift; path = VM/Authorization/RegistrationViewModel.swift; sourceTree = "<group>"; };
+		17C5B1B21DCC6FB30093BC07 /* String+Encoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Encoding.swift"; path = "Extentions/String+Encoding.swift"; sourceTree = "<group>"; };
 		213E09A20FF03D5C94A30589 /* Pods_PartyTonight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartyTonight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		821866A83DBAF48E25583913 /* Pods-PartyTonight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyTonight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartyTonight/Pods-PartyTonight.debug.xcconfig"; sourceTree = "<group>"; };
 		EF07FB577222FA3485322B90 /* Pods-PartyTonight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyTonight.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartyTonight/Pods-PartyTonight.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				171CF2611DC7C84C00CD4335 /* User.swift */,
+				17C5B1AD1DCBE6C40093BC07 /* Token.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -160,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				174BB8811DC6774A00CDAE86 /* LoginViewModel.swift */,
+				17C5B1AF1DCBF2240093BC07 /* RegistrationViewModel.swift */,
 			);
 			name = Authorization;
 			sourceTree = "<group>";
@@ -167,6 +177,7 @@
 		174BB8831DC6814400CDAE86 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				174959D61DC9ED760004903D /* FalkinSansPERSONAL.ttf */,
 				174BB88A1DC69E3300CDAE86 /* Aguda Bold.ttf */,
 				174BB8881DC691C900CDAE86 /* Aguda Regular.ttf */,
 				174BB8861DC683D000CDAE86 /* Sugar Plums.ttf */,
@@ -195,6 +206,7 @@
 		175489961DC5222300993344 /* PartyTonight */ = {
 			isa = PBXGroup;
 			children = (
+				17C5B1B11DCC6F890093BC07 /* Extentions */,
 				171CF2601DC7C7DF00CD4335 /* Entities */,
 				174BB8831DC6814400CDAE86 /* Resources */,
 				174BB87F1DC6746000CDAE86 /* VM */,
@@ -208,6 +220,14 @@
 				175489A31DC5222300993344 /* Info.plist */,
 			);
 			path = PartyTonight;
+			sourceTree = "<group>";
+		};
+		17C5B1B11DCC6F890093BC07 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				17C5B1B21DCC6FB30093BC07 /* String+Encoding.swift */,
+			);
+			name = Extentions;
 			sourceTree = "<group>";
 		};
 		2EE57DD04DF2E008CF01537E /* Pods */ = {
@@ -287,6 +307,7 @@
 				175489A21DC5222300993344 /* LaunchScreen.storyboard in Resources */,
 				174BB88B1DC69E3300CDAE86 /* Aguda Bold.ttf in Resources */,
 				1754899F1DC5222300993344 /* Assets.xcassets in Resources */,
+				174959D71DC9ED760004903D /* FalkinSansPERSONAL.ttf in Resources */,
 				174BB8891DC691C900CDAE86 /* Aguda Regular.ttf in Resources */,
 				174BB8871DC683D000CDAE86 /* Sugar Plums.ttf in Resources */,
 				1754899D1DC5222300993344 /* Main.storyboard in Resources */,
@@ -349,12 +370,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				174BB87C1DC6726000CDAE86 /* PromoterLoginViewController.swift in Sources */,
+				17C5B1B31DCC6FB30093BC07 /* String+Encoding.swift in Sources */,
+				17C5B1B01DCBF2240093BC07 /* RegistrationViewModel.swift in Sources */,
 				174BB8761DC665D000CDAE86 /* APIManager.swift in Sources */,
 				174BB8821DC6774A00CDAE86 /* LoginViewModel.swift in Sources */,
 				1754899A1DC5222300993344 /* ViewController.swift in Sources */,
 				174BB87E1DC6729000CDAE86 /* PromoterRegistrationViewController.swift in Sources */,
 				175489981DC5222300993344 /* AppDelegate.swift in Sources */,
 				171CF2621DC7C84C00CD4335 /* User.swift in Sources */,
+				17C5B1AE1DCBE6C40093BC07 /* Token.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
