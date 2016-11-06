@@ -19,4 +19,8 @@ class Token: Mappable {
     func mapping(map: Map) {
         token <- map["token"]
     }
+    
+    init(){
+        
+    }
 }

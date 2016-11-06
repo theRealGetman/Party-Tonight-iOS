@@ -54,7 +54,9 @@ class PromoterLoginViewController: UIViewController {
                 print("User signed: \(user)")
                 }, onError: { (error) in
                     print("Caught an error: \(error)")
-            } )
+                }, onCompleted:{
+                    print("completed")
+            })
             .addDisposableTo(disposeBag)
     }
     
