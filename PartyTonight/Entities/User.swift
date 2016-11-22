@@ -23,26 +23,6 @@ class User : Mappable{
     var role: Int?
     var billingInfo: BillingInfo?
     
-    
-//    {
-//        "idUser": 0,
-//        "userName": "name",(unique)
-//        "phoneNumber": "0345353",
-//        "email": "g54mail.com",(unique)
-//        "emergencyContact": "contact",
-//        "password": "7",
-//        "enable": false,
-//        "updatedDate": null,
-//        "createdDate": null,
-//        "role": null,
-//        "billing": {
-//            
-//            "card_number": "5634"(unique)
-//            
-//        }
-//    }
-    
-    
     init(email: String, password: String){
         self.email = email;
         self.password = password;
@@ -79,20 +59,3 @@ class User : Mappable{
 }
 
 
-
-class BillingInfo: Mappable {
-    var cardNumber: String?
-    
-    
-    required init?(map: Map){
-        
-    }
-    
-    init(cardNumber: String) {
-        self.cardNumber = cardNumber;
-    }
-    
-    func mapping(map: Map) {
-        cardNumber <- map["card_number"]
-    }
-}

@@ -14,7 +14,7 @@ import RxSwift
 class RegistrationViewModel{
     fileprivate let disposeBag = DisposeBag()
 
-    var userToken: Observable<Token>
+    var userToken: Observable<Result<Token>>
     
     
     init(input: (

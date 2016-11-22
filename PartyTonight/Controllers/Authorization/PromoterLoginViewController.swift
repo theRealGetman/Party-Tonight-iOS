@@ -19,6 +19,8 @@ class PromoterLoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //DefaultWireframe.presentAlert("test")
+        
         let viewModel = LoginViewModel(
             input: (
                 email: loginTextField.rx.text.orEmpty.asObservable(),
@@ -48,10 +50,18 @@ class PromoterLoginViewController: UIViewController {
     
     
     func addBindings(to viewModel: LoginViewModel) {
-        //test
-        viewModel.userToken
-            .subscribe(onNext: { (user) in
-                print("User signed: \(user)")
+        viewModel.userToken.subscribe(onNext: { (token) in
+                switch token {
+                case .Success(let token):
+                      print("User signed: \(token.token)")
+                    APIManager.sharedAPI.userToken = token
+                    self.goToPromoterScreen()
+                case .Failure(let error):
+                    print(error)
+                    if let e = error as? APIError{
+                         DefaultWireframe.presentAlert(e.description)
+                    }
+                }
                 }, onError: { (error) in
                     print("Caught an error: \(error)")
                 }, onCompleted:{
@@ -59,6 +69,14 @@ class PromoterLoginViewController: UIViewController {
             })
             .addDisposableTo(disposeBag)
     }
+    
+    private func goToPromoterScreen(){
+        if let promoterNavVC = self.storyboard?.instantiateViewController(withIdentifier: "PromoterNavVC") as? PromoterNavController{
+        present(promoterNavVC, animated: true, completion: nil)
+        }
+    }
+    
+ 
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

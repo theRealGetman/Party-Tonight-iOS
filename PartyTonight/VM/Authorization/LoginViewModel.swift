@@ -11,11 +11,8 @@ import UIKit
 import RxSwift
 
 class LoginViewModel{
-    fileprivate let disposeBag = DisposeBag()
     
-    var email: Observable<String>
-    var password: Observable<String>
-    var userToken: Observable<Token>
+    var userToken: Observable<Result<Token>>
     
     
     init(input: (
@@ -29,35 +26,16 @@ class LoginViewModel{
         )
         ) {
 
-        self.email = input.email;
-        self.password = input.password;
-        
         
         let usernameAndPassword = Observable.combineLatest(input.email, input.password) { ($0, $1) }
-      
         userToken = input.loginTaps.withLatestFrom(usernameAndPassword)
-            .flatMap ({ (email, password) -> Observable<Token> in
-                
-               // let user = User();
-                
-                               
+            .flatMap ({ (email, password) -> Observable<Result<Token>> in
                 return API.signin(user: User(email: email, password: password))
                     .observeOn(MainScheduler.instance)
                     //.catchErrorJustReturn(nil)
                     //.trackActivity(signingIn)
-        })
-            .shareReplay(1)
-        
-        
-        /*
-         
-         //test
-        signedUser.subscribe(onNext: { (user) in
-            print("User signed: \(user)")
-            }, onError: { (error) in
-            print("Caught an error: \(error)")
-        } )
-        */
+            }).shareReplay(1)
+ 
         
     }
 }

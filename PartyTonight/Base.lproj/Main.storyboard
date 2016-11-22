@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="X4c-33-JtL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="X4c-33-JtL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,8 +36,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disco" translatesAutoresizingMaskIntoConstraints="NO" id="rz7-ub-Cll"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disco" translatesAutoresizingMaskIntoConstraints="NO" id="rz7-ub-Cll">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tW7-CD-4jr">
+                                <rect key="frame" x="62.5" y="560" width="250" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="PAZ-Wb-nyI"/>
                                 </constraints>
@@ -47,11 +53,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party Tonight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9q-gF-2Np">
+                                <rect key="frame" x="29" y="64" width="317.5" height="63"/>
                                 <fontDescription key="fontDescription" name="FalkinSansPERSONAL" family="Falkin Sans PERSONAL" pointSize="54"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Made by Media Opp." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4M-5C-NGc">
+                                <rect key="frame" x="108.5" y="641.5" width="158.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -89,17 +97,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="6rT-He-Geu"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="6rT-He-Geu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="klm-hN-9p7">
+                                <rect key="frame" x="62.5" y="270" width="250" height="127"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ED-p7-SwJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="51"/>
                                         <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="23"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="12" maxX="0.0" maxY="12"/>
                                         <state key="normal" title="Party Goer" backgroundImage="button_bg">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="GX9-Sw-nzS" kind="show" id="M53-M2-9bT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNU-Jb-mDU">
+                                        <rect key="frame" x="0.0" y="76" width="250" height="51"/>
                                         <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="23"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="12" maxX="0.0" maxY="12"/>
                                         <state key="normal" title="Promoter" backgroundImage="button_bg">
@@ -112,6 +128,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party Tonight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="max-8U-rIP">
+                                <rect key="frame" x="29" y="35" width="317.5" height="63"/>
                                 <fontDescription key="fontDescription" name="Sugar_Plums" family="Sugar Plums" pointSize="54"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -148,23 +165,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="0t5-d9-ayA"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="0t5-d9-ayA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Promoter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65B-nY-8bA">
+                                <rect key="frame" x="115" y="50" width="145.5" height="41"/>
                                 <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2U8-Sd-2OL">
+                                <rect key="frame" x="37.5" y="238" width="300" height="191"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" background="login_field" translatesAutoresizingMaskIntoConstraints="NO" id="DSx-Lb-yuG">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Art-2V-A9S"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" background="password_field" translatesAutoresizingMaskIntoConstraints="NO" id="ASr-Us-0lx">
+                                        <rect key="frame" x="0.0" y="70" width="300" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="GRh-b6-NTG"/>
                                         </constraints>
@@ -173,6 +196,7 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8B-qj-aFx">
+                                        <rect key="frame" x="0.0" y="140" width="300" height="51"/>
                                         <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="23"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="12" maxX="0.0" maxY="12"/>
                                         <state key="normal" title="Log In" backgroundImage="button_bg">
@@ -182,13 +206,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9RP-qA-Arb">
+                                <rect key="frame" x="37.5" y="625" width="300" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New here?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjt-af-kEP">
+                                        <rect key="frame" x="0.0" y="0.0" width="140" height="32"/>
                                         <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9G-Fa-FhO">
+                                        <rect key="frame" x="160" y="0.0" width="140" height="32"/>
                                         <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="17"/>
                                         <state key="normal" title="Sign Up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -226,6 +253,1127 @@
             </objects>
             <point key="canvasLocation" x="837.60000000000002" y="123.68815592203899"/>
         </scene>
+        <!--Promoter Nav Controller-->
+        <scene sceneID="xKE-2j-ftc">
+            <objects>
+                <navigationController storyboardIdentifier="PromoterNavVC" id="IEs-oO-5Bp" customClass="PromoterNavController" customModule="PartyTonight" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" tag="1" contentMode="scaleToFill" misplaced="YES" id="s3a-dx-0Xw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Sugar_Plums" family="Sugar Plums" pointSize="25"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XQQ-NZ-aXS" kind="relationship" relationship="rootViewController" id="247-nL-uKZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZFz-hm-e8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="1093"/>
+        </scene>
+        <!--Party Tonight-->
+        <scene sceneID="TLS-6G-djz">
+            <objects>
+                <viewController id="XQQ-NZ-aXS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OqF-4a-SR7"/>
+                        <viewControllerLayoutGuide type="bottom" id="G13-FT-lh6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="J2S-9S-eax">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="V5T-qA-FfV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="aKx-jn-fXa">
+                                <rect key="frame" x="0.0" y="84.5" width="375" height="498"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oKn-Nr-XeT">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="229"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x14-B0-bOP">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
+                                                <state key="normal" image="promoter_my_events">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="g3S-sC-VmA" kind="show" id="e9k-zI-vel"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44B-tb-pHb">
+                                                <rect key="frame" x="0.0" y="190" width="375" height="39"/>
+                                                <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="23"/>
+                                                <state key="normal" title="My events">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="g3S-sC-VmA" kind="show" id="HiL-FR-KPv"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TZ0-qS-tSu">
+                                        <rect key="frame" x="0.0" y="269" width="375" height="229"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXA-Ye-4KM">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
+                                                <state key="normal" image="promoter_new_event">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="5L1-B4-sGn" kind="show" id="7bU-t3-MlP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCA-Ym-x5O">
+                                                <rect key="frame" x="0.0" y="190" width="375" height="39"/>
+                                                <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="23"/>
+                                                <state key="normal" title="Add event">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="5L1-B4-sGn" kind="show" id="Yft-k6-nA3"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="aKx-jn-fXa" firstAttribute="width" secondItem="J2S-9S-eax" secondAttribute="width" id="1XY-j6-fmQ"/>
+                            <constraint firstItem="aKx-jn-fXa" firstAttribute="height" relation="lessThanOrEqual" secondItem="J2S-9S-eax" secondAttribute="height" multiplier="1:1" id="Lmr-VR-g94"/>
+                            <constraint firstItem="V5T-qA-FfV" firstAttribute="width" secondItem="J2S-9S-eax" secondAttribute="width" id="Ous-ob-PON"/>
+                            <constraint firstItem="V5T-qA-FfV" firstAttribute="centerY" secondItem="J2S-9S-eax" secondAttribute="centerY" id="YjK-oH-Z0O"/>
+                            <constraint firstItem="V5T-qA-FfV" firstAttribute="centerX" secondItem="J2S-9S-eax" secondAttribute="centerX" id="i0v-cV-8e7"/>
+                            <constraint firstItem="aKx-jn-fXa" firstAttribute="centerX" secondItem="J2S-9S-eax" secondAttribute="centerX" id="jtX-ec-zjF"/>
+                            <constraint firstItem="V5T-qA-FfV" firstAttribute="height" secondItem="J2S-9S-eax" secondAttribute="height" id="rPC-7D-RM1"/>
+                            <constraint firstItem="aKx-jn-fXa" firstAttribute="centerY" secondItem="J2S-9S-eax" secondAttribute="centerY" id="rzg-A1-UtT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Party Tonight" id="SyE-wF-kel">
+                        <barButtonItem key="backBarButtonItem" title=" " id="NsG-Of-qxa"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ppK-gZ-6vc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="838" y="1093"/>
+        </scene>
+        <!--Events-->
+        <scene sceneID="YNZ-l7-GKs">
+            <objects>
+                <viewController id="g3S-sC-VmA" customClass="PromoterEventsViewController" customModule="PartyTonight" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vi9-fl-5GF"/>
+                        <viewControllerLayoutGuide type="bottom" id="mJB-uR-jdc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2pO-KA-M6o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="hjj-9j-qkS">
+                                <rect key="frame" x="-0.5" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9MU-ix-x9E">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lNP-E4-Xd3">
+                                    <size key="itemSize" width="350" height="250"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9MU-ix-x9E" firstAttribute="width" secondItem="2pO-KA-M6o" secondAttribute="width" id="1dF-OJ-iAy"/>
+                            <constraint firstItem="hjj-9j-qkS" firstAttribute="height" secondItem="2pO-KA-M6o" secondAttribute="height" id="AhA-7T-FVl"/>
+                            <constraint firstItem="hjj-9j-qkS" firstAttribute="centerY" secondItem="2pO-KA-M6o" secondAttribute="centerY" id="SVe-o3-N8Z"/>
+                            <constraint firstItem="hjj-9j-qkS" firstAttribute="centerX" secondItem="2pO-KA-M6o" secondAttribute="centerX" id="UP3-Rv-oUo"/>
+                            <constraint firstItem="mJB-uR-jdc" firstAttribute="top" secondItem="9MU-ix-x9E" secondAttribute="bottom" id="chr-tF-Fal"/>
+                            <constraint firstItem="9MU-ix-x9E" firstAttribute="centerX" secondItem="2pO-KA-M6o" secondAttribute="centerX" id="hkn-1Z-qbi"/>
+                            <constraint firstItem="hjj-9j-qkS" firstAttribute="width" secondItem="2pO-KA-M6o" secondAttribute="width" id="pVQ-wy-HNS"/>
+                            <constraint firstItem="9MU-ix-x9E" firstAttribute="top" secondItem="Vi9-fl-5GF" secondAttribute="bottom" id="spE-Yf-6SD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Events" id="BCe-1D-Mhz"/>
+                    <connections>
+                        <outlet property="eventsCollectionView" destination="9MU-ix-x9E" id="vpx-Sm-vgR"/>
+                        <segue destination="75j-eE-dkC" kind="show" id="IgQ-ch-Y1K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cWx-kR-uv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1817" y="864"/>
+        </scene>
+        <!--Event-->
+        <scene sceneID="a9w-Ee-UpY">
+            <objects>
+                <tableViewController id="75j-eE-dkC" customClass="PromoterEventTableViewController" customModule="PartyTonight" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="flL-qJ-xof">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" opaque="NO" contentMode="scaleToFill" id="EaU-E1-kUK">
+                            <rect key="frame" x="0.0" y="384" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </view>
+                        <sections>
+                            <tableViewSection id="aOT-q1-IdN">
+                                <cells>
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZU9-8E-iTQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZU9-8E-iTQ" id="KaS-gg-orW">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WIb-1N-2GP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="FvV-Hg-HRh">
+                                                            <rect key="frame" x="8" y="17" width="213.5" height="45"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="door_revenue" translatesAutoresizingMaskIntoConstraints="NO" id="fiq-vR-yud">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="45"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="100" id="dSE-TV-uK0"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Door revenue:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0w-jy-oLh">
+                                                                    <rect key="frame" x="100" y="0.0" width="113.5" height="45"/>
+                                                                    <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="18"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$50000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeA-mE-WKx">
+                                                            <rect key="frame" x="306.5" y="29" width="60.5" height="21"/>
+                                                            <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="18"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WIb-1N-2GP" firstAttribute="width" secondItem="KaS-gg-orW" secondAttribute="width" id="CzC-MO-sOB"/>
+                                                <constraint firstItem="WIb-1N-2GP" firstAttribute="height" secondItem="KaS-gg-orW" secondAttribute="height" id="NrI-Pd-76f"/>
+                                                <constraint firstItem="WIb-1N-2GP" firstAttribute="centerY" secondItem="KaS-gg-orW" secondAttribute="centerY" id="nRp-BR-gL8"/>
+                                                <constraint firstItem="WIb-1N-2GP" firstAttribute="centerX" secondItem="KaS-gg-orW" secondAttribute="centerX" id="xNr-lM-0Hh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.99487179489999999" green="0.99487179489999999" blue="0.99487179489999999" alpha="0.24781788790000001" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="w9L-1J-BXV">
+                                        <rect key="frame" x="0.0" y="80" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w9L-1J-BXV" id="w1j-DH-0gm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Fho-C2-t7q">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="LgH-OA-p0D">
+                                                            <rect key="frame" x="8" y="15" width="157" height="49"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="promoter_bottles" translatesAutoresizingMaskIntoConstraints="NO" id="uo5-2j-B5o">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="49"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="100" id="h6w-Ah-PKz"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEQ-y5-NS6">
+                                                                    <rect key="frame" x="100" y="0.0" width="57" height="49"/>
+                                                                    <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="18"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⟩" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCe-R1-25s">
+                                                            <rect key="frame" x="338.5" y="23.5" width="16.5" height="32.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="20"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Fho-C2-t7q" firstAttribute="centerX" secondItem="w1j-DH-0gm" secondAttribute="centerX" id="UcM-yx-fM4"/>
+                                                <constraint firstItem="Fho-C2-t7q" firstAttribute="width" secondItem="w1j-DH-0gm" secondAttribute="width" id="Yat-ga-P1a"/>
+                                                <constraint firstItem="Fho-C2-t7q" firstAttribute="height" secondItem="w1j-DH-0gm" secondAttribute="height" id="hAE-kp-FGw"/>
+                                                <constraint firstItem="Fho-C2-t7q" firstAttribute="centerY" secondItem="w1j-DH-0gm" secondAttribute="centerY" id="x0L-WY-8pY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.99487179489999999" green="0.99487179489999999" blue="0.99487179489999999" alpha="0.24781788790000001" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="7G3-rI-d0k" kind="show" id="pfM-Cx-tOY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="EAU-AI-EbE">
+                                        <rect key="frame" x="0.0" y="160" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EAU-AI-EbE" id="BzP-MF-IG8">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="79M-qG-Pxh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="PT6-jC-k95">
+                                                            <rect key="frame" x="8" y="14" width="151.5" height="51"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="promoter_tables" translatesAutoresizingMaskIntoConstraints="NO" id="cux-Ey-gCe">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="51"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="100" id="DdF-Ne-6sw"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tables" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07A-7x-0kS">
+                                                                    <rect key="frame" x="100" y="0.0" width="51.5" height="51"/>
+                                                                    <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="18"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⟩" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONr-yd-W3U">
+                                                            <rect key="frame" x="338.5" y="23.5" width="16.5" height="32.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="20"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="79M-qG-Pxh" firstAttribute="height" secondItem="BzP-MF-IG8" secondAttribute="height" id="a23-QN-tey"/>
+                                                <constraint firstItem="79M-qG-Pxh" firstAttribute="width" secondItem="BzP-MF-IG8" secondAttribute="width" id="g1Y-xw-cp5"/>
+                                                <constraint firstItem="79M-qG-Pxh" firstAttribute="centerY" secondItem="BzP-MF-IG8" secondAttribute="centerY" id="kOj-sb-C54"/>
+                                                <constraint firstItem="79M-qG-Pxh" firstAttribute="centerX" secondItem="BzP-MF-IG8" secondAttribute="centerX" id="tEP-2h-anm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.99487179489999999" green="0.99487179489999999" blue="0.99487179489999999" alpha="0.24781788790000001" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="xcN-Hy-dUo" kind="show" id="q8N-Mq-0qB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MWu-Mf-245">
+                                        <rect key="frame" x="0.0" y="240" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MWu-Mf-245" id="AKF-s3-gj5">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zDs-M1-WRW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Q8g-mj-iiV">
+                                                            <rect key="frame" x="8" y="21.5" width="223.5" height="36"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="promoter_money_total" translatesAutoresizingMaskIntoConstraints="NO" id="e5s-sz-LUD">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="36"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="100" id="yYb-HU-Gcm"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Statement total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xL4-HV-uvN">
+                                                                    <rect key="frame" x="100" y="0.0" width="123.5" height="36"/>
+                                                                    <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="18"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⟩" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rnx-EG-WDh">
+                                                            <rect key="frame" x="338.5" y="23.5" width="16.5" height="32.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="20"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zDs-M1-WRW" firstAttribute="centerX" secondItem="AKF-s3-gj5" secondAttribute="centerX" id="JHy-CG-86v"/>
+                                                <constraint firstItem="zDs-M1-WRW" firstAttribute="centerY" secondItem="AKF-s3-gj5" secondAttribute="centerY" id="etd-qC-hw1"/>
+                                                <constraint firstItem="zDs-M1-WRW" firstAttribute="width" secondItem="AKF-s3-gj5" secondAttribute="width" id="lvw-du-nJs"/>
+                                                <constraint firstItem="zDs-M1-WRW" firstAttribute="height" secondItem="AKF-s3-gj5" secondAttribute="height" id="xWt-UG-uxw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.99487179489999999" green="0.99487179489999999" blue="0.99487179489999999" alpha="0.24781788790000001" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="Yn6-m3-B4Q" kind="show" id="vTw-Gg-VBp"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="75j-eE-dkC" id="ClO-Up-CkE"/>
+                            <outlet property="delegate" destination="75j-eE-dkC" id="dNz-QH-s3c"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Event" id="6yp-cS-Shb"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8rd-As-a6b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2666.4000000000001" y="550.97451274362822"/>
+        </scene>
+        <!--Promoter Tables View Controller-->
+        <scene sceneID="F4z-XW-lQW">
+            <objects>
+                <tableViewController id="xcN-Hy-dUo" customClass="PromoterTablesViewController" customModule="PartyTonight" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="134" sectionHeaderHeight="28" sectionFooterHeight="28" id="tmg-ug-zGA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BottlesTablesCell" rowHeight="134" id="g92-JE-AXa" customClass="BottlesTablesCell" customModule="PartyTonight" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="134"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g92-JE-AXa" id="NB7-eI-czA">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="134"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="lGZ-dI-nUd">
+                                            <rect key="frame" x="0.0" y="-0.5" width="375" height="134"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Udd-Vm-CRo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hennessy VSOP " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftQ-4h-sz3">
+                                                            <rect key="frame" x="8" y="9" width="179.5" height="20"/>
+                                                            <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Price: $600)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rq7-9J-DSP">
+                                                            <rect key="frame" x="187.5" y="9" width="179.5" height="20"/>
+                                                            <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <edgeInsets key="layoutMargins" top="0.0" left="8" bottom="15" right="8"/>
+                                                </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIh-1B-wRj">
+                                                    <rect key="frame" x="0.0" y="45" width="375" height="44"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tHV-XV-7gZ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LtM-hf-H17">
+                                                                    <rect key="frame" x="8" y="0.0" width="179.5" height="44"/>
+                                                                    <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="234" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aE-yz-z5a">
+                                                                    <rect key="frame" x="187.5" y="0.0" width="179.5" height="44"/>
+                                                                    <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <edgeInsets key="layoutMargins" top="0.0" left="8" bottom="0.0" right="8"/>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="0.24757543109999999" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="tHV-XV-7gZ" firstAttribute="top" secondItem="eIh-1B-wRj" secondAttribute="top" id="7wr-Wl-izq"/>
+                                                        <constraint firstAttribute="bottom" secondItem="tHV-XV-7gZ" secondAttribute="bottom" id="Urs-zm-c1E"/>
+                                                        <constraint firstItem="tHV-XV-7gZ" firstAttribute="leading" secondItem="eIh-1B-wRj" secondAttribute="leading" id="ZdL-Cs-3NG"/>
+                                                        <constraint firstAttribute="trailing" secondItem="tHV-XV-7gZ" secondAttribute="trailing" id="nM8-lC-kak"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdj-0e-wCa">
+                                                    <rect key="frame" x="0.0" y="90" width="375" height="44"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="c8h-9I-5Cv">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchased" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTo-yW-wil">
+                                                                    <rect key="frame" x="8" y="8" width="179.5" height="28"/>
+                                                                    <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="234" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4L-qT-4Cn">
+                                                                    <rect key="frame" x="187.5" y="8" width="179.5" height="28"/>
+                                                                    <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="0.24757543109999999" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="c8h-9I-5Cv" secondAttribute="trailing" id="CKH-z0-UqH"/>
+                                                        <constraint firstAttribute="bottom" secondItem="c8h-9I-5Cv" secondAttribute="bottom" id="dTK-BX-Cvx"/>
+                                                        <constraint firstItem="c8h-9I-5Cv" firstAttribute="leading" secondItem="rdj-0e-wCa" secondAttribute="leading" id="don-qS-oe0"/>
+                                                        <constraint firstItem="c8h-9I-5Cv" firstAttribute="top" secondItem="rdj-0e-wCa" secondAttribute="top" id="hsB-cY-IY5"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="lGZ-dI-nUd" firstAttribute="width" secondItem="NB7-eI-czA" secondAttribute="width" id="1DV-Ne-ZeC"/>
+                                        <constraint firstItem="lGZ-dI-nUd" firstAttribute="centerY" secondItem="NB7-eI-czA" secondAttribute="centerY" id="Zuz-cR-BmC"/>
+                                        <constraint firstItem="lGZ-dI-nUd" firstAttribute="centerX" secondItem="NB7-eI-czA" secondAttribute="centerX" id="dBI-ec-LgV"/>
+                                        <constraint firstItem="lGZ-dI-nUd" firstAttribute="height" secondItem="NB7-eI-czA" secondAttribute="height" id="eMx-wf-3qF"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="availableAmountLabel" destination="7aE-yz-z5a" id="5jZ-Qm-JSD"/>
+                                    <outlet property="priceLabel" destination="Rq7-9J-DSP" id="0B8-iU-xY4"/>
+                                    <outlet property="purchasedAmountLabel" destination="c4L-qT-4Cn" id="fwr-be-rtR"/>
+                                    <outlet property="titleLabel" destination="ftQ-4h-sz3" id="vsw-MH-Zcv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xcN-Hy-dUo" id="uHd-u5-Abf"/>
+                            <outlet property="delegate" destination="xcN-Hy-dUo" id="7Qq-u5-JNf"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yfb-jy-aff" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3413.5999999999999" y="692.20389805097454"/>
+        </scene>
+        <!--Promoter Statement Total View Controller-->
+        <scene sceneID="aKk-uv-DbG">
+            <objects>
+                <viewController id="Yn6-m3-B4Q" customClass="PromoterStatementTotalViewController" customModule="PartyTonight" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nsn-lE-obA"/>
+                        <viewControllerLayoutGuide type="bottom" id="DzE-tk-Nz4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LNl-Zn-GQ3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="rAf-dH-R3E">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="hJa-8X-0d1">
+                                <rect key="frame" x="0.0" y="64" width="375" height="268"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Bbj-Pm-Jcr">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Statement total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aI1-QC-HbI">
+                                                <rect key="frame" x="8" y="15" width="179.5" height="21"/>
+                                                <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$60068" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwq-t3-JAk">
+                                                <rect key="frame" x="187.5" y="15" width="179.5" height="21"/>
+                                                <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="8" bottom="8" right="8"/>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1WL-z9-mhJ">
+                                        <rect key="frame" x="0.0" y="45" width="375" height="43.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5kW-RI-9dL">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tickets sales" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRh-LJ-7FQ">
+                                                        <rect key="frame" x="8" y="0.0" width="179.5" height="43.5"/>
+                                                        <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="234" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0c-h8-I36">
+                                                        <rect key="frame" x="187.5" y="0.0" width="179.5" height="43.5"/>
+                                                        <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <edgeInsets key="layoutMargins" top="0.0" left="8" bottom="0.0" right="8"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.24757543109999999" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="5kW-RI-9dL" secondAttribute="bottom" id="3X1-ZD-4HM"/>
+                                            <constraint firstItem="5kW-RI-9dL" firstAttribute="top" secondItem="1WL-z9-mhJ" secondAttribute="top" id="PEC-ra-XCF"/>
+                                            <constraint firstItem="5kW-RI-9dL" firstAttribute="leading" secondItem="1WL-z9-mhJ" secondAttribute="leading" id="afO-ed-wRl"/>
+                                            <constraint firstAttribute="trailing" secondItem="5kW-RI-9dL" secondAttribute="trailing" id="yAd-uQ-xwq"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Pn-W5-CDV">
+                                        <rect key="frame" x="0.0" y="89.5" width="375" height="44"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="w7x-6m-8UW">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottle sales" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvX-9c-r3S">
+                                                        <rect key="frame" x="8" y="8" width="179.5" height="28"/>
+                                                        <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="234" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCw-uh-3Th">
+                                                        <rect key="frame" x="187.5" y="8" width="179.5" height="28"/>
+                                                        <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.24757543109999999" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="w7x-6m-8UW" firstAttribute="top" secondItem="7Pn-W5-CDV" secondAttribute="top" id="Dh6-1E-2U8"/>
+                                            <constraint firstAttribute="trailing" secondItem="w7x-6m-8UW" secondAttribute="trailing" id="Ekr-y3-D4h"/>
+                                            <constraint firstItem="w7x-6m-8UW" firstAttribute="leading" secondItem="7Pn-W5-CDV" secondAttribute="leading" id="F0d-9e-kM5"/>
+                                            <constraint firstAttribute="bottom" secondItem="w7x-6m-8UW" secondAttribute="bottom" id="gn9-29-122"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOd-b5-hbk">
+                                        <rect key="frame" x="0.0" y="134.5" width="375" height="44"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tSg-Mm-GdL">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Table sales" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fL8-EX-Gan">
+                                                        <rect key="frame" x="8" y="8" width="179.5" height="28"/>
+                                                        <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="234" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fou-by-nRc">
+                                                        <rect key="frame" x="187.5" y="8" width="179.5" height="28"/>
+                                                        <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.24757543109999999" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="tSg-Mm-GdL" firstAttribute="leading" secondItem="pOd-b5-hbk" secondAttribute="leading" id="qRg-cs-s2l"/>
+                                            <constraint firstAttribute="trailing" secondItem="tSg-Mm-GdL" secondAttribute="trailing" id="qTU-pz-pq0"/>
+                                            <constraint firstAttribute="bottom" secondItem="tSg-Mm-GdL" secondAttribute="bottom" id="r8z-o7-eby"/>
+                                            <constraint firstItem="tSg-Mm-GdL" firstAttribute="top" secondItem="pOd-b5-hbk" secondAttribute="top" id="rJi-3h-4Ta"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHJ-LH-OxA">
+                                        <rect key="frame" x="0.0" y="179.5" width="375" height="43.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xlR-kb-hFT">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Refunds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uc1-A7-zNx">
+                                                        <rect key="frame" x="8" y="8" width="179.5" height="27.5"/>
+                                                        <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="234" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1v-4W-ev6">
+                                                        <rect key="frame" x="187.5" y="8" width="179.5" height="27.5"/>
+                                                        <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.24757543109999999" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="xlR-kb-hFT" firstAttribute="leading" secondItem="GHJ-LH-OxA" secondAttribute="leading" id="7tw-YZ-gHs"/>
+                                            <constraint firstItem="xlR-kb-hFT" firstAttribute="top" secondItem="GHJ-LH-OxA" secondAttribute="top" id="9a7-io-GCA"/>
+                                            <constraint firstAttribute="trailing" secondItem="xlR-kb-hFT" secondAttribute="trailing" id="RZ8-nH-vh7"/>
+                                            <constraint firstAttribute="bottom" secondItem="xlR-kb-hFT" secondAttribute="bottom" id="ebI-dO-7sd"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Xd3-kX-Pgb">
+                                        <rect key="frame" x="0.0" y="224" width="375" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Withdraw" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ird-JU-buh">
+                                                <rect key="frame" x="8" y="15" width="268" height="21"/>
+                                                <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkB-mP-LAu">
+                                                <rect key="frame" x="276" y="15" width="91" height="21"/>
+                                                <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="8" bottom="8" right="8"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="268" id="9xQ-Mp-ulh"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rAf-dH-R3E" firstAttribute="top" secondItem="LNl-Zn-GQ3" secondAttribute="top" id="BVl-Qj-cne"/>
+                            <constraint firstItem="hJa-8X-0d1" firstAttribute="centerX" secondItem="LNl-Zn-GQ3" secondAttribute="centerX" id="Dbh-2S-Hud"/>
+                            <constraint firstItem="hJa-8X-0d1" firstAttribute="top" secondItem="Nsn-lE-obA" secondAttribute="bottom" id="bV5-Nx-5mX"/>
+                            <constraint firstAttribute="trailing" secondItem="rAf-dH-R3E" secondAttribute="trailing" id="cFx-DG-sLt"/>
+                            <constraint firstItem="DzE-tk-Nz4" firstAttribute="top" secondItem="rAf-dH-R3E" secondAttribute="bottom" id="eCq-nR-e2w"/>
+                            <constraint firstItem="hJa-8X-0d1" firstAttribute="width" secondItem="LNl-Zn-GQ3" secondAttribute="width" id="i65-SF-0HE"/>
+                            <constraint firstItem="rAf-dH-R3E" firstAttribute="leading" secondItem="LNl-Zn-GQ3" secondAttribute="leading" id="l6X-cu-LPK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottlesSalesAmount" destination="mCw-uh-3Th" id="K55-b2-Vzm"/>
+                        <outlet property="refundsAmountLabel" destination="M1v-4W-ev6" id="VNs-m4-zSM"/>
+                        <outlet property="statementTotalAmountLabel" destination="uwq-t3-JAk" id="krC-bj-kZS"/>
+                        <outlet property="tableSalesAmount" destination="fou-by-nRc" id="xYn-jK-mey"/>
+                        <outlet property="ticketsSalesAmountLabel" destination="G0c-h8-I36" id="dUE-2f-EWK"/>
+                        <outlet property="withdrawAmountLabel" destination="nkB-mP-LAu" id="EFk-eD-nz7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gw6-Dl-QXQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4117.6000000000004" y="407.0464767616192"/>
+        </scene>
+        <!--Promoter Bottles View Controller-->
+        <scene sceneID="dym-T1-BWD">
+            <objects>
+                <tableViewController id="7G3-rI-d0k" customClass="PromoterBottlesViewController" customModule="PartyTonight" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="134" sectionHeaderHeight="28" sectionFooterHeight="28" id="JCH-EH-GEc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BottlesTablesCell" rowHeight="134" id="xcn-Up-ce6" customClass="BottlesTablesCell" customModule="PartyTonight" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="134"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xcn-Up-ce6" id="hdI-h4-O43">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="134"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="wLN-MW-NVd">
+                                            <rect key="frame" x="0.0" y="0.5" width="375" height="134"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="QcH-tJ-thD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hennessy VSOP " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mci-Lb-wHy">
+                                                            <rect key="frame" x="8" y="9" width="179.5" height="20"/>
+                                                            <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Price: $600)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wE-cl-40q">
+                                                            <rect key="frame" x="187.5" y="9" width="179.5" height="20"/>
+                                                            <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <edgeInsets key="layoutMargins" top="0.0" left="8" bottom="15" right="8"/>
+                                                </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h3g-pK-ifA">
+                                                    <rect key="frame" x="0.0" y="45" width="375" height="44"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2Ie-GM-ddO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ex4-fM-LPd">
+                                                                    <rect key="frame" x="8" y="0.0" width="179.5" height="44"/>
+                                                                    <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="234" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8U-Vi-A1t">
+                                                                    <rect key="frame" x="187.5" y="0.0" width="179.5" height="44"/>
+                                                                    <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <edgeInsets key="layoutMargins" top="0.0" left="8" bottom="0.0" right="8"/>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="0.24757543109999999" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="2Ie-GM-ddO" secondAttribute="bottom" id="0xb-1W-BPZ"/>
+                                                        <constraint firstItem="2Ie-GM-ddO" firstAttribute="top" secondItem="h3g-pK-ifA" secondAttribute="top" id="5xJ-ah-bCI"/>
+                                                        <constraint firstAttribute="trailing" secondItem="2Ie-GM-ddO" secondAttribute="trailing" id="ARx-dG-4W1"/>
+                                                        <constraint firstItem="2Ie-GM-ddO" firstAttribute="leading" secondItem="h3g-pK-ifA" secondAttribute="leading" id="qC1-bS-udq"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8BK-Vz-kDe">
+                                                    <rect key="frame" x="0.0" y="90" width="375" height="44"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iG1-fA-S50">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchased" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ke7-vc-fLh">
+                                                                    <rect key="frame" x="8" y="8" width="179.5" height="28"/>
+                                                                    <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="234" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="StG-RO-95d">
+                                                                    <rect key="frame" x="187.5" y="8" width="179.5" height="28"/>
+                                                                    <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="0.24757543109999999" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="iG1-fA-S50" secondAttribute="trailing" id="7iC-CA-4uk"/>
+                                                        <constraint firstItem="iG1-fA-S50" firstAttribute="top" secondItem="8BK-Vz-kDe" secondAttribute="top" id="GhW-Fn-SbZ"/>
+                                                        <constraint firstItem="iG1-fA-S50" firstAttribute="leading" secondItem="8BK-Vz-kDe" secondAttribute="leading" id="Y1n-b6-iCr"/>
+                                                        <constraint firstAttribute="bottom" secondItem="iG1-fA-S50" secondAttribute="bottom" id="d4o-Qj-7RW"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="wLN-MW-NVd" firstAttribute="centerX" secondItem="hdI-h4-O43" secondAttribute="centerX" id="4ar-XF-XXV"/>
+                                        <constraint firstItem="wLN-MW-NVd" firstAttribute="width" secondItem="hdI-h4-O43" secondAttribute="width" id="5s5-eY-tiH"/>
+                                        <constraint firstItem="wLN-MW-NVd" firstAttribute="height" secondItem="hdI-h4-O43" secondAttribute="height" id="Ctf-Ie-xED"/>
+                                        <constraint firstItem="wLN-MW-NVd" firstAttribute="centerY" secondItem="hdI-h4-O43" secondAttribute="centerY" id="sfS-OY-fv1"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="availableAmountLabel" destination="q8U-Vi-A1t" id="lvW-TL-Xec"/>
+                                    <outlet property="priceLabel" destination="7wE-cl-40q" id="gJm-3l-Bj6"/>
+                                    <outlet property="purchasedAmountLabel" destination="StG-RO-95d" id="NFp-vu-eTA"/>
+                                    <outlet property="titleLabel" destination="Mci-Lb-wHy" id="Ovu-5F-cHy"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7G3-rI-d0k" id="z8f-7a-Lfw"/>
+                            <outlet property="delegate" destination="7G3-rI-d0k" id="5NO-vH-o6v"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8nV-s5-byv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3413.5999999999999" y="25.637181409295355"/>
+        </scene>
+        <!--Choose location-->
+        <scene sceneID="9jH-Tq-N4n">
+            <objects>
+                <viewController id="euy-xI-Cld" customClass="ChooseLocationViewController" customModule="PartyTonight" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ybB-0D-TLb"/>
+                        <viewControllerLayoutGuide type="bottom" id="bGp-vK-nfu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kxh-6Q-ybu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="udw-cJ-5gt">
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                            </imageView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ULy-21-nVR">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="udw-cJ-5gt" firstAttribute="centerX" secondItem="Kxh-6Q-ybu" secondAttribute="centerX" id="3rp-kX-GQX"/>
+                            <constraint firstItem="udw-cJ-5gt" firstAttribute="height" secondItem="Kxh-6Q-ybu" secondAttribute="height" id="HDm-ti-xyL"/>
+                            <constraint firstAttribute="trailing" secondItem="ULy-21-nVR" secondAttribute="trailing" id="IEp-bY-fAW"/>
+                            <constraint firstItem="ULy-21-nVR" firstAttribute="top" secondItem="ybB-0D-TLb" secondAttribute="bottom" id="Lse-WX-MXy"/>
+                            <constraint firstItem="udw-cJ-5gt" firstAttribute="width" secondItem="Kxh-6Q-ybu" secondAttribute="width" id="Qex-1d-vBQ"/>
+                            <constraint firstItem="udw-cJ-5gt" firstAttribute="centerY" secondItem="Kxh-6Q-ybu" secondAttribute="centerY" id="ZhK-yt-lHL"/>
+                            <constraint firstItem="ULy-21-nVR" firstAttribute="leading" secondItem="Kxh-6Q-ybu" secondAttribute="leading" id="f5z-Io-fhd"/>
+                            <constraint firstItem="bGp-vK-nfu" firstAttribute="top" secondItem="ULy-21-nVR" secondAttribute="bottom" id="ogR-fT-Anv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Choose location" id="r0n-P1-yfK">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="Gtj-bt-YfJ">
+                            <connections>
+                                <action selector="doneButtonTouched:" destination="euy-xI-Cld" id="8Qj-7f-uz8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="ULy-21-nVR" id="ipO-u9-DRX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vaP-sv-bK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2673" y="1208"/>
+        </scene>
+        <!--Liquors-->
+        <scene sceneID="hcc-7r-alA">
+            <objects>
+                <viewController id="5L1-B4-sGn" customClass="CreateEventViewController" customModule="PartyTonight" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2X4-DU-oUr"/>
+                        <viewControllerLayoutGuide type="bottom" id="E0K-64-a1G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DoV-DU-aVl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="yl9-e8-mdn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B8n-S5-qCU">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBq-F5-JIb">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="713"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="G2t-Q8-r5t">
+                                                <rect key="frame" x="13" y="1" width="350" height="410"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h1F-uh-Rpb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="50"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30242456899999998" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="skX-i3-EmN"/>
+                                                        </constraints>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wib-I4-08o">
+                                                        <rect key="frame" x="0.0" y="60" width="350" height="50"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30242456899999998" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6r7-Dq-hwl">
+                                                        <rect key="frame" x="0.0" y="120" width="350" height="50"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30242456899999998" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <segue destination="dy9-du-IfR" kind="popoverPresentation" identifier="createEventDatetimePopover" popoverAnchorView="6r7-Dq-hwl" id="oGm-7M-Qfx">
+                                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                            </segue>
+                                                        </connections>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTQ-Yg-uuL">
+                                                        <rect key="frame" x="0.0" y="180" width="350" height="50"/>
+                                                        <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="18"/>
+                                                        <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
+                                                        <state key="normal" title="Upload Photos" backgroundImage="button_bg_noborders">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                    </button>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d0Y-LB-NQz">
+                                                        <rect key="frame" x="0.0" y="240" width="350" height="50"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30242456899999998" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fc9-K4-pmI">
+                                                        <rect key="frame" x="0.0" y="300" width="350" height="50"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30242456899999998" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ve-bZ-Ppj">
+                                                        <rect key="frame" x="0.0" y="360" width="350" height="50"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30242456899999998" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="na9-fR-mwU">
+                                                <rect key="frame" x="13" y="433" width="350" height="0.0"/>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kp3-nr-s8X">
+                                                <rect key="frame" x="12" y="463" width="350" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="xqt-KG-smw"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="18"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
+                                                <state key="normal" title="Add More Liquor Type" backgroundImage="button_bg_noborders">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Nob-V6-b6F">
+                                                <rect key="frame" x="12.5" y="530" width="350" height="0.0"/>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTg-9r-wxj">
+                                                <rect key="frame" x="12" y="540" width="350" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="WfL-V8-03B"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="18"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
+                                                <state key="normal" title="Add More Table Type" backgroundImage="button_bg_noborders">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hM2-aj-weK">
+                                                <rect key="frame" x="-0.5" y="598" width="375" height="51"/>
+                                                <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="23"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="12" maxX="0.0" maxY="12"/>
+                                                <state key="normal" title="Create Event" backgroundImage="button_bg_noborders">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="createTouched:" destination="5L1-B4-sGn" eventType="touchUpInside" id="GeI-wm-nJk"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="hM2-aj-weK" firstAttribute="centerX" secondItem="WBq-F5-JIb" secondAttribute="centerX" id="1Ew-6G-uZz"/>
+                                            <constraint firstItem="G2t-Q8-r5t" firstAttribute="top" secondItem="WBq-F5-JIb" secondAttribute="top" constant="1" id="9CY-rQ-Eme"/>
+                                            <constraint firstItem="na9-fR-mwU" firstAttribute="top" secondItem="G2t-Q8-r5t" secondAttribute="bottom" constant="22" id="Cmr-KV-cfO"/>
+                                            <constraint firstItem="G2t-Q8-r5t" firstAttribute="width" secondItem="WBq-F5-JIb" secondAttribute="width" multiplier="2.8:3" id="Cuu-GK-96V"/>
+                                            <constraint firstItem="G2t-Q8-r5t" firstAttribute="centerX" secondItem="WBq-F5-JIb" secondAttribute="centerX" id="Gkk-2W-cbT"/>
+                                            <constraint firstItem="hM2-aj-weK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="lTg-9r-wxj" secondAttribute="bottom" constant="8" symbolic="YES" id="KSI-5u-92C"/>
+                                            <constraint firstItem="Nob-V6-b6F" firstAttribute="top" secondItem="Kp3-nr-s8X" secondAttribute="bottom" constant="17" id="NII-vr-25B"/>
+                                            <constraint firstItem="Nob-V6-b6F" firstAttribute="centerX" secondItem="WBq-F5-JIb" secondAttribute="centerX" id="PpB-DE-E78"/>
+                                            <constraint firstItem="Kp3-nr-s8X" firstAttribute="top" secondItem="na9-fR-mwU" secondAttribute="bottom" constant="30" id="b95-ij-XFu"/>
+                                            <constraint firstItem="lTg-9r-wxj" firstAttribute="centerX" secondItem="WBq-F5-JIb" secondAttribute="centerX" id="cEx-uZ-7W7"/>
+                                            <constraint firstItem="Kp3-nr-s8X" firstAttribute="width" secondItem="WBq-F5-JIb" secondAttribute="width" multiplier="2.8:3" id="dui-gG-I10"/>
+                                            <constraint firstItem="Nob-V6-b6F" firstAttribute="width" secondItem="WBq-F5-JIb" secondAttribute="width" multiplier="2.8:3" id="eP8-Pl-s9L"/>
+                                            <constraint firstItem="na9-fR-mwU" firstAttribute="width" secondItem="WBq-F5-JIb" secondAttribute="width" multiplier="2.8:3" id="gPB-Tg-Mnt"/>
+                                            <constraint firstItem="lTg-9r-wxj" firstAttribute="top" secondItem="Nob-V6-b6F" secondAttribute="bottom" constant="10" id="j7V-F1-7Dg"/>
+                                            <constraint firstItem="na9-fR-mwU" firstAttribute="centerX" secondItem="WBq-F5-JIb" secondAttribute="centerX" id="jOn-t9-1R5"/>
+                                            <constraint firstItem="Kp3-nr-s8X" firstAttribute="centerX" secondItem="WBq-F5-JIb" secondAttribute="centerX" id="uC0-Wb-py5"/>
+                                            <constraint firstAttribute="bottom" secondItem="hM2-aj-weK" secondAttribute="bottom" constant="64" id="uGF-3r-fIg"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="WBq-F5-JIb" firstAttribute="leading" secondItem="B8n-S5-qCU" secondAttribute="leading" id="B7x-yg-baN"/>
+                                    <constraint firstAttribute="bottom" secondItem="WBq-F5-JIb" secondAttribute="bottom" constant="-64" id="BPS-Hd-9dN"/>
+                                    <constraint firstAttribute="trailing" secondItem="WBq-F5-JIb" secondAttribute="trailing" id="INI-NX-NyQ"/>
+                                    <constraint firstItem="WBq-F5-JIb" firstAttribute="top" secondItem="B8n-S5-qCU" secondAttribute="top" id="Sr8-uD-epZ"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="B8n-S5-qCU" firstAttribute="leading" secondItem="DoV-DU-aVl" secondAttribute="leading" id="0kj-5O-ugc"/>
+                            <constraint firstItem="WBq-F5-JIb" firstAttribute="height" secondItem="DoV-DU-aVl" secondAttribute="height" priority="250" id="1DF-wN-9zc"/>
+                            <constraint firstItem="E0K-64-a1G" firstAttribute="top" secondItem="B8n-S5-qCU" secondAttribute="bottom" id="3Ag-gY-0zq"/>
+                            <constraint firstItem="yl9-e8-mdn" firstAttribute="width" secondItem="DoV-DU-aVl" secondAttribute="width" id="68P-gt-q7k"/>
+                            <constraint firstItem="WBq-F5-JIb" firstAttribute="width" secondItem="DoV-DU-aVl" secondAttribute="width" id="7Wm-L9-uaa"/>
+                            <constraint firstAttribute="trailing" secondItem="B8n-S5-qCU" secondAttribute="trailing" id="CDx-du-fpT"/>
+                            <constraint firstItem="hM2-aj-weK" firstAttribute="width" secondItem="DoV-DU-aVl" secondAttribute="width" id="KUH-54-Rvl"/>
+                            <constraint firstItem="yl9-e8-mdn" firstAttribute="centerY" secondItem="DoV-DU-aVl" secondAttribute="centerY" id="QUI-yW-16h"/>
+                            <constraint firstItem="yl9-e8-mdn" firstAttribute="height" secondItem="DoV-DU-aVl" secondAttribute="height" id="gBn-tb-2B3"/>
+                            <constraint firstItem="lTg-9r-wxj" firstAttribute="width" secondItem="DoV-DU-aVl" secondAttribute="width" multiplier="2.8:3" id="jKo-Cs-hEY"/>
+                            <constraint firstItem="B8n-S5-qCU" firstAttribute="top" secondItem="2X4-DU-oUr" secondAttribute="bottom" id="qeP-6s-kQu"/>
+                            <constraint firstItem="yl9-e8-mdn" firstAttribute="centerX" secondItem="DoV-DU-aVl" secondAttribute="centerX" id="rmZ-LE-EAa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Liquors" id="cUT-Sc-BVw"/>
+                    <connections>
+                        <outlet property="addMoreLiquorTypeButton" destination="Kp3-nr-s8X" id="y5a-XS-jrm"/>
+                        <outlet property="addMoreTableTypeButton" destination="lTg-9r-wxj" id="5f8-sM-Bt7"/>
+                        <outlet property="bottlesStackView" destination="na9-fR-mwU" id="lKN-vt-PJE"/>
+                        <outlet property="clubCapacityTextField" destination="d0Y-LB-NQz" id="i8K-63-Rnx"/>
+                        <outlet property="clubNameTextField" destination="h1F-uh-Rpb" id="Rn5-34-2jr"/>
+                        <outlet property="createEventButton" destination="hM2-aj-weK" id="VQV-Wr-o06"/>
+                        <outlet property="dateAndTimeTextField" destination="Wib-I4-08o" id="cR1-Sy-BxW"/>
+                        <outlet property="locationTextField" destination="6r7-Dq-hwl" id="xld-l2-lDg"/>
+                        <outlet property="partyNameTextView" destination="4ve-bZ-Ppj" id="rrp-4b-Mtr"/>
+                        <outlet property="tablesStackView" destination="Nob-V6-b6F" id="jxD-Sc-WM5"/>
+                        <outlet property="ticketsPriceTextView" destination="fc9-K4-pmI" id="2pr-Fr-QXJ"/>
+                        <outlet property="uploadPhotosButton" destination="dTQ-Yg-uuL" id="QvW-L5-gw1"/>
+                        <segue destination="euy-xI-Cld" kind="show" identifier="ChooseLocationSegue" id="EOW-FX-Sgj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FdV-IT-fF5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1816.8" y="1535.9820089955024"/>
+        </scene>
+        <!--Date Time Picker View Controller-->
+        <scene sceneID="Wwy-aB-0LD">
+            <objects>
+                <viewController id="dy9-du-IfR" customClass="DateTimePickerViewController" customModule="PartyTonight" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pXp-bw-Vxk"/>
+                        <viewControllerLayoutGuide type="bottom" id="DPk-sP-z5d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tFt-Qq-UQw">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="FjK-XN-cQX">
+                                <rect key="frame" x="0.0" y="20" width="300" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="500980132.03138">
+                                    <!--2016-11-16 09:08:52 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMl-Lf-EK1">
+                                <rect key="frame" x="124" y="250" width="52" height="30"/>
+                                <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="18"/>
+                                <state key="normal" title="Apply"/>
+                                <connections>
+                                    <action selector="applyButtonTouched:" destination="dy9-du-IfR" eventType="touchUpInside" id="mCk-EK-5iL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xMl-Lf-EK1" firstAttribute="centerX" secondItem="tFt-Qq-UQw" secondAttribute="centerX" id="dw7-hM-4aN"/>
+                            <constraint firstItem="xMl-Lf-EK1" firstAttribute="top" secondItem="FjK-XN-cQX" secondAttribute="bottom" constant="14" id="dxB-kt-4Wz"/>
+                            <constraint firstItem="FjK-XN-cQX" firstAttribute="width" secondItem="tFt-Qq-UQw" secondAttribute="width" id="eTl-uC-nXr"/>
+                            <constraint firstItem="DPk-sP-z5d" firstAttribute="top" secondItem="xMl-Lf-EK1" secondAttribute="bottom" constant="20" id="n8c-AT-j7g"/>
+                            <constraint firstItem="FjK-XN-cQX" firstAttribute="top" secondItem="pXp-bw-Vxk" secondAttribute="bottom" id="plN-ck-psc"/>
+                            <constraint firstItem="FjK-XN-cQX" firstAttribute="centerX" secondItem="tFt-Qq-UQw" secondAttribute="centerX" id="yxL-5U-KAv"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="300"/>
+                    <connections>
+                        <outlet property="datePicker" destination="FjK-XN-cQX" id="hF7-Az-3qn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ZR-Mt-cbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2613" y="1695"/>
+        </scene>
         <!--Promoter Registration View Controller-->
         <scene sceneID="Iwn-QA-dOF">
             <objects>
@@ -238,10 +1386,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="I10-rh-GhM"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="I10-rh-GhM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wsx-J4-8Nt">
+                                <rect key="frame" x="37.5" y="118.5" width="300" height="350"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qac-KW-ZIK">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.37225215517241378" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="bgB-iu-zQv"/>
@@ -251,6 +1403,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="61e-Fg-DKO">
+                                        <rect key="frame" x="0.0" y="60" width="300" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.37734374999999998" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Bot-cu-9WV"/>
@@ -260,15 +1413,17 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bsw-gf-vln">
+                                        <rect key="frame" x="0.0" y="120" width="300" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="d8M-ty-o3L"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Billing info" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pxj-2e-CPI">
+                                        <rect key="frame" x="0.0" y="180" width="300" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="QhJ-oN-26I"/>
@@ -278,6 +1433,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Emergency contact" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zJc-jB-rQU">
+                                        <rect key="frame" x="0.0" y="240" width="300" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="8ag-SD-aUr"/>
@@ -287,6 +1443,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ei-V0-ClH">
+                                        <rect key="frame" x="0.0" y="300" width="300" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30242456896551723" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="aA3-Iu-f8b"/>
@@ -298,27 +1455,33 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Promoter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dl7-cy-kQy">
+                                <rect key="frame" x="104.5" y="50" width="166.5" height="35.5"/>
                                 <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZM9-jP-olv">
+                                <rect key="frame" x="37.5" y="561" width="300" height="96"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tew-YB-77v">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tew-YB-77v">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="47"/>
                                         <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="23"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="12" maxX="0.0" maxY="12"/>
                                         <state key="normal" title="Sign Up" backgroundImage="button_bg">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="FqQ-rB-T3h">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FqQ-rB-T3h">
+                                        <rect key="frame" x="0.0" y="67" width="300" height="29"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fy-qy-203">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fy-qy-203">
+                                                <rect key="frame" x="0.0" y="0.0" width="145" height="29"/>
                                                 <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="17"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBR-kI-7Te">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBR-kI-7Te">
+                                                <rect key="frame" x="155" y="0.0" width="145" height="29"/>
                                                 <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="17"/>
                                                 <state key="normal" title="Sign In">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -342,6 +1505,7 @@
                             <constraint firstItem="wsx-J4-8Nt" firstAttribute="width" secondItem="bIi-zr-FFF" secondAttribute="width" multiplier="2.4:3" id="ZU8-kb-zI4"/>
                             <constraint firstItem="ZM9-jP-olv" firstAttribute="centerX" secondItem="bIi-zr-FFF" secondAttribute="centerX" id="aCH-ta-BIL"/>
                             <constraint firstItem="Dl7-cy-kQy" firstAttribute="top" secondItem="tfi-HP-Oct" secondAttribute="bottom" constant="30" id="eOO-Wd-lt5"/>
+                            <constraint firstItem="FqQ-rB-T3h" firstAttribute="centerX" secondItem="bIi-zr-FFF" secondAttribute="centerX" id="fJu-oQ-xge"/>
                             <constraint firstItem="I10-rh-GhM" firstAttribute="centerY" secondItem="bIi-zr-FFF" secondAttribute="centerY" id="gY3-ck-Nnb"/>
                             <constraint firstItem="wsx-J4-8Nt" firstAttribute="centerY" secondItem="bIi-zr-FFF" secondAttribute="centerY" constant="-40" id="hNj-zG-9Kt"/>
                             <constraint firstItem="ZM9-jP-olv" firstAttribute="width" secondItem="wsx-J4-8Nt" secondAttribute="width" id="vEn-Kd-eb4"/>
@@ -362,15 +1526,219 @@
             </objects>
             <point key="canvasLocation" x="1608.8" y="123.68815592203899"/>
         </scene>
+        <!--Party Tonight-->
+        <scene sceneID="goZ-Gf-ZU4">
+            <objects>
+                <viewController id="3vp-tc-uUZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kxi-zW-eVX"/>
+                        <viewControllerLayoutGuide type="bottom" id="eeI-3p-pqh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qKB-HI-50U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="zMu-lC-4Qk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="xja-3S-svJ">
+                                <rect key="frame" x="0.0" y="85" width="375" height="498"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UQ9-zH-HU3">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="229"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZJ-u0-wIX">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
+                                                <state key="normal" image="promoter_my_events">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbG-gT-c9b">
+                                                <rect key="frame" x="0.0" y="190" width="375" height="39"/>
+                                                <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="23"/>
+                                                <state key="normal" title="Find a venue">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1xU-NN-TR0">
+                                        <rect key="frame" x="0.0" y="269" width="375" height="229"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phv-J0-umN">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
+                                                <state key="normal" image="goer_call_a_cab">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYY-mS-xod">
+                                                <rect key="frame" x="0.0" y="190" width="375" height="39"/>
+                                                <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="23"/>
+                                                <state key="normal" title="Call a cab">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="zMu-lC-4Qk" firstAttribute="width" secondItem="qKB-HI-50U" secondAttribute="width" id="5WE-gX-RO2"/>
+                            <constraint firstItem="xja-3S-svJ" firstAttribute="centerX" secondItem="qKB-HI-50U" secondAttribute="centerX" id="61n-Ki-5fb"/>
+                            <constraint firstItem="zMu-lC-4Qk" firstAttribute="centerY" secondItem="qKB-HI-50U" secondAttribute="centerY" id="KhX-jM-Uwf"/>
+                            <constraint firstItem="zMu-lC-4Qk" firstAttribute="height" secondItem="qKB-HI-50U" secondAttribute="height" id="RNQ-9I-g0O"/>
+                            <constraint firstItem="xja-3S-svJ" firstAttribute="width" secondItem="qKB-HI-50U" secondAttribute="width" id="SIa-8W-kms"/>
+                            <constraint firstItem="xja-3S-svJ" firstAttribute="centerY" secondItem="qKB-HI-50U" secondAttribute="centerY" id="UGk-X7-rMJ"/>
+                            <constraint firstItem="xja-3S-svJ" firstAttribute="height" relation="lessThanOrEqual" secondItem="qKB-HI-50U" secondAttribute="height" multiplier="1:1" id="vlM-PM-4Wf"/>
+                            <constraint firstItem="zMu-lC-4Qk" firstAttribute="centerX" secondItem="qKB-HI-50U" secondAttribute="centerX" id="wdk-tT-DEr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Party Tonight" id="e4i-PK-Hes">
+                        <barButtonItem key="backBarButtonItem" title=" " id="GV5-lb-vwX"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MUP-jG-a9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="838" y="-655"/>
+        </scene>
+        <!--Goer Nav Controller-->
+        <scene sceneID="bRQ-2k-N73">
+            <objects>
+                <navigationController storyboardIdentifier="GoerNavVC" id="Qfu-EC-xT2" customClass="GoerNavController" customModule="PartyTonight" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" tag="1" contentMode="scaleToFill" misplaced="YES" id="57T-Os-EsO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Sugar_Plums" family="Sugar Plums" pointSize="25"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3vp-tc-uUZ" kind="relationship" relationship="rootViewController" id="8VD-eM-027"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ef-Cm-ZpM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="-655"/>
+        </scene>
+        <!--Goer Login View Controller-->
+        <scene sceneID="W5g-nY-MIc">
+            <objects>
+                <viewController id="GX9-Sw-nzS" customClass="GoerLoginViewController" customModule="PartyTonight" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wie-LM-LMa"/>
+                        <viewControllerLayoutGuide type="bottom" id="Iep-KO-hxJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XNe-RN-9Wh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="53e-JA-iJ0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHX-as-W89">
+                                <rect key="frame" x="149" y="50" width="77.5" height="41"/>
+                                <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gPe-cd-nCX">
+                                <rect key="frame" x="38" y="238" width="300" height="191"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" background="login_field" translatesAutoresizingMaskIntoConstraints="NO" id="R0G-u5-br3">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="rPA-HB-9Ga"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" background="password_field" translatesAutoresizingMaskIntoConstraints="NO" id="ooj-AZ-Up8">
+                                        <rect key="frame" x="0.0" y="70" width="300" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="I1K-90-nIu"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKB-Gc-Sg1">
+                                        <rect key="frame" x="0.0" y="140" width="300" height="51"/>
+                                        <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="23"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="12" maxX="0.0" maxY="12"/>
+                                        <state key="normal" title="Log In" backgroundImage="button_bg">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1sT-fX-OB1">
+                                <rect key="frame" x="38" y="625" width="300" height="32"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New here?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTh-0P-8VY">
+                                        <rect key="frame" x="0.0" y="0.0" width="140" height="32"/>
+                                        <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gtp-rd-Ibx">
+                                        <rect key="frame" x="160" y="0.0" width="140" height="32"/>
+                                        <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="17"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="53e-JA-iJ0" firstAttribute="centerX" secondItem="XNe-RN-9Wh" secondAttribute="centerX" id="2V9-M9-NuZ"/>
+                            <constraint firstItem="1sT-fX-OB1" firstAttribute="centerX" secondItem="XNe-RN-9Wh" secondAttribute="centerX" id="7od-3c-o94"/>
+                            <constraint firstItem="53e-JA-iJ0" firstAttribute="height" secondItem="XNe-RN-9Wh" secondAttribute="height" id="ETO-p9-nWI"/>
+                            <constraint firstItem="gPe-cd-nCX" firstAttribute="width" secondItem="XNe-RN-9Wh" secondAttribute="width" multiplier="2.4:3" id="G2N-2n-aHC"/>
+                            <constraint firstItem="1sT-fX-OB1" firstAttribute="width" secondItem="XNe-RN-9Wh" secondAttribute="width" multiplier="2.4:3" id="I6F-eb-uJg"/>
+                            <constraint firstItem="53e-JA-iJ0" firstAttribute="width" secondItem="XNe-RN-9Wh" secondAttribute="width" id="QMz-Ed-dqi"/>
+                            <constraint firstItem="gPe-cd-nCX" firstAttribute="centerY" secondItem="XNe-RN-9Wh" secondAttribute="centerY" id="b6P-uy-uCF"/>
+                            <constraint firstItem="Iep-KO-hxJ" firstAttribute="top" secondItem="1sT-fX-OB1" secondAttribute="bottom" constant="10" id="dYn-57-Gap"/>
+                            <constraint firstItem="53e-JA-iJ0" firstAttribute="centerY" secondItem="XNe-RN-9Wh" secondAttribute="centerY" id="gBH-19-Xxc"/>
+                            <constraint firstItem="hHX-as-W89" firstAttribute="top" secondItem="Wie-LM-LMa" secondAttribute="bottom" constant="30" id="hHV-Q3-6Ol"/>
+                            <constraint firstItem="hHX-as-W89" firstAttribute="centerX" secondItem="XNe-RN-9Wh" secondAttribute="centerX" id="mAR-pV-mDx"/>
+                            <constraint firstItem="gPe-cd-nCX" firstAttribute="centerX" secondItem="XNe-RN-9Wh" secondAttribute="centerX" id="xGr-GI-AJP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="YKB-Gc-Sg1" id="lgy-wX-fQW"/>
+                        <outlet property="loginTextField" destination="R0G-u5-br3" id="EgP-ed-oLF"/>
+                        <outlet property="passwordTextField" destination="ooj-AZ-Up8" id="OIk-Eq-5Bw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0cX-mO-goQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-612" y="-655"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bg_blur" width="1280" height="840"/>
         <image name="button_bg" width="13" height="13"/>
+        <image name="button_bg_noborders" width="12" height="12"/>
         <image name="disco" width="3000" height="1800"/>
+        <image name="door_revenue" width="51" height="45"/>
+        <image name="goer_call_a_cab" width="185" height="185"/>
         <image name="login_field" width="55" height="50"/>
         <image name="password_field" width="55" height="50"/>
+        <image name="promoter_bottles" width="54" height="49"/>
+        <image name="promoter_money_total" width="55" height="36"/>
+        <image name="promoter_my_events" width="185" height="185"/>
+        <image name="promoter_new_event" width="185" height="185"/>
+        <image name="promoter_tables" width="50" height="51"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="94u-ex-tb2"/>
+        <segue reference="Yft-k6-nA3"/>
+        <segue reference="e9k-zI-vel"/>
     </inferredMetricsTieBreakers>
 </document>

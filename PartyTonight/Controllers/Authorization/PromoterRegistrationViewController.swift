@@ -55,15 +55,45 @@ class PromoterRegistrationViewController: UIViewController {
     
     func addBindings(to viewModel: RegistrationViewModel) {
         //test
-        viewModel.userToken
-            .subscribe(onNext: { (user) in
-                print("User registered: \(user)")
-                }, onError: { (error) in
-                    print("Caught an error: \(error)")
-            } )
+        viewModel.userToken.subscribe(onNext: { (token) in
+                
+                switch token {
+                case .Success(let token):
+                    print("User registered: \(token)")
+                    APIManager.sharedAPI.userToken = token
+                    self.goToPromoterScreen()
+                case .Failure(let error):
+                    
+                    if let e = error as? APIError{
+                        DefaultWireframe.presentAlert(e.description)
+                    }
+                    
+                    //                    switch error {
+                    //                    case APIError.Username(let message):
+                    //                        self.showError(message, on: self.usernameInput)
+                    //
+                    //                    case LoginError.Password(let message):
+                    //                        self.showError(message, on: self.passwordInput)
+                    //
+                    //                    default:
+                    //                        self.showError("Unknown error")
+                    //                    }
+                }
+            }, onError: { (error) in
+                print("Caught an error: \(error)")
+            }, onCompleted:{
+                print("completed")
+            })
             .addDisposableTo(disposeBag)
+            
+
     }
     
+    private func goToPromoterScreen(){
+        if let promoterNavVC = self.storyboard?.instantiateViewController(withIdentifier: "PromoterNavVC") as? PromoterNavController{
+            present(promoterNavVC, animated: true, completion: nil)
+        }
+    }
     
     func setTextFieldInsets(){
         nameTextField.attributedPlaceholder = NSAttributedString(string:"Name", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])

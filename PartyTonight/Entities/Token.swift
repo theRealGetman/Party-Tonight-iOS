@@ -13,6 +13,8 @@ class Token: Mappable {
     var token: String?
     
     required init?(map: Map){
+       
+        
         
     }
     

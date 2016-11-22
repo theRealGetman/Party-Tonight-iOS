@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTableViewCell" rowHeight="160" id="KGk-i7-Jjw" customClass="EventTableViewCell" customModule="PartyTonight" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="160"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="350" height="159"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disco" translatesAutoresizingMaskIntoConstraints="NO" id="ZeG-7G-pOM">
+                        <rect key="frame" x="5" y="5" width="340" height="149.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="ia7-Bn-Qj4"/>
+                        </constraints>
+                    </imageView>
+                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cja-g6-fJ5">
+                        <rect key="frame" x="5" y="4.5" width="340" height="149.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="3fY-GP-1uv">
+                        <rect key="frame" x="15" y="10" width="320" height="139.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mHd-db-DLx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jh6-as-wLP">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00 PM 25.07.16" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feg-mj-1aw">
+                                        <rect key="frame" x="160" y="0.0" width="160" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ct-Hr-DjH">
+                                <rect key="frame" x="0.0" y="27.5" width="320" height="112"/>
+                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. h hj khh jh j hk khkjk jh jhj hjhjhkhjkh jkhj ghghjgjg hgrgygjg g hjrghghjegrhg ghgegj hgfe</string>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="ZeG-7G-pOM" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" constant="-10" id="6bE-EM-2iL"/>
+                    <constraint firstItem="cja-g6-fJ5" firstAttribute="width" secondItem="ZeG-7G-pOM" secondAttribute="width" id="Bsb-MP-DYh"/>
+                    <constraint firstItem="3fY-GP-1uv" firstAttribute="width" secondItem="ZeG-7G-pOM" secondAttribute="width" constant="-20" id="EGt-WH-avK"/>
+                    <constraint firstItem="3fY-GP-1uv" firstAttribute="centerY" secondItem="ZeG-7G-pOM" secondAttribute="centerY" id="Id4-7I-gHV"/>
+                    <constraint firstItem="ZeG-7G-pOM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PNn-qg-Kw8"/>
+                    <constraint firstItem="ZeG-7G-pOM" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Q7g-tC-Kc1"/>
+                    <constraint firstItem="cja-g6-fJ5" firstAttribute="height" secondItem="ZeG-7G-pOM" secondAttribute="height" id="ST5-P7-oWS"/>
+                    <constraint firstItem="cja-g6-fJ5" firstAttribute="centerX" secondItem="ZeG-7G-pOM" secondAttribute="centerX" id="adf-2Z-suB"/>
+                    <constraint firstItem="cja-g6-fJ5" firstAttribute="centerY" secondItem="ZeG-7G-pOM" secondAttribute="centerY" id="s7u-ZD-vFZ"/>
+                    <constraint firstItem="3fY-GP-1uv" firstAttribute="centerX" secondItem="ZeG-7G-pOM" secondAttribute="centerX" id="tsf-65-4Oe"/>
+                    <constraint firstItem="ZeG-7G-pOM" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" constant="-10" id="vow-er-DkO"/>
+                    <constraint firstItem="3fY-GP-1uv" firstAttribute="height" secondItem="ZeG-7G-pOM" secondAttribute="height" constant="-10" id="xHd-rI-DOa"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="bgImageView" destination="ZeG-7G-pOM" id="KUW-P0-ZWi"/>
+                <outlet property="tintView" destination="cja-g6-fJ5" id="BJC-FC-mty"/>
+            </connections>
+            <point key="canvasLocation" x="41" y="110"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="disco" width="3000" height="1800"/>
+    </resources>
+</document>
