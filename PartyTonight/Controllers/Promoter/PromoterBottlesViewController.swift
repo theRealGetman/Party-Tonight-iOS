@@ -10,6 +10,8 @@ import UIKit
 
 class PromoterBottlesViewController: UITableViewController {
 
+    var bottles:[Bottle] = [];
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,7 +35,7 @@ class PromoterBottlesViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 20
+        return bottles.count
     }
     
  
@@ -42,7 +44,14 @@ class PromoterBottlesViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BottlesTablesCell", for: indexPath) as! BottlesTablesCell;
         
-        cell.titleLabel.text = "Hennessy VSOP";
+        //cell.titleLabel.text = "Hennessy VSOP";
+        
+        cell.titleLabel.text = bottles[indexPath.row].type;
+        cell.priceLabel.text = ("(Price: $\((bottles[indexPath.row].price ?? "0")))");
+        print("avail")
+        print(bottles[indexPath.row].available)
+        cell.availableAmountLabel.text = bottles[indexPath.row].available ?? "0"
+        cell.purchasedAmountLabel.text = bottles[indexPath.row].booked ?? "0"
         return cell
     }
  

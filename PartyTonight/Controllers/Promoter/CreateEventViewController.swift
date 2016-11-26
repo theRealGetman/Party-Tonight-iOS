@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 class CreateEventViewController: UIViewController, DataEnteredDelegate {
+    
     @IBAction func createTouched(_ sender: UIButton) {
         
         //print("location! \(locationTextField.text)")
@@ -37,6 +38,8 @@ class CreateEventViewController: UIViewController, DataEnteredDelegate {
     
     let disposeBag = DisposeBag();
     
+    var zipCode = Variable<String?>("");
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,7 +56,7 @@ class CreateEventViewController: UIViewController, DataEnteredDelegate {
             let price = tableView.priceTextField.rx.text.orEmpty.asObservable()
             let quantity = tableView.quantityTextField.rx.text.orEmpty.asObservable()
             let tableEntity = Observable.combineLatest(type, price, quantity) { ($0, $1, $2)}.flatMap({  (type, price, quantity) -> Observable<Table> in
-                return  Observable.just(Table(price: price,type: type,available: Int(quantity)));
+                return  Observable.just(Table(price: price,type: type,available: quantity));
             })
             return tableEntity;
         }
@@ -65,14 +68,17 @@ class CreateEventViewController: UIViewController, DataEnteredDelegate {
             let price = tableView.priceTextField.rx.text.orEmpty.asObservable()
             let quantity = tableView.quantityTextField.rx.text.orEmpty.asObservable()
             let bottleEntity = Observable.combineLatest(type, price, quantity) { ($0, $1, $2)}.flatMap({  (type, price, quantity) -> Observable<Bottle> in
-                return  Observable.just(Bottle(price: price,type: type,available: Int(quantity)));
+                return  Observable.just(Bottle(price: price,type: type,available: quantity));
             })
             return bottleEntity;
         }
         
-       // locationTextField.rx.te
         
-        let viewModel = CreateEventViewModel(input: (clubName: clubNameTextField.rx.text.orEmpty.asObservable(), dateTime: dateAndTimeTextField.rx.text.orEmpty.asObservable(), location: locationTextField.rx.text.orEmpty.asObservable(), uploadPhotosTaps: uploadPhotosButton.rx.tap.asObservable(), clubCapacity: clubCapacityTextField.rx.text.orEmpty.asObservable(), ticketsPrice: ticketsPriceTextView.rx.text.orEmpty.asObservable(), partyName: partyNameTextView.rx.text.orEmpty.asObservable(), bottles: rxBottles, tables: rxTables,createEventTaps: createEventButton.rx.tap.asObservable()), API: APIManager.sharedAPI);
+        // locationTextField.rx.te
+        
+        //let c = Observable.combineLatest( locationTextField.rx.text.orEmpty.asObservable()) { ($0) }
+        let t = Observable.combineLatest(locationTextField.rx.text.orEmpty.asObservable(), zipCode.asObservable()) { (address: $0, zip: $1) }
+        let viewModel = CreateEventViewModel(input: (clubName: clubNameTextField.rx.text.orEmpty.asObservable(), dateTime: dateAndTimeTextField.rx.text.orEmpty.asObservable(), location: t, uploadPhotosTaps: uploadPhotosButton.rx.tap.asObservable(), clubCapacity: clubCapacityTextField.rx.text.orEmpty.asObservable(), ticketsPrice: ticketsPriceTextView.rx.text.orEmpty.asObservable(), partyName: partyNameTextView.rx.text.orEmpty.asObservable(), bottles: rxBottles, tables: rxTables,createEventTaps: createEventButton.rx.tap.asObservable()), API: APIManager.sharedAPI);
         
         
         
@@ -81,7 +87,7 @@ class CreateEventViewController: UIViewController, DataEnteredDelegate {
             switch code {
             case .Success(let code):
                 print("Created: \(code)")
-               
+                
                 self.goToPromoterScreen()
             case .Failure(let error):
                 print(error)
@@ -92,10 +98,10 @@ class CreateEventViewController: UIViewController, DataEnteredDelegate {
         }).addDisposableTo(disposeBag)
         
         
-     
-
+        
+        
     }
-
+    
     func goToPromoterScreen() {
         _ = self.navigationController?.popViewController(animated: true)
     }
@@ -106,7 +112,7 @@ class CreateEventViewController: UIViewController, DataEnteredDelegate {
     }
     
     
-
+    
     
     
     func setTextFieldPlaceholders(){
@@ -122,15 +128,15 @@ class CreateEventViewController: UIViewController, DataEnteredDelegate {
         
         partyNameTextView.attributedPlaceholder = NSAttributedString(string:"Party name", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

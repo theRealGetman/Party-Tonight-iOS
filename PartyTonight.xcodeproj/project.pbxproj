@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		171CF2621DC7C84C00CD4335 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171CF2611DC7C84C00CD4335 /* User.swift */; };
+		1731E7451DE4E2A4005DE42A /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1731E7441DE4E2A4005DE42A /* SplashScreenViewController.swift */; };
 		173510801DDC9D46008CCCF9 /* CreateEventViewController+Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735107F1DDC9D46008CCCF9 /* CreateEventViewController+Popover.swift */; };
 		173510821DDC9DCD008CCCF9 /* DateTimePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173510811DDC9DCD008CCCF9 /* DateTimePickerViewController.swift */; };
 		173611421DDF419300050048 /* UIApplication+TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173611411DDF419300050048 /* UIApplication+TopViewController.swift */; };
@@ -53,6 +54,8 @@
 		178505401DD288D900D5BD79 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785053E1DD288D900D5BD79 /* EventCollectionViewCell.swift */; };
 		178505411DD288D900D5BD79 /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1785053F1DD288D900D5BD79 /* EventCollectionViewCell.xib */; };
 		178505431DD28A5A00D5BD79 /* PromoterEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178505421DD28A5A00D5BD79 /* PromoterEventsViewController.swift */; };
+		17ABBAF01DE9A85A00DA8AAA /* PromoterEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ABBAEF1DE9A85A00DA8AAA /* PromoterEventViewModel.swift */; };
+		17ABBAF21DE9CF9100DA8AAA /* EventStatementTotalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ABBAF11DE9CF9100DA8AAA /* EventStatementTotalViewModel.swift */; };
 		17B49F411DC803FD002FFA00 /* Pods_PartyTonight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213E09A20FF03D5C94A30589 /* Pods_PartyTonight.framework */; };
 		17B49F421DC803FD002FFA00 /* Pods_PartyTonight.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 213E09A20FF03D5C94A30589 /* Pods_PartyTonight.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		17B8B52D1DD5A43300B784B8 /* PromoterEventsViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B8B52C1DD5A43300B784B8 /* PromoterEventsViewController+CollectionView.swift */; };
@@ -99,6 +102,7 @@
 		171CF2671DC7F12800CD4335 /* RxAlamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAlamofire.framework; path = Carthage/Build/iOS/RxAlamofire.framework; sourceTree = "<group>"; };
 		171CF2691DC802DA00CD4335 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		171CF26A1DC802DA00CD4335 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		1731E7441DE4E2A4005DE42A /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashScreenViewController.swift; path = Controllers/SplashScreenViewController.swift; sourceTree = "<group>"; };
 		1735107F1DDC9D46008CCCF9 /* CreateEventViewController+Popover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CreateEventViewController+Popover.swift"; path = "Controllers/Promoter/Extentions/CreateEventViewController+Popover.swift"; sourceTree = "<group>"; };
 		173510811DDC9DCD008CCCF9 /* DateTimePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateTimePickerViewController.swift; path = Controllers/Promoter/DateTimePickerViewController.swift; sourceTree = "<group>"; };
 		173611411DDF419300050048 /* UIApplication+TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIApplication+TopViewController.swift"; path = "Extentions/UIApplication+TopViewController.swift"; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 		1785053E1DD288D900D5BD79 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventCollectionViewCell.swift; path = UI/EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		1785053F1DD288D900D5BD79 /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventCollectionViewCell.xib; path = UI/EventCollectionViewCell.xib; sourceTree = "<group>"; };
 		178505421DD28A5A00D5BD79 /* PromoterEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoterEventsViewController.swift; path = Controllers/Promoter/PromoterEventsViewController.swift; sourceTree = "<group>"; };
+		17ABBAEF1DE9A85A00DA8AAA /* PromoterEventViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoterEventViewModel.swift; path = VM/Promoter/PromoterEventViewModel.swift; sourceTree = "<group>"; };
+		17ABBAF11DE9CF9100DA8AAA /* EventStatementTotalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventStatementTotalViewModel.swift; path = VM/Promoter/EventStatementTotalViewModel.swift; sourceTree = "<group>"; };
 		17B49F441DC80458002FFA00 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		17B8B52C1DD5A43300B784B8 /* PromoterEventsViewController+CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PromoterEventsViewController+CollectionView.swift"; path = "Controllers/Promoter/Extentions/PromoterEventsViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		17B8B52E1DD5A50E00B784B8 /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateEventViewController.swift; path = Controllers/Promoter/CreateEventViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +243,7 @@
 				178505331DD2575B00D5BD79 /* Goer */,
 				178505301DD23EE000D5BD79 /* Navigation */,
 				174BB8781DC6708100CDAE86 /* Authorization */,
+				1731E7441DE4E2A4005DE42A /* SplashScreenViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -401,6 +408,8 @@
 			children = (
 				17B8B5311DD5E43500B784B8 /* CreateEventViewModel.swift */,
 				175FCB021DDB943D004014C9 /* PromoterEventsViewModel.swift */,
+				17ABBAEF1DE9A85A00DA8AAA /* PromoterEventViewModel.swift */,
+				17ABBAF11DE9CF9100DA8AAA /* EventStatementTotalViewModel.swift */,
 			);
 			name = Promoter;
 			sourceTree = "<group>";
@@ -460,7 +469,7 @@
 				TargetAttributes = {
 					175489931DC5222300993344 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 5BCDXKAUFJ;
+						DevelopmentTeam = 4ZMR62ZPC8;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -562,10 +571,12 @@
 				17CA19861DE0693400BD67A9 /* BottlesTablesCell.swift in Sources */,
 				17B8B5361DD6187400B784B8 /* BillingInfo.swift in Sources */,
 				1736114D1DDFAD0900050048 /* GoerLoginViewController.swift in Sources */,
+				17ABBAF01DE9A85A00DA8AAA /* PromoterEventViewModel.swift in Sources */,
 				178505431DD28A5A00D5BD79 /* PromoterEventsViewController.swift in Sources */,
 				173611421DDF419300050048 /* UIApplication+TopViewController.swift in Sources */,
 				175FCB031DDB943D004014C9 /* PromoterEventsViewModel.swift in Sources */,
 				1736114F1DDFAD3500050048 /* GoerRegistrationViewController.swift in Sources */,
+				17ABBAF21DE9CF9100DA8AAA /* EventStatementTotalViewModel.swift in Sources */,
 				17DE96C11DD51CCD00FA5C43 /* TypePriceQuantityView.swift in Sources */,
 				178505401DD288D900D5BD79 /* EventCollectionViewCell.swift in Sources */,
 				174BB87C1DC6726000CDAE86 /* PromoterLoginViewController.swift in Sources */,
@@ -585,6 +596,7 @@
 				1736114B1DDFA64D00050048 /* GoerNavController.swift in Sources */,
 				174BB87E1DC6729000CDAE86 /* PromoterRegistrationViewController.swift in Sources */,
 				17B8B52F1DD5A50E00B784B8 /* CreateEventViewController.swift in Sources */,
+				1731E7451DE4E2A4005DE42A /* SplashScreenViewController.swift in Sources */,
 				178505321DD23F3300D5BD79 /* PromoterNavController.swift in Sources */,
 				175489981DC5222300993344 /* AppDelegate.swift in Sources */,
 				17CA19841DE0407600BD67A9 /* PromoterBottlesViewController.swift in Sources */,
@@ -718,7 +730,7 @@
 			baseConfigurationReference = 821866A83DBAF48E25583913 /* Pods-PartyTonight.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5BCDXKAUFJ;
+				DEVELOPMENT_TEAM = 4ZMR62ZPC8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -736,7 +748,7 @@
 			baseConfigurationReference = EF07FB577222FA3485322B90 /* Pods-PartyTonight.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5BCDXKAUFJ;
+				DEVELOPMENT_TEAM = 4ZMR62ZPC8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

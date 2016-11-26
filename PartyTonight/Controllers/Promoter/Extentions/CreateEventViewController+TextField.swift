@@ -8,11 +8,12 @@
 
 import Foundation
 import UIKit
+import RxSwift
 extension CreateEventViewController: UITextFieldDelegate{
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         switch (textField) {
         case locationTextField:
-             performSegue(withIdentifier: "ChooseLocationSegue", sender: textField)
+            performSegue(withIdentifier: "ChooseLocationSegue", sender: textField)
             
         case dateAndTimeTextField:
             performSegue(withIdentifier: "createEventDatetimePopover", sender: textField)
@@ -21,18 +22,18 @@ extension CreateEventViewController: UITextFieldDelegate{
             return true;
             
         }
-       
+        
         return false;
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let mapVC = segue.destination as? ChooseLocationViewController{
-//            mapVC.delegate = self;
-//        }
-//    }
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        if let mapVC = segue.destination as? ChooseLocationViewController{
+    //            mapVC.delegate = self;
+    //        }
+    //    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       //print("prepare")
+        //print("prepare")
         switch (segue.identifier) {
         case "createEventDatetimePopover"?:
             if let controller = segue.destination as? DateTimePickerViewController {
@@ -48,15 +49,21 @@ extension CreateEventViewController: UITextFieldDelegate{
     }
     
     
-    func userDidChooseLocation(info: String){
+    
+    
+    internal func userDidChooseLocation(info: String, zipVal: String?) {
+        zipCode.value = zipVal;
         locationTextField.text = info;
         //for rx
         locationTextField.sendActions(for: .editingDidBegin)
+        
     }
     
+    
     func userDidChooseDateTime(date: Date) {
+        
         dateAndTimeTextField.text = date.string(format: "EEEE, d MMM yyyy HH:mm")
         dateAndTimeTextField.sendActions(for: .editingDidBegin)
     }
-
+    
 }

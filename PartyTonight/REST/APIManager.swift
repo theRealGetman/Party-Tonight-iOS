@@ -31,19 +31,19 @@ extension APIError: CustomStringConvertible {
         switch self {
             
         case .UnsuccessfulSignup(let val):
-             return  val;
+            return  val;
         case .UnsuccessfulSignin(let val):
-             return  val;
+            return  val;
         case .BadStatusCode(let val):
-             return  val;
+            return  val;
         case .CannotParse(let val):
             return  val;
-        //default: return "Undefined error";
-
+            //default: return "Undefined error";
+            
         }
-        }
+    }
     
-   
+    
     
 }
 
@@ -62,6 +62,10 @@ class APIManager{
         
         case CreateEvent = "maker/event/create"
         case GetEvents = "maker/event/get"
+        case GetRevenue = "maker/event/revenue"
+        case GetBottles = "maker/event/bottles"
+        case GetTables = "maker/event/tables"
+        case GetTotal = "maker/event/total"
         
         var path: String {
             return Constants.baseURL + rawValue
@@ -77,10 +81,10 @@ class APIManager{
         }
     }
     
-   
+    
     
     private let successfulStatusCodes = 200...201;
-
+    
     
     func event(create event: Event) -> Observable<Result<Int>> {
         
@@ -89,7 +93,7 @@ class APIManager{
         print("club name \(event.clubName) b count  : \(event.bottles?.count) loc \(event.location) date: \(event.date)")
         
         
-       let headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
+        let headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
         return request(.post, PromoterPath.CreateEvent.path, parameters: Mapper<Event>().toJSON(event),   encoding:  JSONEncoding.default,  headers: headers  )
             .map { response  in
                 return response.validate(statusCode: self.successfulStatusCodes)
@@ -99,7 +103,7 @@ class APIManager{
                 return Observable.just(Result.Failure(APIError.BadStatusCode(err.localizedDescription)));
                 
             })
-            //.catchErrorJustReturn(Result.Failure(APIError.BadStatusCode("")))
+        //.catchErrorJustReturn(Result.Failure(APIError.BadStatusCode("")))
     }
     
     
@@ -110,6 +114,7 @@ class APIManager{
                 return response.validate(statusCode: self.successfulStatusCodes).rx.json()
             }).map(JSON.init)
             .flatMap { json -> Observable<Result<[Event]>> in
+                
                 guard let events = Mapper<Event>().mapArray(JSONString: json.rawString() ?? "" ) else {
                     return Observable.just(Result.Failure(APIError.CannotParse("")))
                 }
@@ -118,7 +123,7 @@ class APIManager{
                 return Observable.just(Result.Failure(APIError.BadStatusCode(err.localizedDescription)));
                 
             })
-            //.catchErrorJustReturn(Result.Failure(APIError.BadStatusCode("")))
+        //.catchErrorJustReturn(Result.Failure(APIError.BadStatusCode("")))
     }
     
     
@@ -137,31 +142,31 @@ class APIManager{
                 }
                 print("Got token: \(token.token)")
                 return Observable.just(Result.Success(token))
-        }.catchError({ (err) -> Observable<Result<Token>> in
-            
+            }.catchError({ (err) -> Observable<Result<Token>> in
+                
                 return Observable.just(Result.Failure(APIError.UnsuccessfulSignin(err.localizedDescription)));
-
-        })
+                
+            })
         
         
         
         //
-            //.catchErrorJustReturn(Result.Failure(APIError.UnsuccessfulSignin))
+        //.catchErrorJustReturn(Result.Failure(APIError.UnsuccessfulSignin))
     }
     
     func signup(promoter: User)-> Observable<Result<Token>> {
         return request(.post, PromoterPath.SignUp.path, parameters: Mapper<User>().toJSON(promoter) , encoding:  JSONEncoding.default)
             .map { response  in
                 return response.validate(statusCode: self.successfulStatusCodes)
-        }.flatMap { response -> Observable<Result<Token>> in
+            }.flatMap { response -> Observable<Result<Token>> in
                 return self.signin(user: promoter)
             }.catchError({ (err) -> Observable<Result<Token>> in
                 return Observable.just(Result.Failure(APIError.UnsuccessfulSignup(err.localizedDescription)));
                 
             })
-            
-            
-            //.catchErrorJustReturn(Result.Failure(APIError.UnsuccessfulSignup("")))
+        
+        
+        //.catchErrorJustReturn(Result.Failure(APIError.UnsuccessfulSignup("")))
     }
     
     func signup(goer: User)-> Observable<Result<Token>> {
@@ -174,9 +179,89 @@ class APIManager{
                 return Observable.just(Result.Failure(APIError.UnsuccessfulSignup(err.localizedDescription)));
                 
             })
-            
-           // .catchErrorJustReturn(Result.Failure(APIError.UnsuccessfulSignup("")))
-
+        
+        // .catchErrorJustReturn(Result.Failure(APIError.UnsuccessfulSignup("")))
+        
     }
+    
+    
+    
+    func revenue(getFor partyName: String) ->  Observable<Result<Revenue>> {
+        var headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
+        headers["partyName"] = partyName
+        return request(.get, PromoterPath.GetRevenue.path,  headers: headers  )
+            .flatMap({ (response) -> Observable<Any> in
+                return response.validate(statusCode: self.successfulStatusCodes).rx.json()
+            }).map(JSON.init)
+            .flatMap { json -> Observable<Result<Revenue>> in
+                
+                guard let revenue = Mapper<Revenue>().map(JSONString: json.rawString() ?? "" ) else {
+                    return Observable.just(Result.Failure(APIError.CannotParse("")))
+                }
+                return Observable.just(Result.Success(revenue))
+            }.catchError({ (err) -> Observable<Result<Revenue>> in
+                return Observable.just(Result.Failure(APIError.BadStatusCode(err.localizedDescription)));
+                
+            })
+    }
+    
+    func bottles(getFor partyName: String) ->  Observable<Result<[Bottle]>> {
+        var headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
+        headers["partyName"] = partyName
+        return request(.get, PromoterPath.GetBottles.path,  headers: headers  )
+            .flatMap({ (response) -> Observable<Any> in
+                return response.validate(statusCode: self.successfulStatusCodes).rx.json()
+            }).map(JSON.init)
+            .flatMap { json -> Observable<Result<[Bottle]>> in
+                guard let bottles = Mapper<Bottle>().mapArray(JSONString: json.rawString() ?? "" ) else {
+                    return Observable.just(Result.Failure(APIError.CannotParse("")))
+                }
+                return Observable.just(Result.Success(bottles))
+            }.catchError({ (err) -> Observable<Result<[Bottle]>> in
+                return Observable.just(Result.Failure(APIError.BadStatusCode(err.localizedDescription)));
+                
+            })
+    }
+    
+    
+    func tables(getFor partyName: String) ->  Observable<Result<[Table]>> {
+        var headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
+        headers["partyName"] = partyName
+        return request(.get, PromoterPath.GetTables.path,  headers: headers  )
+            .flatMap({ (response) -> Observable<Any> in
+                return response.validate(statusCode: self.successfulStatusCodes).rx.json()
+            }).map(JSON.init)
+            .flatMap { json -> Observable<Result<[Table]>> in
+                guard let tables = Mapper<Table>().mapArray(JSONString: json.rawString() ?? "" ) else {
+                    return Observable.just(Result.Failure(APIError.CannotParse("")))
+                }
+                return Observable.just(Result.Success(tables))
+            }.catchError({ (err) -> Observable<Result<[Table]>> in
+                return Observable.just(Result.Failure(APIError.BadStatusCode(err.localizedDescription)));
+                
+            })
+    }
+    
+    
+    func total(getFor partyName: String) ->  Observable<Result<Total>> {
+        var headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
+        headers["partyName"] = partyName
+        return request(.get, PromoterPath.GetTotal.path,  headers: headers  )
+            .flatMap({ (response) -> Observable<Any> in
+                return response.validate(statusCode: self.successfulStatusCodes).rx.json()
+            }).map(JSON.init)
+            .flatMap { json -> Observable<Result<Total>> in
+                
+                guard let revenue = Mapper<Total>().map(JSONString: json.rawString() ?? "" ) else {
+                    return Observable.just(Result.Failure(APIError.CannotParse("")))
+                }
+                return Observable.just(Result.Success(revenue))
+            }.catchError({ (err) -> Observable<Result<Total>> in
+                return Observable.just(Result.Failure(APIError.BadStatusCode(err.localizedDescription)));
+                
+            })
+    }
+    
+    
     
 }

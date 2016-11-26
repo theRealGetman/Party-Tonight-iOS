@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RxSwift
 class PromoterStatementTotalViewController: UIViewController {
 
     @IBOutlet weak var statementTotalAmountLabel: UILabel!
@@ -21,9 +21,31 @@ class PromoterStatementTotalViewController: UIViewController {
     @IBOutlet weak var refundsAmountLabel: UILabel!
     @IBOutlet weak var withdrawAmountLabel: UILabel!
     
+    var event:Event?
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        guard let evt = event else {
+            return
+        }
+        print("statement")
+        let viewModel = EventStatementTotalViewModel(dependency: (API: APIManager.sharedAPI, event: evt))
+        viewModel.statementTotal.subscribe(onNext: { (total) in
+            
+            self.statementTotalAmountLabel.text = "$\(total.withdrawn ?? "$0")";
+            self.ticketsSalesAmountLabel.text = "$\(total.ticketsSales ?? "$0")";
+            self.bottlesSalesAmount.text = "$\(total.bottleSales ?? "$0")";
+            self.tableSalesAmount.text = "$\(total.tableSales ?? "$0")";
+            self.refundsAmountLabel.text = "$\(total.refunds ?? "$0")";
+            self.withdrawAmountLabel.text = "$\(total.withdrawn ?? "$0")";
+            
+        }, onError: { (error) in
+            print("Caught an error: \(error)")
+        }, onCompleted:{
+            
+        }).addDisposableTo(disposeBag)
         // Do any additional setup after loading the view.
     }
 

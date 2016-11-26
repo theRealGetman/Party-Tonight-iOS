@@ -10,6 +10,8 @@ import UIKit
 
 class PromoterTablesViewController: UITableViewController {
 
+    var tables:[Table] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let backgroundImage = UIImage(named: "bg_blur")
@@ -37,7 +39,7 @@ class PromoterTablesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 20
+        return tables.count
     }
     
     
@@ -46,7 +48,11 @@ class PromoterTablesViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BottlesTablesCell", for: indexPath) as! BottlesTablesCell;
         
-        cell.titleLabel.text = "Unnamed";
+        cell.titleLabel.text = tables[indexPath.row].type;
+        cell.priceLabel.text = ("(Price: $\((tables[indexPath.row].price ?? "0")))");
+        cell.availableAmountLabel.text = tables[indexPath.row].available ?? "0"
+        cell.purchasedAmountLabel.text = tables[indexPath.row].booked ?? "0"
+
         return cell
     }
 

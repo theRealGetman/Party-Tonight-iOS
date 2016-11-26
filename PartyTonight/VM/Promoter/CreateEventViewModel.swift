@@ -18,7 +18,7 @@ class CreateEventViewModel{
     init(input: (
         clubName: Observable<String>,
         dateTime: Observable<String>,
-        location: Observable<String>,
+        location: Observable<(address: String, zip: String?)>,
         uploadPhotosTaps: Observable<Void>,
         clubCapacity: Observable<String>,
         ticketsPrice: Observable<String>,
@@ -50,10 +50,13 @@ class CreateEventViewModel{
         let eventInfo = input.createEventTaps.withLatestFrom(Observable.combineLatest(input.clubName,input.dateTime,input.location,input.clubCapacity, input.ticketsPrice, input.partyName,rxTables, rxBottles) { (clubName: $0,dateTime: $1 ,location: $2 ,clubCapacity: $3,ticketsPrice: $4,partyName: $5, tables: $6, bottles: $7) })
         
          eventResponse = eventInfo.flatMapLatest({ (clubName,dateTime ,location,clubCapacity,ticketsPrice,partyName, tables, bottles) -> Observable<Result<Int>> in
+            print("!location.address")
+            print(location.address)
+            print(location.zip)
             
             let df = DateFormatter();
             df.dateFormat = "EEEE, d MMM yyyy HH:mm"
-            return API.event(create: Event(clubName: clubName,dateTime: String(round(df.date(from: dateTime)?.timeIntervalSince1970 ?? NSDate().timeIntervalSince1970)) ,location: location,clubCapacity: clubCapacity,ticketsPrice: ticketsPrice,partyName: partyName, tables: tables, bottles: bottles))
+            return API.event(create: Event(clubName: clubName,dateTime: df.date(from: dateTime) ?? Date() ,location: location.address,zipCode: location.zip,clubCapacity: clubCapacity,ticketsPrice: ticketsPrice,partyName: partyName, tables: tables, bottles: bottles))
                 //.catchErrorJustReturn(nil)
                 //.trackActivity(signingIn)
             }).shareReplay(1)

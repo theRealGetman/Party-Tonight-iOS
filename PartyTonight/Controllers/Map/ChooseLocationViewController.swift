@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 protocol DataEnteredDelegate: class {
-    func userDidChooseLocation(info: String)
+    func userDidChooseLocation(info: String,zipVal:String?)
     func userDidChooseDateTime(date: Date)
 }
 
@@ -18,12 +18,12 @@ class ChooseLocationViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     let annotation = MKPointAnnotation()
     weak var delegate: DataEnteredDelegate? = nil
-    var address:String?
+    var address:(address:String,zip: String?)?
     
     @IBAction func doneButtonTouched(_ sender: UIBarButtonItem) {
         // call this method on whichever class implements our delegate protocol
         if let location = address{
-            delegate?.userDidChooseLocation(info: location);
+            delegate?.userDidChooseLocation(info: location.address, zipVal: location.zip);
             _ = self.navigationController?.popViewController(animated: true)
         }
         // go back to the previous view controller
@@ -84,7 +84,7 @@ class ChooseLocationViewController: UIViewController {
 //            if let zip = placeMark.addressDictionary!["ZIP"] as? NSString {
 //                print(zip)
 //            }
-//            
+//
 //            // Country
 //            if let country = placeMark.addressDictionary!["Country"] as? NSString {
 //                print(country)
@@ -92,7 +92,10 @@ class ChooseLocationViewController: UIViewController {
 //            
             // FormattedAddressLines
             if let formattedAddressLines = placeMark.addressDictionary?["FormattedAddressLines"] as? [String] {
-                self.address = formattedAddressLines.joined(separator: ", ")
+                // Zip code
+                 let zip:String? = placeMark.addressDictionary?["ZIP"] as? String
+                self.address = (address: formattedAddressLines.joined(separator: ", "),zip: zip)
+                //self.address?.address = formattedAddressLines.joined(separator: ", ")
             }
             
             

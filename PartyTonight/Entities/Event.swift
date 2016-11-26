@@ -34,7 +34,7 @@ class Event : Mappable {
 //    successful response 201(created)
     
     var clubName,location,clubCapacity,partyName,zipCode: String?
-    var date: String?
+    var date: Date?
     var bottles: [Bottle]?
     var tickets: [Ticket]?
     var tables: [Table]?
@@ -43,10 +43,11 @@ class Event : Mappable {
         
     }
     
-    init(clubName: String,dateTime:String,location:String,clubCapacity:String,ticketsPrice:String,partyName:String, tables:[Table], bottles:[Bottle]){
+    init(clubName: String,dateTime:Date,location:String,zipCode:String?,clubCapacity:String,ticketsPrice:String,partyName:String, tables:[Table], bottles:[Bottle]){
         self.clubName = clubName;
         self.date = dateTime;
         self.location = location;
+        self.zipCode = zipCode;
         self.clubCapacity = clubCapacity;
         self.tickets = [Ticket(price: ticketsPrice)]
         self.partyName = partyName;
@@ -56,16 +57,16 @@ class Event : Mappable {
     }
     
     func mapping(map: Map) {
-        clubName <- map["club_name"]
-        location <- map["location"]
+        clubName     <- map["club_name"]
+        location     <- map["location"]
         clubCapacity <- map["club_capacity"]
-        partyName <- map["party_name"]
-        zipCode <- map["zip_code"]
-        //date <- (map["date"], DateTransform())
-        date <- map["date"]
-        bottles <- map["bottles"]
-        tickets <- map["tickets"]
-        tables <- map["tables"]
+        partyName    <- map["party_name"]
+        zipCode      <- map["zip_code"]
+        date         <- (map["date"], DateTransform())
+        //date       <- map["date"]
+        bottles      <- map["bottles"]
+        tickets      <- map["tickets"]
+        tables       <- map["tables"]
         
     }
  
@@ -73,24 +74,24 @@ class Event : Mappable {
 
 
 class Table:Mappable {
-    var price,type:String?
-    var available: Int?
+    var price,type,available,booked:String?
+    
     
     
     required init?(map: Map){
         
     }
-    init(price:String?,type:String?, available: Int?){
+    init(price:String?,type:String?, available: String?){
         self.price = price;
         self.type = type;
         self.available = available;
     }
     
     func mapping(map: Map) {
-        price <- map["price"]
-        type <- map["type"]
+        price     <- map["price"]
+        type      <- map["type"]
         available <- map["available"]
-        
+        booked    <- map["booked"]
     }
 
 }
@@ -112,10 +113,10 @@ class Ticket:Mappable{
 }
 
 class Bottle:Mappable{
-    var price,type:String?
-    var available: Int?
+    var price,type,available, booked:String?
     
-    init(price:String?,type:String?, available: Int?){
+    
+    init(price:String?,type:String?, available: String?){
         self.price = price;
         self.type = type;
         self.available = available;
@@ -129,9 +130,41 @@ class Bottle:Mappable{
         price     <- map["price"]
         type      <- map["type"]
         available <- map["available"]
+        booked    <- map["booked"]
     }
 }
 
+class Revenue: Mappable{
+    var revenue:String?
+    init(revenue: String) {
+        self.revenue = revenue;
+    }
+    required init?(map: Map){
+        
+    }
+    
+    func mapping(map: Map) {
+        revenue <- map["revenue"]
+    }
+}
 
-
+class Total: Mappable{
+    var withdrawn,ticketsSales,bottleSales,tableSales,refunds: String?
+    
+    required init?(map: Map){
+        
+    }
+    
+    init() {
+        
+    }
+    
+    func mapping(map: Map) {
+        withdrawn    <- map["withdrawn"]
+        ticketsSales <- map["ticketsSales"]
+        bottleSales  <- map["bottleSales"]
+        tableSales   <- map["tableSales"]
+        refunds      <- map["refunds"]
+    }
+}
 

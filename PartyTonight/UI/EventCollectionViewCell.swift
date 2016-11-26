@@ -11,6 +11,13 @@ import UIKit
 class EventCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bgImageView: UIImageView!
 
+    @IBOutlet weak var eventTitleLabel: UILabel!
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var eventDescriptionLabel: UILabel!
+    
+    var event:Event?
+    
     @IBOutlet weak var tintBgView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
