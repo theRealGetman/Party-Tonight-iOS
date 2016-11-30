@@ -42,9 +42,6 @@ extension APIError: CustomStringConvertible {
             
         }
     }
-    
-    
-    
 }
 
 class APIManager{

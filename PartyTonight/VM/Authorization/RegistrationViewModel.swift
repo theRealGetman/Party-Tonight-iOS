@@ -13,7 +13,7 @@ import RxSwift
 
 class RegistrationViewModel{
     fileprivate let disposeBag = DisposeBag()
-
+    
     var userToken: Observable<Result<Token>>
     
     
@@ -25,22 +25,24 @@ class RegistrationViewModel{
         emergencyContact: Observable<String>,
         password: Observable<String>,
         signupTaps: Observable<Void>
-
-        ),
-         API: (
-        APIManager
         
-        )
-        ) {
+        ), API: (APIManager)) {
         
         let signupCredentials = Observable.combineLatest(input.username, input.phone, input.email, input.billingInfo, input.emergencyContact, input.password) { ($0, $1, $2, $3, $4, $5) }
         
         userToken = input.signupTaps.withLatestFrom(signupCredentials)
-            .flatMapLatest { (username, phone, email, billingInfo, emergencyContact, password) in
+            .flatMapLatest ({ (username, phone, email, billingInfo, emergencyContact, password) -> Observable<Result<Token>> in
+                
+                let validatedPassword = ValidationService.validate(password: password);
+                if(!validatedPassword.isValid){
+                    return Observable.just(Result.Failure(validatedPassword))
+                }
+                if(!ValidationService.validate(email: email)){
+                    return Observable.just(Result.Failure(ValidationResult.failed(message: "Incorrect email")));
+                }
+                
                 return API.signup(promoter: User(username: username, phone: phone, email: email, billingInfo: BillingInfo(cardNumber: billingInfo), emergencyContact: emergencyContact, password: password))
                     .observeOn(MainScheduler.instance)
-            }
-            .shareReplay(1)
-
+            }).shareReplay(1)
     }
 }

@@ -30,10 +30,12 @@ class LoginViewModel{
         let usernameAndPassword = Observable.combineLatest(input.email, input.password) { ($0, $1) }
         userToken = input.loginTaps.withLatestFrom(usernameAndPassword)
             .flatMap ({ (email, password) -> Observable<Result<Token>> in
+                
+                if(!ValidationService.validate(email: email)){
+                    return Observable.just(Result.Failure(ValidationResult.failed(message: "Incorrect email")));
+                }
                 return API.signin(user: User(email: email, password: password))
                     .observeOn(MainScheduler.instance)
-                    //.catchErrorJustReturn(nil)
-                    //.trackActivity(signingIn)
             }).shareReplay(1)
  
         

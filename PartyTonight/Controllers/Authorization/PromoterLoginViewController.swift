@@ -60,6 +60,8 @@ class PromoterLoginViewController: UIViewController {
                     print(error)
                     if let e = error as? APIError{
                          DefaultWireframe.presentAlert(e.description)
+                    } else if let e = error as? ValidationResult{
+                        DefaultWireframe.presentAlert(e.description)
                     }
                 }
                 }, onError: { (error) in

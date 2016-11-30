@@ -25,13 +25,14 @@ class PromoterEventsViewController: UIViewController{
         viewModel.events.map({ (it) -> [Event] in
             switch it {
             case .Success(let events):
-                print("events")
-                print(events)
+               
+                self.emptyView(isSet: events.count > 0 ? false : true, collectionView: self.eventsCollectionView)
                 return events;
                 
             case .Failure(let error):
                 print("#error")
                 print(error)
+                self.emptyView(isSet: true, collectionView: self.eventsCollectionView)
                 return [];
             }
         }).bindTo(eventsCollectionView.rx.items(cellIdentifier: cellName, cellType: EventCollectionViewCell.self)) { (row, element, cell) in
@@ -65,6 +66,18 @@ class PromoterEventsViewController: UIViewController{
             if let eventCell = sender as? EventCollectionViewCell{
                 eventController.event = eventCell.event;
             }
+        }
+    }
+    
+    func emptyView(isSet:Bool,collectionView:UICollectionView)  {
+        if (!isSet) {
+            collectionView.backgroundView = nil
+        } else {
+            
+            let noDataLabel: UILabel = UILabel(frame: CGRect(x:0, y:0, width: collectionView.bounds.size.width, height: collectionView.bounds.size.height))
+            noDataLabel.attributedText = NSAttributedString(string:"No data available", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
+            noDataLabel.textAlignment = NSTextAlignment.center
+            collectionView.backgroundView = noDataLabel
         }
     }
     

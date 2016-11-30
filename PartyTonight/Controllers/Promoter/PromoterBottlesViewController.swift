@@ -19,6 +19,10 @@ class PromoterBottlesViewController: UITableViewController {
         let imageView = UIImageView(image: backgroundImage)
         self.tableView.backgroundView = imageView
         imageView.contentMode = .scaleAspectFill
+        
+        if(bottles.count == 0){
+            emptyView(isSet: true, tableView: tableView)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,6 +59,18 @@ class PromoterBottlesViewController: UITableViewController {
         return cell
     }
  
+    
+    func emptyView(isSet:Bool,tableView:UITableView)  {
+        if (!isSet) {
+            tableView.backgroundView = nil
+        } else {
+            
+            let noDataLabel: UILabel = UILabel(frame: CGRect(x:0, y:0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            noDataLabel.attributedText = NSAttributedString(string:"No data available", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
+            noDataLabel.textAlignment = NSTextAlignment.center
+            tableView.backgroundView?.addSubview(noDataLabel)
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
