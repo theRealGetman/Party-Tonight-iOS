@@ -47,6 +47,7 @@
 		1775F14E1DD21ECD00B90EEA /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F1411DD21ECD00B90EEA /* RxSwift.framework */; };
 		1775F14F1DD21ECD00B90EEA /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F1411DD21ECD00B90EEA /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1777718A1DEDF42A00BEE874 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177771891DEDF42A00BEE874 /* ValidationService.swift */; };
+		177771A81DEEE10400BEE874 /* CreateEventViewController+ImageChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177771A71DEEE10400BEE874 /* CreateEventViewController+ImageChooser.swift */; };
 		1785052A1DD234AA00D5BD79 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178505291DD234AA00D5BD79 /* SwiftyJSON.framework */; };
 		1785052B1DD234AA00D5BD79 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 178505291DD234AA00D5BD79 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		178505321DD23F3300D5BD79 /* PromoterNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178505311DD23F3300D5BD79 /* PromoterNavController.swift */; };
@@ -65,12 +66,14 @@
 		17C5B1AE1DCBE6C40093BC07 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5B1AD1DCBE6C40093BC07 /* Token.swift */; };
 		17C5B1B01DCBF2240093BC07 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5B1AF1DCBF2240093BC07 /* RegistrationViewModel.swift */; };
 		17C5B1B31DCC6FB30093BC07 /* String+Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5B1B21DCC6FB30093BC07 /* String+Encoding.swift */; };
+		17C9FB891DF0EA3700695507 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C9FB881DF0EA3700695507 /* Photo.swift */; };
 		17CA197E1DE03F0800BD67A9 /* PromoterStatementTotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA197D1DE03F0800BD67A9 /* PromoterStatementTotalViewController.swift */; };
 		17CA19821DE0405700BD67A9 /* PromoterTablesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA19811DE0405700BD67A9 /* PromoterTablesViewController.swift */; };
 		17CA19841DE0407600BD67A9 /* PromoterBottlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA19831DE0407600BD67A9 /* PromoterBottlesViewController.swift */; };
 		17CA19861DE0693400BD67A9 /* BottlesTablesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA19851DE0693400BD67A9 /* BottlesTablesCell.swift */; };
 		17DE96C11DD51CCD00FA5C43 /* TypePriceQuantityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DE96C01DD51CCD00FA5C43 /* TypePriceQuantityView.swift */; };
 		17DE96C31DD51CF600FA5C43 /* TypePriceQuantityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17DE96C21DD51CF600FA5C43 /* TypePriceQuantityView.xib */; };
+		43A92A685466E00A8BD84307 /* Pods_PartyTonight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213E09A20FF03D5C94A30589 /* Pods_PartyTonight.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -138,6 +141,7 @@
 		1775F1431DD21ECD00B90EEA /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		1775F1541DD21F3100B90EEA /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		177771891DEDF42A00BEE874 /* ValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidationService.swift; path = Services/ValidationService.swift; sourceTree = "<group>"; };
+		177771A71DEEE10400BEE874 /* CreateEventViewController+ImageChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CreateEventViewController+ImageChooser.swift"; path = "Controllers/Promoter/Extentions/CreateEventViewController+ImageChooser.swift"; sourceTree = "<group>"; };
 		178505291DD234AA00D5BD79 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		1785052C1DD2357A00D5BD79 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		178505311DD23F3300D5BD79 /* PromoterNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoterNavController.swift; path = Controllers/Navigation/PromoterNavController.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 		17C5B1AD1DCBE6C40093BC07 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Token.swift; path = Entities/Token.swift; sourceTree = "<group>"; };
 		17C5B1AF1DCBF2240093BC07 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationViewModel.swift; path = VM/Authorization/RegistrationViewModel.swift; sourceTree = "<group>"; };
 		17C5B1B21DCC6FB30093BC07 /* String+Encoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Encoding.swift"; path = "Extentions/String+Encoding.swift"; sourceTree = "<group>"; };
+		17C9FB881DF0EA3700695507 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Photo.swift; path = Entities/Photo.swift; sourceTree = "<group>"; };
 		17CA197D1DE03F0800BD67A9 /* PromoterStatementTotalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoterStatementTotalViewController.swift; path = Controllers/Promoter/PromoterStatementTotalViewController.swift; sourceTree = "<group>"; };
 		17CA19811DE0405700BD67A9 /* PromoterTablesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoterTablesViewController.swift; path = Controllers/Promoter/PromoterTablesViewController.swift; sourceTree = "<group>"; };
 		17CA19831DE0407600BD67A9 /* PromoterBottlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoterBottlesViewController.swift; path = Controllers/Promoter/PromoterBottlesViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +185,7 @@
 				1775F14A1DD21ECD00B90EEA /* RxBlocking.framework in Frameworks */,
 				1775F1441DD21ECD00B90EEA /* Alamofire.framework in Frameworks */,
 				1775F1481DD21ECD00B90EEA /* RxAlamofire.framework in Frameworks */,
+				43A92A685466E00A8BD84307 /* Pods_PartyTonight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +214,7 @@
 				17C5B1AD1DCBE6C40093BC07 /* Token.swift */,
 				17B8B5331DD6147D00B784B8 /* Event.swift */,
 				17B8B5351DD6187400B784B8 /* BillingInfo.swift */,
+				17C9FB881DF0EA3700695507 /* Photo.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -398,6 +405,7 @@
 				17B8B52C1DD5A43300B784B8 /* PromoterEventsViewController+CollectionView.swift */,
 				175FCB001DDB76AE004014C9 /* CreateEventViewController+TextField.swift */,
 				1735107F1DDC9D46008CCCF9 /* CreateEventViewController+Popover.swift */,
+				177771A71DEEE10400BEE874 /* CreateEventViewController+ImageChooser.swift */,
 			);
 			name = Extentions;
 			sourceTree = "<group>";
@@ -565,6 +573,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17C9FB891DF0EA3700695507 /* Photo.swift in Sources */,
 				1785053A1DD25A1B00D5BD79 /* EventTableViewCell.swift in Sources */,
 				17CA19821DE0405700BD67A9 /* PromoterTablesViewController.swift in Sources */,
 				17CA19861DE0693400BD67A9 /* BottlesTablesCell.swift in Sources */,
@@ -592,6 +601,7 @@
 				1754899A1DC5222300993344 /* ViewController.swift in Sources */,
 				17B8B52D1DD5A43300B784B8 /* PromoterEventsViewController+CollectionView.swift in Sources */,
 				175FCAFF1DDB4DA4004014C9 /* ChooseLocationViewController.swift in Sources */,
+				177771A81DEEE10400BEE874 /* CreateEventViewController+ImageChooser.swift in Sources */,
 				17CA197E1DE03F0800BD67A9 /* PromoterStatementTotalViewController.swift in Sources */,
 				1736114B1DDFA64D00050048 /* GoerNavController.swift in Sources */,
 				174BB87E1DC6729000CDAE86 /* PromoterRegistrationViewController.swift in Sources */,

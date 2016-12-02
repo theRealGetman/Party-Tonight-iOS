@@ -3,6 +3,6 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'PartyTonight' do
-
+ pod 'YangMingShan'
 end
 

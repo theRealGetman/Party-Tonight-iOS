@@ -63,6 +63,7 @@ class APIManager{
         case GetBottles = "maker/event/bottles"
         case GetTables = "maker/event/tables"
         case GetTotal = "maker/event/total"
+        case Image = "maker/event/image"
         
         var path: String {
             return Constants.baseURL + rawValue
@@ -85,11 +86,6 @@ class APIManager{
     
     func event(create event: Event) -> Observable<Result<Int>> {
         
-        print("event desc")
-        print(event)
-        print("club name \(event.clubName) b count  : \(event.bottles?.count) loc \(event.location) date: \(event.date)")
-        
-        
         let headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
         return request(.post, PromoterPath.CreateEvent.path, parameters: Mapper<Event>().toJSON(event),   encoding:  JSONEncoding.default,  headers: headers  )
             .map { response  in
@@ -111,7 +107,6 @@ class APIManager{
                 return response.validate(statusCode: self.successfulStatusCodes).rx.json()
             }).map(JSON.init)
             .flatMap { json -> Observable<Result<[Event]>> in
-                
                 guard let events = Mapper<Event>().mapArray(JSONString: json.rawString() ?? "" ) else {
                     return Observable.just(Result.Failure(APIError.CannotParse("")))
                 }
@@ -260,5 +255,59 @@ class APIManager{
     }
     
     
+    func uploadData(images:[UIImage]) -> Observable<[String]>{
+        return Observable.combineLatest(images.map { (img)  in
+            uploadImage(image: img)
+        }, {el in el})
+    }
+    
+    
+    func uploadImage(image:UIImage) ->  Observable<String>{
+        return Observable<String>.create({observer in
+            let parameters:[String:String] = [:]
+            let headers = (self.userToken?.token != nil) ? ["x-auth-token": self.userToken!.token!] : [:]
+            
+            
+            Alamofire.upload(multipartFormData: { multipartFormData in
+                if let imageData = UIImageJPEGRepresentation(image, 0.8) {
+                    multipartFormData.append(imageData, withName: "file", fileName: "file.jpg", mimeType: "image/jpg")
+                }
+                
+                for (key, value) in parameters {
+                    multipartFormData.append((value.data(using: .utf8))!, withName: key)
+                }}, to: PromoterPath.Image.path, method: .post, headers: headers,
+                    encodingCompletion: { encodingResult in
+                        switch encodingResult {
+                        case .success(let upload, _, _):
+                            
+                            upload.responseJSON { [weak self] response in
+                                
+                                guard self != nil else {
+                                    return
+                                }
+                                
+                                guard response.result.error == nil else {
+                                    print("error response")
+                                    print(response.result.error!)
+                                    return
+                                }
+                                if let value: Any = response.result.value {
+                                    
+                                    observer.onNext(JSON(value)["path"].stringValue)
+                                    // completion(response: JSON(value))
+                                }
+                                
+                            }
+                        case .failure(let encodingError):
+                            print("error:\(encodingError)")
+                        }
+            })
+            
+            
+            return Disposables.create();
+            
+        })
+        
+    }
     
 }

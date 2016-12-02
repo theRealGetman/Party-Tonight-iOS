@@ -9,7 +9,13 @@
 import UIKit
 import RxSwift
 import RxCocoa
+
+
 class CreateEventViewController: UIViewController, DataEnteredDelegate {
+    
+    var images: NSArray! = []
+    var maxImagesToChoose:UInt = 5;
+    var uiImages:Variable<[UIImage]> = Variable<[UIImage]>([])
     
     @IBAction func createTouched(_ sender: UIButton) {
         
@@ -73,15 +79,8 @@ class CreateEventViewController: UIViewController, DataEnteredDelegate {
             return bottleEntity;
         }
         
-        
-        // locationTextField.rx.te
-        
-        //let c = Observable.combineLatest( locationTextField.rx.text.orEmpty.asObservable()) { ($0) }
-        let t = Observable.combineLatest(locationTextField.rx.text.orEmpty.asObservable(), zipCode.asObservable()) { (address: $0, zip: $1) }
-        let viewModel = CreateEventViewModel(input: (clubName: clubNameTextField.rx.text.orEmpty.asObservable(), dateTime: dateAndTimeTextField.rx.text.orEmpty.asObservable(), location: t, uploadPhotosTaps: uploadPhotosButton.rx.tap.asObservable(), clubCapacity: clubCapacityTextField.rx.text.orEmpty.asObservable(), ticketsPrice: ticketsPriceTextView.rx.text.orEmpty.asObservable(), partyName: partyNameTextView.rx.text.orEmpty.asObservable(), bottles: rxBottles, tables: rxTables,createEventTaps: createEventButton.rx.tap.asObservable()), API: APIManager.sharedAPI);
-        
-        
-        
+        let loc = Observable.combineLatest(locationTextField.rx.text.orEmpty.asObservable(), zipCode.asObservable()) { (address: $0, zip: $1) }
+        let viewModel = CreateEventViewModel(input: (clubName: clubNameTextField.rx.text.orEmpty.asObservable(), dateTime: dateAndTimeTextField.rx.text.orEmpty.asObservable(), location: loc, uploadPhotosTaps: uploadPhotosButton.rx.tap.asObservable(), clubCapacity: clubCapacityTextField.rx.text.orEmpty.asObservable(), ticketsPrice: ticketsPriceTextView.rx.text.orEmpty.asObservable(), partyName: partyNameTextView.rx.text.orEmpty.asObservable(), bottles: rxBottles, tables: rxTables,createEventTaps: createEventButton.rx.tap.asObservable(),images: uiImages), API: APIManager.sharedAPI);
         
         viewModel.eventResponse.subscribe (onNext: { (code) in
             switch code {
@@ -99,9 +98,6 @@ class CreateEventViewController: UIViewController, DataEnteredDelegate {
             }
         }).addDisposableTo(disposeBag)
         
-        
-        
-        
     }
     
     func goToPromoterScreen() {
@@ -112,9 +108,6 @@ class CreateEventViewController: UIViewController, DataEnteredDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
     
     
     func setTextFieldPlaceholders(){

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -50,7 +49,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party Tonight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9q-gF-2Np">
-                                <rect key="frame" x="59.5" y="64" width="257.5" height="64"/>
+                                <rect key="frame" x="-0.5" y="64" width="376.5" height="75"/>
                                 <fontDescription key="fontDescription" name="FalkinSansPERSONAL" family="Falkin Sans PERSONAL" pointSize="64"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -169,13 +168,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Promoter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65B-nY-8bA">
-                                <rect key="frame" x="130" y="50" width="115.5" height="42"/>
+                                <rect key="frame" x="100.5" y="50" width="174.5" height="49"/>
                                 <fontDescription key="fontDescription" name="FalkinSansPERSONAL" family="Falkin Sans PERSONAL" pointSize="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2U8-Sd-2OL">
-                                <rect key="frame" x="37.5" y="240" width="300" height="187"/>
+                                <rect key="frame" x="37.5" y="238" width="300" height="191"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" background="login_field" translatesAutoresizingMaskIntoConstraints="NO" id="DSx-Lb-yuG">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
@@ -196,7 +195,7 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8B-qj-aFx">
-                                        <rect key="frame" x="0.0" y="140" width="300" height="47"/>
+                                        <rect key="frame" x="0.0" y="140" width="300" height="51"/>
                                         <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="23"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="12" maxX="0.0" maxY="12"/>
                                         <state key="normal" title="Log In" backgroundImage="button_bg">
@@ -206,16 +205,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9RP-qA-Arb">
-                                <rect key="frame" x="37.5" y="628" width="300" height="29"/>
+                                <rect key="frame" x="37.5" y="625" width="300" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New here?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjt-af-kEP">
-                                        <rect key="frame" x="0.0" y="0.0" width="140" height="29"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="140" height="32"/>
                                         <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9G-Fa-FhO">
-                                        <rect key="frame" x="160" y="0.0" width="140" height="29"/>
+                                        <rect key="frame" x="160" y="0.0" width="140" height="32"/>
                                         <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="17"/>
                                         <state key="normal" title="Sign Up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -290,10 +289,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="aKx-jn-fXa">
-                                <rect key="frame" x="0.0" y="88.5" width="375" height="490"/>
+                                <rect key="frame" x="0.0" y="84.5" width="375" height="498"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oKn-Nr-XeT">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="225"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="229"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x14-B0-bOP">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
@@ -305,7 +304,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44B-tb-pHb">
-                                                <rect key="frame" x="0.0" y="190" width="375" height="35"/>
+                                                <rect key="frame" x="0.0" y="190" width="375" height="39"/>
                                                 <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="23"/>
                                                 <state key="normal" title="My events">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -317,7 +316,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TZ0-qS-tSu">
-                                        <rect key="frame" x="0.0" y="265" width="375" height="225"/>
+                                        <rect key="frame" x="0.0" y="269" width="375" height="229"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXA-Ye-4KM">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
@@ -329,7 +328,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCA-Ym-x5O">
-                                                <rect key="frame" x="0.0" y="190" width="375" height="35"/>
+                                                <rect key="frame" x="0.0" y="190" width="375" height="39"/>
                                                 <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="23"/>
                                                 <state key="normal" title="Add event">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -431,7 +430,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZU9-8E-iTQ" id="KaS-gg-orW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WIb-1N-2GP">
@@ -477,7 +476,7 @@
                                         <rect key="frame" x="0.0" y="80" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w9L-1J-BXV" id="w1j-DH-0gm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Fho-C2-t7q">
@@ -526,7 +525,7 @@
                                         <rect key="frame" x="0.0" y="160" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EAU-AI-EbE" id="BzP-MF-IG8">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="79M-qG-Pxh">
@@ -575,7 +574,7 @@
                                         <rect key="frame" x="0.0" y="240" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MWu-Mf-245" id="AKF-s3-gj5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zDs-M1-WRW">
@@ -660,13 +659,13 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hennessy VSOP " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftQ-4h-sz3">
-                                                            <rect key="frame" x="8" y="12" width="213.5" height="17"/>
+                                                            <rect key="frame" x="8" y="9" width="216.5" height="20"/>
                                                             <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Price: $600)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rq7-9J-DSP">
-                                                            <rect key="frame" x="221.5" y="12" width="145.5" height="17"/>
+                                                            <rect key="frame" x="224.5" y="9" width="142.5" height="20"/>
                                                             <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -1204,6 +1203,9 @@
                                                         <state key="normal" title="Upload Photos" backgroundImage="button_bg_noborders">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="presentPhotoPicker:" destination="5L1-B4-sGn" eventType="touchUpInside" id="LPO-mn-PEK"/>
+                                                        </connections>
                                                     </button>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d0Y-LB-NQz">
                                                         <rect key="frame" x="0.0" y="240" width="350" height="50"/>
@@ -1462,16 +1464,16 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Promoter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dl7-cy-kQy">
-                                <rect key="frame" x="130.5" y="50" width="115.5" height="42"/>
+                                <rect key="frame" x="101" y="50" width="174.5" height="49"/>
                                 <fontDescription key="fontDescription" name="FalkinSansPERSONAL" family="Falkin Sans PERSONAL" pointSize="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZM9-jP-olv">
-                                <rect key="frame" x="38" y="561" width="300" height="96"/>
+                                <rect key="frame" x="38" y="554" width="300" height="103"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tew-YB-77v">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="47"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="51"/>
                                         <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="23"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="12" maxX="0.0" maxY="12"/>
                                         <state key="normal" title="Sign Up" backgroundImage="button_bg">
@@ -1479,16 +1481,16 @@
                                         </state>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FqQ-rB-T3h">
-                                        <rect key="frame" x="0.0" y="67" width="300" height="29"/>
+                                        <rect key="frame" x="0.0" y="71" width="300" height="32"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fy-qy-203">
-                                                <rect key="frame" x="0.0" y="0.0" width="232" height="29"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="227.5" height="32"/>
                                                 <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="17"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBR-kI-7Te">
-                                                <rect key="frame" x="242" y="0.0" width="58" height="29"/>
+                                                <rect key="frame" x="237.5" y="0.0" width="62.5" height="32"/>
                                                 <fontDescription key="fontDescription" name="Aguda-Regular4" family="Aguda" pointSize="17"/>
                                                 <state key="normal" title="Sign In">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

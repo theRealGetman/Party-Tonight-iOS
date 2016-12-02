@@ -35,6 +35,7 @@ class Event : Mappable {
     
     var clubName,location,clubCapacity,partyName,zipCode: String?
     var date: Date?
+    var photos:[Photo]?
     var bottles: [Bottle]?
     var tickets: [Ticket]?
     var tables: [Table]?
@@ -43,7 +44,7 @@ class Event : Mappable {
         
     }
     
-    init(clubName: String,dateTime:Date,location:String,zipCode:String?,clubCapacity:String,ticketsPrice:String,partyName:String, tables:[Table], bottles:[Bottle]){
+    init(clubName: String,dateTime:Date,location:String,zipCode:String?,clubCapacity:String,ticketsPrice:String,partyName:String, tables:[Table], bottles:[Bottle], photos: [Photo]){
         self.clubName = clubName;
         self.date = dateTime;
         self.location = location;
@@ -53,6 +54,7 @@ class Event : Mappable {
         self.partyName = partyName;
         self.tables = tables;
         self.bottles = bottles;
+        self.photos = photos;
         
     }
     
@@ -67,6 +69,7 @@ class Event : Mappable {
         bottles      <- map["bottles"]
         tickets      <- map["tickets"]
         tables       <- map["tables"]
+        photos       <- map["photos"]
         
     }
  

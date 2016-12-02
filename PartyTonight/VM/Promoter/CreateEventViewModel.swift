@@ -26,7 +26,8 @@ class CreateEventViewModel{
         partyName: Observable<String>,
         bottles: Observable<Observable<Bottle>>,
         tables: Observable<Observable<Table>>,
-        createEventTaps: Observable<Void>
+        createEventTaps: Observable<Void>,
+        images: Variable<[UIImage]>
         ),
          API: (APIManager)) {
         
@@ -44,20 +45,22 @@ class CreateEventViewModel{
             }
         }
         
+        let eventData = Observable.combineLatest(input.clubName ,input.dateTime,input.location,input.clubCapacity, input.ticketsPrice, input.partyName){(clubName: $0,dateTime: $1 ,location: $2 ,clubCapacity: $3,ticketsPrice: $4,partyName: $5)}
         
+        let images = input.images.asObservable().flatMapLatest { (images) -> Observable<[String]> in
+            return APIManager.sharedAPI.uploadData(images: images)
+        }
         
+        let eventInfo = input.createEventTaps.withLatestFrom(Observable.combineLatest(eventData,rxTables.startWith([]), rxBottles.startWith([]), images.startWith([])) { (eventData: $0, tables: $1, bottles: $2, images: $3) })
         
-        
-        let eventInfo = input.createEventTaps.withLatestFrom(Observable.combineLatest(input.clubName ,input.dateTime,input.location,input.clubCapacity, input.ticketsPrice, input.partyName,rxTables.startWith([]), rxBottles.startWith([])) { (clubName: $0,dateTime: $1 ,location: $2 ,clubCapacity: $3,ticketsPrice: $4,partyName: $5, tables: $6, bottles: $7) })
-        
-        eventResponse = eventInfo.flatMapLatest({ (clubName,dateTime ,location,clubCapacity,ticketsPrice,partyName, tables, bottles) -> Observable<Result<Int>> in
+        eventResponse = eventInfo.flatMapLatest({ (eventData, tables, bottles,images) -> Observable<Result<Int>> in
             
             // validating data
             
-            if(!ValidationService.validate(quantity: clubCapacity)){
+            if(!ValidationService.validate(quantity: eventData.clubCapacity)){
                 return Observable.just(Result.Failure(ValidationResult.failed(message: "Incorrect club capacity")));
             }
-            if(!ValidationService.validate(price: ticketsPrice)){
+            if(!ValidationService.validate(price: eventData.ticketsPrice)){
                 return Observable.just(Result.Failure(ValidationResult.failed(message: "Incorrect tickets price")));
             }
             
@@ -73,9 +76,13 @@ class CreateEventViewModel{
             }
             //---------
             
+            let photos = images.map({ (url) -> Photo in
+                return Photo(url: url)
+            })
+            
             let df = DateFormatter();
             df.dateFormat = "EEEE, d MMM yyyy HH:mm"
-            return API.event(create: Event(clubName: clubName,dateTime: df.date(from: dateTime) ?? Date() ,location: location.address,zipCode: location.zip,clubCapacity: clubCapacity,ticketsPrice: ticketsPrice,partyName: partyName, tables: tables, bottles: bottles))
+            return API.event(create: Event(clubName: eventData.clubName,dateTime: df.date(from: eventData.dateTime) ?? Date() ,location: eventData.location.address,zipCode: eventData.location.zip,clubCapacity: eventData.clubCapacity,ticketsPrice: eventData.ticketsPrice,partyName: eventData.partyName, tables: tables, bottles: bottles, photos: photos))
         }).shareReplay(1)
         
     }

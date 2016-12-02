@@ -52,8 +52,6 @@ class PromoterBottlesViewController: UITableViewController {
         
         cell.titleLabel.text = bottles[indexPath.row].type;
         cell.priceLabel.text = ("(Price: $\((bottles[indexPath.row].price ?? "0")))");
-        print("avail")
-        print(bottles[indexPath.row].available)
         cell.availableAmountLabel.text = bottles[indexPath.row].available ?? "0"
         cell.purchasedAmountLabel.text = bottles[indexPath.row].booked ?? "0"
         return cell

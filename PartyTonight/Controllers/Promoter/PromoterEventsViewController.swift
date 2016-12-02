@@ -36,6 +36,9 @@ class PromoterEventsViewController: UIViewController{
                 return [];
             }
         }).bindTo(eventsCollectionView.rx.items(cellIdentifier: cellName, cellType: EventCollectionViewCell.self)) { (row, element, cell) in
+            
+            
+            
             cell.event = element;
             cell.eventTitleLabel.text = element.partyName;
             if let date = element.date{

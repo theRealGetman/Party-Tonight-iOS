@@ -16,10 +16,6 @@ class DateTimePickerViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
- 
-
-    
  
     weak var delegate: DataEnteredDelegate? = nil
     
