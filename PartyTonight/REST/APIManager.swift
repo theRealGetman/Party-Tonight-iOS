@@ -50,7 +50,7 @@ class APIManager{
     var userToken: Token?
     
     fileprivate struct Constants {
-        static let baseURL = "http://45.55.226.134:8080/partymaker/"
+        static let baseURL = "http://45.55.226.134:8382/partymaker/"
     }
     
     enum PromoterPath: String {
@@ -86,11 +86,15 @@ class APIManager{
     
     func event(create event: Event) -> Observable<Result<Int>> {
         
+        print("creating event")
+      //  print(JSON(Mapper<Event>().toJSON(event)).rawString())
+        
         let headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
         return request(.post, PromoterPath.CreateEvent.path, parameters: Mapper<Event>().toJSON(event),   encoding:  JSONEncoding.default,  headers: headers  )
             .map { response  in
                 return response.validate(statusCode: self.successfulStatusCodes)
             }.flatMap { response -> Observable<Result<Int>> in
+                
                 return Observable.just(Result.Success(201))
             }.catchError({ (err) -> Observable<Result<Int>> in
                 return Observable.just(Result.Failure(APIError.BadStatusCode(err.localizedDescription)));
@@ -100,13 +104,24 @@ class APIManager{
     }
     
     
-    func event() -> Observable<Result<[Event]>> {
-        let headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
+    func event(zip: String? = nil) -> Observable<Result<[Event]>> {
+        var headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
+        if let zipCode = zip{
+            if(zipCode != ""){
+                headers["zip_code"] = zipCode;
+            }
+        }
         return request(.get, PromoterPath.GetEvents.path,  headers: headers  )
             .flatMap({ (response) -> Observable<Any> in
+                print("json event request")
+                print(JSON(response.request?.allHTTPHeaderFields).rawString())
                 return response.validate(statusCode: self.successfulStatusCodes).rx.json()
             }).map(JSON.init)
             .flatMap { json -> Observable<Result<[Event]>> in
+                
+                print("got events")
+                print(json.rawString())
+                
                 guard let events = Mapper<Event>().mapArray(JSONString: json.rawString() ?? "" ) else {
                     return Observable.just(Result.Failure(APIError.CannotParse("")))
                 }
@@ -117,6 +132,8 @@ class APIManager{
             })
         //.catchErrorJustReturn(Result.Failure(APIError.BadStatusCode("")))
     }
+    
+    
     
     
     func signin(user: User)-> Observable<Result<Token>> {
@@ -162,10 +179,13 @@ class APIManager{
     }
     
     func signup(goer: User)-> Observable<Result<Token>> {
+        print("goer signup")
+        print(JSON(Mapper<User>().toJSON(goer)).rawString())
         return request(.post, GoerPath.SignUp.path, parameters: Mapper<User>().toJSON(goer) , encoding:  JSONEncoding.default)
             .map { response  in
                 return response.validate(statusCode: self.successfulStatusCodes)
             }.flatMap { response -> Observable<Result<Token>> in
+                
                 return self.signin(user: goer)
             }.catchError({ (err) -> Observable<Result<Token>> in
                 return Observable.just(Result.Failure(APIError.UnsuccessfulSignup(err.localizedDescription)));
@@ -286,15 +306,16 @@ class APIManager{
                                     return
                                 }
                                 
+                                
                                 guard response.result.error == nil else {
                                     print("error response")
                                     print(response.result.error!)
                                     return
                                 }
                                 if let value: Any = response.result.value {
-                                    
+                                    print("photo upload response");
+                                    print(JSON(value).rawString());
                                     observer.onNext(JSON(value)["path"].stringValue)
-                                    // completion(response: JSON(value))
                                 }
                                 
                             }

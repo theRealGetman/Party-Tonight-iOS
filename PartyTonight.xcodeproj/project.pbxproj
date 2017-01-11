@@ -34,6 +34,11 @@
 		175FCAFF1DDB4DA4004014C9 /* ChooseLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175FCAFE1DDB4DA4004014C9 /* ChooseLocationViewController.swift */; };
 		175FCB011DDB76AE004014C9 /* CreateEventViewController+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175FCB001DDB76AE004014C9 /* CreateEventViewController+TextField.swift */; };
 		175FCB031DDB943D004014C9 /* PromoterEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175FCB021DDB943D004014C9 /* PromoterEventsViewModel.swift */; };
+		176708551DF1D0870049BAD5 /* GoerRegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176708541DF1D0870049BAD5 /* GoerRegistrationViewModel.swift */; };
+		176708581DF1EF730049BAD5 /* FindVenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176708571DF1EF730049BAD5 /* FindVenueViewController.swift */; };
+		1767085C1DF21AE30049BAD5 /* PageItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1767085B1DF21AE30049BAD5 /* PageItemController.swift */; };
+		1767085E1DF21B7D0049BAD5 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1767085D1DF21B7D0049BAD5 /* EventDetailsViewController.swift */; };
+		176708611DF21C530049BAD5 /* EventPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176708601DF21C530049BAD5 /* EventPageViewController.swift */; };
 		1775F1441DD21ECD00B90EEA /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F13C1DD21ECD00B90EEA /* Alamofire.framework */; };
 		1775F1451DD21ECD00B90EEA /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F13C1DD21ECD00B90EEA /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1775F1461DD21ECD00B90EEA /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F13D1DD21ECD00B90EEA /* ObjectMapper.framework */; };
@@ -46,6 +51,7 @@
 		1775F14D1DD21ECD00B90EEA /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F1401DD21ECD00B90EEA /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1775F14E1DD21ECD00B90EEA /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F1411DD21ECD00B90EEA /* RxSwift.framework */; };
 		1775F14F1DD21ECD00B90EEA /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F1411DD21ECD00B90EEA /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		17760E1C1DF73DF600D7C06B /* FindVenueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17760E1B1DF73DF600D7C06B /* FindVenueViewModel.swift */; };
 		1777718A1DEDF42A00BEE874 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177771891DEDF42A00BEE874 /* ValidationService.swift */; };
 		177771A81DEEE10400BEE874 /* CreateEventViewController+ImageChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177771A71DEEE10400BEE874 /* CreateEventViewController+ImageChooser.swift */; };
 		1785052A1DD234AA00D5BD79 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178505291DD234AA00D5BD79 /* SwiftyJSON.framework */; };
@@ -131,6 +137,11 @@
 		175FCAFE1DDB4DA4004014C9 /* ChooseLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChooseLocationViewController.swift; path = Controllers/Map/ChooseLocationViewController.swift; sourceTree = "<group>"; };
 		175FCB001DDB76AE004014C9 /* CreateEventViewController+TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CreateEventViewController+TextField.swift"; path = "Controllers/Promoter/Extentions/CreateEventViewController+TextField.swift"; sourceTree = "<group>"; };
 		175FCB021DDB943D004014C9 /* PromoterEventsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoterEventsViewModel.swift; path = VM/Promoter/PromoterEventsViewModel.swift; sourceTree = "<group>"; };
+		176708541DF1D0870049BAD5 /* GoerRegistrationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoerRegistrationViewModel.swift; path = VM/Authorization/GoerRegistrationViewModel.swift; sourceTree = "<group>"; };
+		176708571DF1EF730049BAD5 /* FindVenueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindVenueViewController.swift; path = Controllers/Goer/FindVenueViewController.swift; sourceTree = "<group>"; };
+		1767085B1DF21AE30049BAD5 /* PageItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItemController.swift; sourceTree = "<group>"; };
+		1767085D1DF21B7D0049BAD5 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetailsViewController.swift; path = Controllers/Goer/EventDetailsViewController.swift; sourceTree = "<group>"; };
+		176708601DF21C530049BAD5 /* EventPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPageViewController.swift; path = Controllers/Goer/EventPageViewController.swift; sourceTree = "<group>"; };
 		1775F13C1DD21ECD00B90EEA /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		1775F13D1DD21ECD00B90EEA /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		1775F13E1DD21ECD00B90EEA /* RxAlamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAlamofire.framework; path = Carthage/Build/iOS/RxAlamofire.framework; sourceTree = "<group>"; };
@@ -140,6 +151,7 @@
 		1775F1421DD21ECD00B90EEA /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		1775F1431DD21ECD00B90EEA /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		1775F1541DD21F3100B90EEA /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		17760E1B1DF73DF600D7C06B /* FindVenueViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindVenueViewModel.swift; path = VM/Goer/FindVenueViewModel.swift; sourceTree = "<group>"; };
 		177771891DEDF42A00BEE874 /* ValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidationService.swift; path = Services/ValidationService.swift; sourceTree = "<group>"; };
 		177771A71DEEE10400BEE874 /* CreateEventViewController+ImageChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CreateEventViewController+ImageChooser.swift"; path = "Controllers/Promoter/Extentions/CreateEventViewController+ImageChooser.swift"; sourceTree = "<group>"; };
 		178505291DD234AA00D5BD79 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
@@ -243,6 +255,7 @@
 		174BB8771DC6706200CDAE86 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1767085B1DF21AE30049BAD5 /* PageItemController.swift */,
 				175FCAFD1DDB4D36004014C9 /* Map */,
 				178505341DD2576200D5BD79 /* Promoter */,
 				178505331DD2575B00D5BD79 /* Goer */,
@@ -267,6 +280,7 @@
 		174BB87F1DC6746000CDAE86 /* VM */ = {
 			isa = PBXGroup;
 			children = (
+				17760E1A1DF73DC200D7C06B /* Goer */,
 				17B8B5301DD5E40800B784B8 /* Promoter */,
 				174BB8801DC6747600CDAE86 /* Authorization */,
 			);
@@ -278,6 +292,7 @@
 			children = (
 				174BB8811DC6774A00CDAE86 /* LoginViewModel.swift */,
 				17C5B1AF1DCBF2240093BC07 /* RegistrationViewModel.swift */,
+				176708541DF1D0870049BAD5 /* GoerRegistrationViewModel.swift */,
 			);
 			name = Authorization;
 			sourceTree = "<group>";
@@ -359,6 +374,24 @@
 			name = Map;
 			sourceTree = "<group>";
 		};
+		176708561DF1EF420049BAD5 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				176708571DF1EF730049BAD5 /* FindVenueViewController.swift */,
+				1767085D1DF21B7D0049BAD5 /* EventDetailsViewController.swift */,
+				176708601DF21C530049BAD5 /* EventPageViewController.swift */,
+			);
+			name = Event;
+			sourceTree = "<group>";
+		};
+		17760E1A1DF73DC200D7C06B /* Goer */ = {
+			isa = PBXGroup;
+			children = (
+				17760E1B1DF73DF600D7C06B /* FindVenueViewModel.swift */,
+			);
+			name = Goer;
+			sourceTree = "<group>";
+		};
 		178505301DD23EE000D5BD79 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +404,7 @@
 		178505331DD2575B00D5BD79 /* Goer */ = {
 			isa = PBXGroup;
 			children = (
+				176708561DF1EF420049BAD5 /* Event */,
 			);
 			name = Goer;
 			sourceTree = "<group>";
@@ -592,13 +626,17 @@
 				17B8B5321DD5E43500B784B8 /* CreateEventViewModel.swift in Sources */,
 				17B8B5341DD6147D00B784B8 /* Event.swift in Sources */,
 				173510821DDC9DCD008CCCF9 /* DateTimePickerViewController.swift in Sources */,
+				17760E1C1DF73DF600D7C06B /* FindVenueViewModel.swift in Sources */,
 				17C5B1B31DCC6FB30093BC07 /* String+Encoding.swift in Sources */,
 				17C5B1B01DCBF2240093BC07 /* RegistrationViewModel.swift in Sources */,
 				174BB8761DC665D000CDAE86 /* APIManager.swift in Sources */,
 				174BB8821DC6774A00CDAE86 /* LoginViewModel.swift in Sources */,
 				173611471DDF6D4A00050048 /* PromoterEventTableViewController.swift in Sources */,
+				176708551DF1D0870049BAD5 /* GoerRegistrationViewModel.swift in Sources */,
 				17563E891DDE22FE00ED545F /* Date+DateFormatter.swift in Sources */,
 				1754899A1DC5222300993344 /* ViewController.swift in Sources */,
+				1767085C1DF21AE30049BAD5 /* PageItemController.swift in Sources */,
+				176708611DF21C530049BAD5 /* EventPageViewController.swift in Sources */,
 				17B8B52D1DD5A43300B784B8 /* PromoterEventsViewController+CollectionView.swift in Sources */,
 				175FCAFF1DDB4DA4004014C9 /* ChooseLocationViewController.swift in Sources */,
 				177771A81DEEE10400BEE874 /* CreateEventViewController+ImageChooser.swift in Sources */,
@@ -611,10 +649,12 @@
 				175489981DC5222300993344 /* AppDelegate.swift in Sources */,
 				17CA19841DE0407600BD67A9 /* PromoterBottlesViewController.swift in Sources */,
 				175FCB011DDB76AE004014C9 /* CreateEventViewController+TextField.swift in Sources */,
+				1767085E1DF21B7D0049BAD5 /* EventDetailsViewController.swift in Sources */,
 				17563E8C1DDE405400ED545F /* Wireframe.swift in Sources */,
 				173510801DDC9D46008CCCF9 /* CreateEventViewController+Popover.swift in Sources */,
 				171CF2621DC7C84C00CD4335 /* User.swift in Sources */,
 				17C5B1AE1DCBE6C40093BC07 /* Token.swift in Sources */,
+				176708581DF1EF730049BAD5 /* FindVenueViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

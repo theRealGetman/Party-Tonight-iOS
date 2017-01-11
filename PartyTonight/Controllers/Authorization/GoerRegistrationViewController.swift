@@ -7,11 +7,34 @@
 //
 
 import UIKit
-
+import RxSwift
 class GoerRegistrationViewController: UIViewController {
+    @IBOutlet weak var nameTextField: UITextField!
+    
+    @IBOutlet weak var emailTextField: UITextField!
 
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var signupButton: UIButton!
+    
+    let disposeBag = DisposeBag();
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let viewModel = GoerRegistrationViewModel(
+            input: (
+                username: nameTextField.rx.text.orEmpty.asObservable(),
+                email: emailTextField.rx.text.orEmpty.asObservable(),
+                password: passwordTextField.rx.text.orEmpty.asObservable(),
+                signupTaps: signupButton.rx.tap.asObservable()
+            ),
+            API: (APIManager.sharedAPI)
+        )
+        
+        addBindings(to: viewModel)
+        
+        setTextFieldInsets()
 
         // Do any additional setup after loading the view.
     }
@@ -20,6 +43,51 @@ class GoerRegistrationViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func addBindings(to viewModel: GoerRegistrationViewModel) {
+        //test
+        viewModel.userToken.subscribe(onNext: { (token) in
+            
+            switch token {
+            case .Success(let token):
+                print("User registered: \(token)")
+                APIManager.sharedAPI.userToken = token
+                self.goToGoerScreen()
+            case .Failure(let error):
+                
+                if let e = error as? APIError{
+                    DefaultWireframe.presentAlert(e.description)
+                } else if let e = error as? ValidationResult{
+                    DefaultWireframe.presentAlert(e.description)
+                }
+
+            }
+        }, onError: { (error) in
+            print("Caught an error: \(error)")
+        }, onCompleted:{
+            print("completed")
+        })
+            .addDisposableTo(disposeBag)
+        
+        
+    }
+
+    private func goToGoerScreen(){
+        if let goerNavVC = self.storyboard?.instantiateViewController(withIdentifier: "GoerNavVC") as? GoerNavController{
+            present(goerNavVC, animated: true, completion: nil)
+        }
+    }
+    
+    func setTextFieldInsets(){
+        nameTextField.attributedPlaceholder = NSAttributedString(string:"Name", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
+        
+        
+        emailTextField.attributedPlaceholder = NSAttributedString(string:"E-mail", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
+        
+        
+        passwordTextField.attributedPlaceholder = NSAttributedString(string:"Password", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
+    }
+
     
 
     /*

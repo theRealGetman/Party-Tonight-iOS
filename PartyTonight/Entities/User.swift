@@ -28,7 +28,7 @@ class User : Mappable{
         self.password = password;
     }
     
-    init(username:String, phone:String, email:String, billingInfo:BillingInfo, emergencyContact:String, password:String){
+    init(username:String?, phone:String?, email:String?, billingInfo:BillingInfo?, emergencyContact:String?, password:String?){
         self.username = username;
         self.phoneNumber = phone;
         self.email = email;

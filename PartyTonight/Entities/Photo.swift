@@ -11,6 +11,7 @@ import ObjectMapper
 class Photo:Mappable{
     
     var url: String?
+    var idPhoto: Int?
     
     required init?(map: Map){
         
@@ -18,6 +19,7 @@ class Photo:Mappable{
     
     func mapping(map: Map) {
         url <- map["photo"]
+        idPhoto <- map["idPhoto"]
     }
     
     init(url:String){

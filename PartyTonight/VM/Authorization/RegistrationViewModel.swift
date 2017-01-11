@@ -12,10 +12,7 @@ import UIKit
 import RxSwift
 
 class RegistrationViewModel{
-    fileprivate let disposeBag = DisposeBag()
-    
     var userToken: Observable<Result<Token>>
-    
     
     init(input: (
         username: Observable<String>,
