@@ -81,7 +81,7 @@ class APIManager{
     
     
     
-    private let successfulStatusCodes = 200...201;
+    private let successfulStatusCodes = 200...226;
     
     
     func event(create event: Event) -> Observable<Result<Int>> {

@@ -72,6 +72,8 @@
 		17C5B1AE1DCBE6C40093BC07 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5B1AD1DCBE6C40093BC07 /* Token.swift */; };
 		17C5B1B01DCBF2240093BC07 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5B1AF1DCBF2240093BC07 /* RegistrationViewModel.swift */; };
 		17C5B1B31DCC6FB30093BC07 /* String+Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5B1B21DCC6FB30093BC07 /* String+Encoding.swift */; };
+		17C9C21E1E26DB2E00CBD84F /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C9C21D1E26DB2E00CBD84F /* WebImage.framework */; };
+		17C9C21F1E26DB2E00CBD84F /* WebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17C9C21D1E26DB2E00CBD84F /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		17C9FB891DF0EA3700695507 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C9FB881DF0EA3700695507 /* Photo.swift */; };
 		17CA197E1DE03F0800BD67A9 /* PromoterStatementTotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA197D1DE03F0800BD67A9 /* PromoterStatementTotalViewController.swift */; };
 		17CA19821DE0405700BD67A9 /* PromoterTablesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA19811DE0405700BD67A9 /* PromoterTablesViewController.swift */; };
@@ -96,6 +98,7 @@
 				1775F14B1DD21ECD00B90EEA /* RxBlocking.framework in Embed Frameworks */,
 				1775F1451DD21ECD00B90EEA /* Alamofire.framework in Embed Frameworks */,
 				1775F1491DD21ECD00B90EEA /* RxAlamofire.framework in Embed Frameworks */,
+				17C9C21F1E26DB2E00CBD84F /* WebImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +176,7 @@
 		17C5B1AD1DCBE6C40093BC07 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Token.swift; path = Entities/Token.swift; sourceTree = "<group>"; };
 		17C5B1AF1DCBF2240093BC07 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationViewModel.swift; path = VM/Authorization/RegistrationViewModel.swift; sourceTree = "<group>"; };
 		17C5B1B21DCC6FB30093BC07 /* String+Encoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Encoding.swift"; path = "Extentions/String+Encoding.swift"; sourceTree = "<group>"; };
+		17C9C21D1E26DB2E00CBD84F /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		17C9FB881DF0EA3700695507 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Photo.swift; path = Entities/Photo.swift; sourceTree = "<group>"; };
 		17CA197D1DE03F0800BD67A9 /* PromoterStatementTotalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoterStatementTotalViewController.swift; path = Controllers/Promoter/PromoterStatementTotalViewController.swift; sourceTree = "<group>"; };
 		17CA19811DE0405700BD67A9 /* PromoterTablesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoterTablesViewController.swift; path = Controllers/Promoter/PromoterTablesViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 				1775F14C1DD21ECD00B90EEA /* RxCocoa.framework in Frameworks */,
 				1775F1461DD21ECD00B90EEA /* ObjectMapper.framework in Frameworks */,
 				1785052A1DD234AA00D5BD79 /* SwiftyJSON.framework in Frameworks */,
+				17C9C21E1E26DB2E00CBD84F /* WebImage.framework in Frameworks */,
 				1775F14E1DD21ECD00B90EEA /* RxSwift.framework in Frameworks */,
 				1775F14A1DD21ECD00B90EEA /* RxBlocking.framework in Frameworks */,
 				1775F1441DD21ECD00B90EEA /* Alamofire.framework in Frameworks */,
@@ -311,6 +316,7 @@
 		1754898B1DC5222300993344 = {
 			isa = PBXGroup;
 			children = (
+				17C9C21D1E26DB2E00CBD84F /* WebImage.framework */,
 				178505291DD234AA00D5BD79 /* SwiftyJSON.framework */,
 				1775F1541DD21F3100B90EEA /* SwiftyJSON.framework */,
 				1775F13C1DD21ECD00B90EEA /* Alamofire.framework */,

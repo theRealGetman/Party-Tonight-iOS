@@ -9,6 +9,8 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import WebImage
+
 class PromoterEventsViewController: UIViewController{
     @IBOutlet weak var eventsCollectionView: UICollectionView!
     let disposeBag = DisposeBag();
@@ -45,6 +47,12 @@ class PromoterEventsViewController: UIViewController{
                 cell.dateLabel.text = self.df.string(from: date);
             }
             cell.eventDescriptionLabel.text = "";
+            
+            if let urlExists = URL(string: (element.photos?.first?.url) ?? "") {
+                   cell.bgImageView.sd_setImage(with: urlExists, placeholderImage: UIImage(named: "disco.png"))
+            }
+         
+            
             }
             .addDisposableTo(disposeBag)
         

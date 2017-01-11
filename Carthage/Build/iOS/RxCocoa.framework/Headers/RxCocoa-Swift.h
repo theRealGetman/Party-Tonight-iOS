@@ -464,6 +464,35 @@ SWIFT_CLASS("_TtC7RxCocoa31RxSearchControllerDelegateProxy")
   DelegateProxyType
   \endcode.
 */
+SWIFT_CLASS("_TtC7RxCocoa31RxTabBarControllerDelegateProxy")
+@interface RxTabBarControllerDelegateProxy : DelegateProxy <UITabBarControllerDelegate>
+/**
+  For more information take a look at \code
+  DelegateProxyType
+  \endcode.
+*/
++ (id _Nullable)currentDelegateFor:(id _Nonnull)object;
+/**
+  For more information take a look at \code
+  DelegateProxyType
+  \endcode.
+*/
++ (void)setCurrentDelegate:(id _Nullable)delegate toObject:(id _Nonnull)object;
+/**
+  For more information take a look at \code
+  DelegateProxyType
+  \endcode.
+*/
++ (id _Nonnull)createProxyForObject:(id _Nonnull)object;
+- (nonnull instancetype)initWithParentObject:(id _Nonnull)parentObject OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/**
+  For more information take a look at \code
+  DelegateProxyType
+  \endcode.
+*/
 SWIFT_CLASS("_TtC7RxCocoa21RxTabBarDelegateProxy")
 @interface RxTabBarDelegateProxy : DelegateProxy <UITabBarDelegate>
 /**
@@ -621,6 +650,24 @@ SWIFT_CLASS("_TtC7RxCocoa23RxTextViewDelegateProxy")
 @end
 
 
+SWIFT_CLASS("_TtC7RxCocoa22RxWebViewDelegateProxy")
+@interface RxWebViewDelegateProxy : DelegateProxy <UIWebViewDelegate>
+/**
+  For more information take a look at \code
+  DelegateProxyType
+  \endcode.
+*/
++ (void)setCurrentDelegate:(id _Nullable)delegate toObject:(id _Nonnull)object;
+/**
+  For more information take a look at \code
+  DelegateProxyType
+  \endcode.
+*/
++ (id _Nullable)currentDelegateFor:(id _Nonnull)object;
+- (nonnull instancetype)initWithParentObject:(id _Nonnull)parentObject OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC7RxCocoa25TableViewDataSourceNotSet")
 @interface TableViewDataSourceNotSet : NSObject <UITableViewDataSource>
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
@@ -697,6 +744,21 @@ SWIFT_CLASS("_TtC7RxCocoa25TableViewDataSourceNotSet")
   \endcode.
 */
 - (RxTabBarDelegateProxy * _Nonnull)createRxDelegateProxy;
+@end
+
+
+@interface UITabBarController (SWIFT_EXTENSION(RxCocoa))
+/**
+  Factory method that enables subclasses to implement their own \code
+  delegate
+  \endcode.
+
+  returns:
+  Instance of delegate proxy that wraps \code
+  delegate
+  \endcode.
+*/
+- (RxTabBarControllerDelegateProxy * _Nonnull)createRxDelegateProxy;
 @end
 
 
