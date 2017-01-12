@@ -48,7 +48,9 @@ class PromoterEventsViewController: UIViewController{
             }
             cell.eventDescriptionLabel.text = "";
             
-            if let urlExists = URL(string: (element.photos?.first?.url) ?? "") {
+            
+            if let urlExists = URL(string: /*APIManager.Constants.baseURL +*/ ((element.photos?.first?.url) ?? "")) {
+                print("url@: \(urlExists)");
                    cell.bgImageView.sd_setImage(with: urlExists, placeholderImage: UIImage(named: "disco.png"))
             }
          

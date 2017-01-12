@@ -49,7 +49,7 @@ class APIManager{
     
     var userToken: Token?
     
-    fileprivate struct Constants {
+    struct Constants {
         static let baseURL = "http://45.55.226.134:8382/partymaker/"
     }
     

@@ -79,6 +79,25 @@ class PromoterEventTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        switch indexPath.row {
+        case 1:
+            if(event?.bottles?.count ?? 0 > 0){
+            performSegue(withIdentifier: "BottlesVCSegue", sender: nil);
+            }
+            
+        case 2:
+            if(event?.tables?.count ?? 0 > 0){
+            performSegue(withIdentifier: "TablesVCSegue", sender: nil);
+            }
+        case 3:
+            performSegue(withIdentifier: "StatementTotalVCSegue", sender: nil);
+        default:
+            break;
+        }
+    }
     
     
     //    // MARK: - Table view data source
