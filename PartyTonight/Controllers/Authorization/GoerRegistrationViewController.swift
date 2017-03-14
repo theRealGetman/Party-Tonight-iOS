@@ -20,11 +20,11 @@ class GoerRegistrationViewController: UIViewController {
     @IBOutlet weak var signupButton: UIButton!
     
     let disposeBag = DisposeBag();
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let viewModel = GoerRegistrationViewModel(
+       let viewModel = GoerRegistrationViewModel(
             input: (
                 username: nameTextField.rx.text.orEmpty.asObservable(),
                 address: addressTextField.rx.text.orEmpty.asObservable(),
@@ -37,6 +37,8 @@ class GoerRegistrationViewController: UIViewController {
         )
         
         
+        
+        addBindings(to: viewModel);
         
         setTextFieldInsets()
 

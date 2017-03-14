@@ -24,6 +24,7 @@
 		174BB8871DC683D000CDAE86 /* Sugar Plums.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 174BB8861DC683D000CDAE86 /* Sugar Plums.ttf */; };
 		174BB8891DC691C900CDAE86 /* Aguda Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 174BB8881DC691C900CDAE86 /* Aguda Regular.ttf */; };
 		174BB88B1DC69E3300CDAE86 /* Aguda Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 174BB88A1DC69E3300CDAE86 /* Aguda Bold.ttf */; };
+		174FB91F1E7818C3007E8FCB /* Sumptuous_Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 174FB91E1E7813B6007E8FCB /* Sumptuous_Light.otf */; };
 		175489981DC5222300993344 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175489971DC5222300993344 /* AppDelegate.swift */; };
 		1754899A1DC5222300993344 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175489991DC5222300993344 /* ViewController.swift */; };
 		1754899D1DC5222300993344 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1754899B1DC5222300993344 /* Main.storyboard */; };
@@ -607,6 +608,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				174FB91F1E7818C3007E8FCB /* Sumptuous_Light.otf in Resources */,
 				17A8D59E1E7548C300CE82C7 /* TermsAndConditions.txt in Resources */,
 				175489A21DC5222300993344 /* LaunchScreen.storyboard in Resources */,
 				174BB88B1DC69E3300CDAE86 /* Aguda Bold.ttf in Resources */,

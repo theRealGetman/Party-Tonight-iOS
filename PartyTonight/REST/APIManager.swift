@@ -185,8 +185,8 @@ class APIManager{
     }
     
     func signup(goer: User)-> Observable<Result<Token>> {
-        print("goer signup")
-        print(JSON(Mapper<User>().toJSON(goer)).rawString())
+        //print("goer signup")
+       // print(JSON(Mapper<User>().toJSON(goer)).rawString())
         return request(.post, GoerPath.SignUp.path, parameters: Mapper<User>().toJSON(goer) , encoding:  JSONEncoding.default)
             .map { response  in
                 return response.validate(statusCode: self.successfulStatusCodes)

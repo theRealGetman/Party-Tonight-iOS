@@ -16,7 +16,10 @@ extension CreateEventViewController: YMSPhotoPickerViewControllerDelegate{
         
         pickerViewController.numberOfPhotoToSelect = maxImagesToChoose
         
-        let customColor = UIColor.init(red:102.0/255.0, green:23.0/255.0, blue:94.0/255.0, alpha:1.0)
+        //old red color
+        //let customColor = UIColor.init(red:102.0/255.0, green:23.0/255.0, blue:94.0/255.0, alpha:1.0)
+        
+        let customColor = UIColor.init(red:125.0/255.0, green:80.0/255.0, blue:53.0/255.0, alpha:1.0)
         
         pickerViewController.theme.titleLabelTextColor = UIColor.white
         pickerViewController.theme.navigationBarBackgroundColor = customColor

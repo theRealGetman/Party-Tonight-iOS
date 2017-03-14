@@ -11,7 +11,6 @@ import RxSwift
 
 class GoerRegistrationViewModel {
     var userToken: Observable<Result<Token>>
-    
     init(input: (
         username: Observable<String>,
         address: Observable<String>,
@@ -24,9 +23,8 @@ class GoerRegistrationViewModel {
         
         let signupCredentials = Observable.combineLatest(input.username, input.address, input.birthday, input.email,  input.password) { ($0, $1, $2, $3, $4) }
         
-        userToken = input.signupTaps.withLatestFrom(signupCredentials)
-            .flatMapLatest ({ (username, address, birthday, email, password) -> Observable<Result<Token>> in
-                
+        userToken = input.signupTaps.withLatestFrom(signupCredentials).flatMapLatest ({ (username, address, birthday, email, password) -> Observable<Result<Token>> in
+
                 let validatedPassword = ValidationService.validate(password: password);
                 if(!validatedPassword.isValid){
                     return Observable.just(Result.Failure(validatedPassword))
