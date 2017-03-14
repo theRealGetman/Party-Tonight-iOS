@@ -15,6 +15,8 @@ class PromoterRegistrationViewController: UIViewController {
     
     @IBOutlet weak var phoneNumberTextField: UITextField!
     
+    @IBOutlet weak var birthdayTextField: UITextField!
+
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var billingInfoTextField: UITextField!
@@ -33,6 +35,7 @@ class PromoterRegistrationViewController: UIViewController {
         let viewModel = RegistrationViewModel(
             input: (
                 username: nameTextField.rx.text.orEmpty.asObservable(),
+                birthday: birthdayTextField.rx.text.orEmpty.asObservable(),
                 phone: phoneNumberTextField.rx.text.orEmpty.asObservable(),
                 email: emailTextField.rx.text.orEmpty.asObservable(),
                 billingInfo: billingInfoTextField.rx.text.orEmpty.asObservable(),
@@ -88,7 +91,6 @@ class PromoterRegistrationViewController: UIViewController {
             })
             .addDisposableTo(disposeBag)
             
-
     }
     
     private func goToPromoterScreen(){
@@ -99,6 +101,8 @@ class PromoterRegistrationViewController: UIViewController {
     
     func setTextFieldInsets(){
         nameTextField.attributedPlaceholder = NSAttributedString(string:"Name", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
+        
+        birthdayTextField.attributedPlaceholder = NSAttributedString(string:"Birthday", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
         
         phoneNumberTextField.attributedPlaceholder = NSAttributedString(string:"Phone number", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
         

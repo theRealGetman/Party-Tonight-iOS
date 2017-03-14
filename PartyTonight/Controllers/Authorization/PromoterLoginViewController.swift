@@ -34,6 +34,11 @@ class PromoterLoginViewController: UIViewController {
         setTextFieldInsets()
     }
     
+    
+    
+    
+    
+    
     func setTextFieldInsets(){
         loginTextField.leftView = UIView(frame:CGRect(x: 0, y: 0, width: 60, height: 30))
         loginTextField.leftViewMode = UITextFieldViewMode.always

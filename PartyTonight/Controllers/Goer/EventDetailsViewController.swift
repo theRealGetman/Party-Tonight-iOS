@@ -9,11 +9,21 @@
 import UIKit
 
 class EventDetailsViewController: UIViewController, UIPageViewControllerDataSource {
+    
     @IBOutlet weak var sliderView: UIView!
+    var event:Event?
+    
+    @IBOutlet weak var aboutVenueLabel: UILabel!
+    
+    @IBOutlet weak var dateTimeLabel: UIButton!
+    
+    @IBOutlet weak var locationLabel: UIButton!
+   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        initEventData()
         createPageViewController()
         setupPageControl()
         // Do any additional setup after loading the view.
@@ -24,23 +34,33 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
         // Dispose of any resources that can be recreated.
     }
     
+    func initEventData(){
+       
+        
+        aboutVenueLabel.text = event?.partyName
+        dateTimeLabel.setTitle(event?.date?.string(format: "h:mm a dd.MM.yyyy"), for: .normal);
+        locationLabel.setTitle(event?.location, for: .normal);
+    }
+    
     
     fileprivate var pageViewController: UIPageViewController?
     
     // Initialize it right away here
-    fileprivate let contentImages = ["nature_pic_1",
-                                     "nature_pic_2",
-                                     "nature_pic_3",
-                                     "nature_pic_4"]
+//    fileprivate let contentImages:[String] = ["nature_pic_1",
+//         "nature_pic_2",
+//         "nature_pic_3",
+//         "nature_pic_4"]
     
     
     
     fileprivate func createPageViewController() {
         
+        
+        
         let pageController = self.storyboard!.instantiateViewController(withIdentifier: "EventPageController") as! EventPageViewController
         pageController.dataSource = self
         
-        if contentImages.count > 0 {
+        if event?.photos?.count ?? 0 > 0 {
             let firstController = getItemController(0)!
             let startingViewControllers = [firstController]
             pageController.setViewControllers(startingViewControllers, direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
@@ -74,8 +94,11 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
         //
         //        return nil
         
-        let pageContent: PageItemController = viewController as! PageItemController
-        var index = pageContent.itemIndex
+        let pageContent: PageItemController? = viewController as? PageItemController
+        guard var index = pageContent?.itemIndex else
+        {
+            return nil;
+        }
         if ((index == 0) || (index == NSNotFound))
         {
             return nil
@@ -95,14 +118,16 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
         //        return nil
         //
         
-        let pageContent: PageItemController = viewController as! PageItemController
-        var index = pageContent.itemIndex
+        let pageContent: PageItemController? = viewController as? PageItemController
+        guard var index = pageContent?.itemIndex else{
+            return nil;
+        }
         if (index == NSNotFound)
         {
             return nil;
         }
         index += 1;
-        if (index ==  contentImages.count)
+        if (index ==  event?.photos?.count)
         {
             return nil;
         }
@@ -113,10 +138,18 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
     }
     
     fileprivate func getItemController(_ itemIndex: Int) -> PageItemController? {
-        if itemIndex < contentImages.count {
+        
+        if itemIndex < event?.photos?.count ?? 0 {
             let pageItemController = self.storyboard!.instantiateViewController(withIdentifier: "ItemController") as! PageItemController
             pageItemController.itemIndex = itemIndex
-            pageItemController.imageName = contentImages[itemIndex]
+             //pageItemController.imageName = contentImages[0]
+            
+            
+            if let urlStr = event?.photos?[itemIndex].url {
+                pageItemController.imageUrl = urlStr;
+            }
+            
+            
             return pageItemController
         }
         
@@ -126,7 +159,7 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
     // MARK: - Page Indicator
     
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return contentImages.count
+        return event?.photos?.count ?? 0;
     }
     
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {

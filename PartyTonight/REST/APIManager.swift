@@ -73,6 +73,7 @@ class APIManager{
     enum GoerPath: String {
         case SignUp = "dancer/signup"
         case SignIn = "signin"
+        case GetEvents = "dancer/event/get"
         
         var path: String {
             return Constants.baseURL + rawValue
@@ -91,9 +92,11 @@ class APIManager{
         
         let headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
         return request(.post, PromoterPath.CreateEvent.path, parameters: Mapper<Event>().toJSON(event),   encoding:  JSONEncoding.default,  headers: headers  )
-            .map { response  in
+            .map({ (response) -> DataRequest  in
+
+                
                 return response.validate(statusCode: self.successfulStatusCodes)
-            }.flatMap { response -> Observable<Result<Int>> in
+            }).flatMap { response -> Observable<Result<Int>> in
                 
                 return Observable.just(Result.Success(201))
             }.catchError({ (err) -> Observable<Result<Int>> in
@@ -106,12 +109,15 @@ class APIManager{
     
     func event(zip: String? = nil) -> Observable<Result<[Event]>> {
         var headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
+        var eventPath = PromoterPath.GetEvents.path;
         if let zipCode = zip{
+            eventPath = GoerPath.GetEvents.path;
             if(zipCode != ""){
                 headers["zip_code"] = zipCode;
+                
             }
         }
-        return request(.get, PromoterPath.GetEvents.path,  headers: headers  )
+        return request(.get, eventPath,  headers: headers  )
             .flatMap({ (response) -> Observable<Any> in
                 print("json event request")
                 print(JSON(response.request?.allHTTPHeaderFields).rawString())
@@ -200,7 +206,7 @@ class APIManager{
     
     func revenue(getFor partyName: String) ->  Observable<Result<Revenue>> {
         var headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
-        headers["partyName"] = partyName
+        headers["party_name"] = partyName
         return request(.get, PromoterPath.GetRevenue.path,  headers: headers  )
             .flatMap({ (response) -> Observable<Any> in
                 return response.validate(statusCode: self.successfulStatusCodes).rx.json()
@@ -212,6 +218,8 @@ class APIManager{
                 }
                 return Observable.just(Result.Success(revenue))
             }.catchError({ (err) -> Observable<Result<Revenue>> in
+                print(err)
+                
                 return Observable.just(Result.Failure(APIError.BadStatusCode(err.localizedDescription)));
                 
             })
@@ -219,7 +227,7 @@ class APIManager{
     
     func bottles(getFor partyName: String) ->  Observable<Result<[Bottle]>> {
         var headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
-        headers["partyName"] = partyName
+        headers["party_name"] = partyName
         return request(.get, PromoterPath.GetBottles.path,  headers: headers  )
             .flatMap({ (response) -> Observable<Any> in
                 return response.validate(statusCode: self.successfulStatusCodes).rx.json()
@@ -238,7 +246,7 @@ class APIManager{
     
     func tables(getFor partyName: String) ->  Observable<Result<[Table]>> {
         var headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
-        headers["partyName"] = partyName
+        headers["party_name"] = partyName
         return request(.get, PromoterPath.GetTables.path,  headers: headers  )
             .flatMap({ (response) -> Observable<Any> in
                 return response.validate(statusCode: self.successfulStatusCodes).rx.json()
@@ -257,18 +265,20 @@ class APIManager{
     
     func total(getFor partyName: String) ->  Observable<Result<Total>> {
         var headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
-        headers["partyName"] = partyName
+        headers["party_name"] = partyName
         return request(.get, PromoterPath.GetTotal.path,  headers: headers  )
             .flatMap({ (response) -> Observable<Any> in
                 return response.validate(statusCode: self.successfulStatusCodes).rx.json()
             }).map(JSON.init)
             .flatMap { json -> Observable<Result<Total>> in
-                
+//                print("json.rawString()")
+//                print(json.rawString())
                 guard let revenue = Mapper<Total>().map(JSONString: json.rawString() ?? "" ) else {
-                    return Observable.just(Result.Failure(APIError.CannotParse("")))
+                    return Observable.just(Result.Failure(APIError.CannotParse("can not parse response")))
                 }
                 return Observable.just(Result.Success(revenue))
             }.catchError({ (err) -> Observable<Result<Total>> in
+                print(err)
                 return Observable.just(Result.Failure(APIError.BadStatusCode(err.localizedDescription)));
                 
             })
@@ -299,6 +309,7 @@ class APIManager{
                     encodingCompletion: { encodingResult in
                         switch encodingResult {
                         case .success(let upload, _, _):
+   
                             
                             upload.responseJSON { [weak self] response in
                                 
@@ -306,7 +317,7 @@ class APIManager{
                                     return
                                 }
                                 
-                                
+                               
                                 guard response.result.error == nil else {
                                     print("error response")
                                     print(response.result.error!)

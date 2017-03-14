@@ -9,13 +9,14 @@
 import UIKit
 import RxSwift
 class GoerLoginViewController: UIViewController {
-
-
+    
+    
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
     let disposeBag = DisposeBag();
+    let termsAccepted : PublishSubject<Void> = PublishSubject();
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +24,71 @@ class GoerLoginViewController: UIViewController {
             input: (
                 email: loginTextField.rx.text.orEmpty.asObservable(),
                 password: passwordTextField.rx.text.orEmpty.asObservable(),
-                loginTaps: loginButton.rx.tap.asObservable()
+                loginTaps: termsAccepted.asObservable()//loginButton.rx.tap.asObservable()
             ),
             API: (APIManager.sharedAPI)
         )
         
         addBindings(to: viewModel)
         
-         setTextFieldInsets()
-        // Do any additional setup after loading the view.
+        setTextFieldInsets()
+        
+        loginButton.rx.tap.asObservable().map { (_) -> Void in
+            
+            }.subscribe(onNext: { (_) in
+                self.termsAlert();
+            }, onError: { (err) in
+                
+            }, onCompleted: {
+                
+            }) {
+                
+            }.addDisposableTo(disposeBag);
+        
+        
+        
+        
     }
-
+    
+    func termsAlert(){
+        
+        if(!UserDefaults.standard.bool(forKey: "termsAndConditionsAccepted")){
+            
+            let alertController = UIAlertController(title: "Terms and Conditions", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+            var termsAndConditions = "";
+            do {
+                termsAndConditions = try String(contentsOf: Bundle.main.url(forResource: "TermsAndConditions", withExtension:"txt")!)
+            }
+            catch {}
+            let agreeAction = UIAlertAction(title: "Agree", style: .default, handler: {(alert: UIAlertAction!) in
+                UserDefaults.standard.set(true, forKey: "termsAndConditionsAccepted");
+                self.termsAccepted.onNext();
+            })
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(alert: UIAlertAction!) in print("cancel")})
+            alertController.addAction(agreeAction)
+            alertController.addAction(cancelAction)
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = NSTextAlignment.left
+            
+            let messageText = NSMutableAttributedString(
+                string: termsAndConditions,
+                attributes: [
+                    NSParagraphStyleAttributeName: paragraphStyle,
+                    NSFontAttributeName: UIFont.systemFont(ofSize: 13.0)
+                ]
+            )
+            
+            alertController.setValue(messageText, forKey: "attributedMessage")
+            self.present(alertController, animated: true, completion: nil)
+            
+        }else{
+            self.termsAccepted.onNext();
+        }
+        
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -80,16 +135,16 @@ class GoerLoginViewController: UIViewController {
             present(goerNavVC, animated: true, completion: nil)
         }
     }
-
-
+    
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

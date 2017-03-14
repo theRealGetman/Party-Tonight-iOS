@@ -47,6 +47,9 @@ class FindVenueViewController: UIViewController {
             
             cell.event = element;
             cell.eventTitleLabel.text = element.partyName;
+            if let firstPhotoURL = URL(string: element.photos?.first?.url ?? "") {
+                cell.bgImageView.sd_setImage(with: firstPhotoURL)
+            }
             if let date = element.date{
                 cell.dateLabel.text = self.df.string(from: date);
             }
@@ -59,10 +62,10 @@ class FindVenueViewController: UIViewController {
         }).addDisposableTo(disposeBag)
         
         
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -72,9 +75,9 @@ class FindVenueViewController: UIViewController {
         searchTextField.leftView = UIView(frame:CGRect(x: 0, y: 0, width: 60, height: 30))
         searchTextField.leftViewMode = UITextFieldViewMode.always
         searchTextField.attributedPlaceholder = NSAttributedString(string:"Zip code",
-                                                                  attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
+                                                                   attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
     }
-
+    
     func emptyView(isSet:Bool,collectionView:UICollectionView)  {
         if (!isSet) {
             collectionView.backgroundView = nil
@@ -86,14 +89,15 @@ class FindVenueViewController: UIViewController {
             collectionView.backgroundView = noDataLabel
         }
     }
-    /*
+    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let cell = sender as? EventCollectionViewCell;
+        let vc = segue.destination as? EventDetailsViewController;
+        vc?.event =  cell?.event;
     }
-    */
-
+    
+    
 }

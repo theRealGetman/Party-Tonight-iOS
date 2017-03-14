@@ -13,8 +13,10 @@ class GoerRegistrationViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
 
+    @IBOutlet weak var birthdayTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var signupButton: UIButton!
     
     let disposeBag = DisposeBag();
@@ -25,6 +27,8 @@ class GoerRegistrationViewController: UIViewController {
         let viewModel = GoerRegistrationViewModel(
             input: (
                 username: nameTextField.rx.text.orEmpty.asObservable(),
+                address: addressTextField.rx.text.orEmpty.asObservable(),
+                birthday: birthdayTextField.rx.text.orEmpty.asObservable(),
                 email: emailTextField.rx.text.orEmpty.asObservable(),
                 password: passwordTextField.rx.text.orEmpty.asObservable(),
                 signupTaps: signupButton.rx.tap.asObservable()
@@ -32,7 +36,7 @@ class GoerRegistrationViewController: UIViewController {
             API: (APIManager.sharedAPI)
         )
         
-        addBindings(to: viewModel)
+        
         
         setTextFieldInsets()
 
@@ -79,11 +83,14 @@ class GoerRegistrationViewController: UIViewController {
     }
     
     func setTextFieldInsets(){
+        
         nameTextField.attributedPlaceholder = NSAttributedString(string:"Name", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
         
+        addressTextField.attributedPlaceholder = NSAttributedString(string:"Address", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
+        
+        birthdayTextField.attributedPlaceholder = NSAttributedString(string:"Birthday", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
         
         emailTextField.attributedPlaceholder = NSAttributedString(string:"E-mail", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
-        
         
         passwordTextField.attributedPlaceholder = NSAttributedString(string:"Password", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
     }

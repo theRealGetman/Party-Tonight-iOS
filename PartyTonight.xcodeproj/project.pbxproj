@@ -29,6 +29,7 @@
 		1754899D1DC5222300993344 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1754899B1DC5222300993344 /* Main.storyboard */; };
 		1754899F1DC5222300993344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1754899E1DC5222300993344 /* Assets.xcassets */; };
 		175489A21DC5222300993344 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175489A01DC5222300993344 /* LaunchScreen.storyboard */; };
+		1756083A1E441AF300570A2A /* BuyLiquorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175608391E441AF300570A2A /* BuyLiquorViewController.swift */; };
 		17563E891DDE22FE00ED545F /* Date+DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17563E881DDE22FE00ED545F /* Date+DateFormatter.swift */; };
 		17563E8C1DDE405400ED545F /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17563E8B1DDE405400ED545F /* Wireframe.swift */; };
 		175FCAFF1DDB4DA4004014C9 /* ChooseLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175FCAFE1DDB4DA4004014C9 /* ChooseLocationViewController.swift */; };
@@ -62,6 +63,12 @@
 		178505401DD288D900D5BD79 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785053E1DD288D900D5BD79 /* EventCollectionViewCell.swift */; };
 		178505411DD288D900D5BD79 /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1785053F1DD288D900D5BD79 /* EventCollectionViewCell.xib */; };
 		178505431DD28A5A00D5BD79 /* PromoterEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178505421DD28A5A00D5BD79 /* PromoterEventsViewController.swift */; };
+		179743851E74B49900D169B2 /* TermsAndConditionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179743841E74B49900D169B2 /* TermsAndConditionsView.xib */; };
+		179743871E74B4EB00D169B2 /* TermsAndConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179743861E74B4EB00D169B2 /* TermsAndConditionsView.swift */; };
+		17A8D59E1E7548C300CE82C7 /* TermsAndConditions.txt in Resources */ = {isa = PBXBuildFile; fileRef = 17A8D59D1E7548C300CE82C7 /* TermsAndConditions.txt */; };
+		17A8D5A01E75580A00CE82C7 /* ContactUs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 17A8D59F1E75580A00CE82C7 /* ContactUs.txt */; };
+		17A8D5A31E75B79700CE82C7 /* GoerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8D5A21E75B79700CE82C7 /* GoerMenuViewController.swift */; };
+		17A8D5A61E75B7CE00CE82C7 /* PromoterMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8D5A51E75B7CE00CE82C7 /* PromoterMenuViewController.swift */; };
 		17ABBAF01DE9A85A00DA8AAA /* PromoterEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ABBAEF1DE9A85A00DA8AAA /* PromoterEventViewModel.swift */; };
 		17ABBAF21DE9CF9100DA8AAA /* EventStatementTotalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ABBAF11DE9CF9100DA8AAA /* EventStatementTotalViewModel.swift */; };
 		17B8B52D1DD5A43300B784B8 /* PromoterEventsViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B8B52C1DD5A43300B784B8 /* PromoterEventsViewController+CollectionView.swift */; };
@@ -81,6 +88,11 @@
 		17CA19861DE0693400BD67A9 /* BottlesTablesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA19851DE0693400BD67A9 /* BottlesTablesCell.swift */; };
 		17DE96C11DD51CCD00FA5C43 /* TypePriceQuantityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DE96C01DD51CCD00FA5C43 /* TypePriceQuantityView.swift */; };
 		17DE96C31DD51CF600FA5C43 /* TypePriceQuantityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17DE96C21DD51CF600FA5C43 /* TypePriceQuantityView.xib */; };
+		17F705871E4526C700B33D39 /* BuyLiquorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F705861E4526C700B33D39 /* BuyLiquorViewModel.swift */; };
+		17F705891E45584600B33D39 /* LiquorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17F705881E45584600B33D39 /* LiquorView.xib */; };
+		17F7058B1E455BD400B33D39 /* LiquorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7058A1E455BD400B33D39 /* LiquorView.swift */; };
+		17FEE9F21E4664B100E7C8A9 /* LiquorTypePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FEE9F11E4664B100E7C8A9 /* LiquorTypePickerViewController.swift */; };
+		17FEE9F51E46681900E7C8A9 /* BuyLiquorViewController+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FEE9F41E46681900E7C8A9 /* BuyLiquorViewController+TextField.swift */; };
 		43A92A685466E00A8BD84307 /* Pods_PartyTonight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213E09A20FF03D5C94A30589 /* Pods_PartyTonight.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +140,7 @@
 		174BB8861DC683D000CDAE86 /* Sugar Plums.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sugar Plums.ttf"; sourceTree = "<group>"; };
 		174BB8881DC691C900CDAE86 /* Aguda Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aguda Regular.ttf"; sourceTree = "<group>"; };
 		174BB88A1DC69E3300CDAE86 /* Aguda Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aguda Bold.ttf"; sourceTree = "<group>"; };
+		174FB91E1E7813B6007E8FCB /* Sumptuous_Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sumptuous_Light.otf; sourceTree = "<group>"; };
 		175489941DC5222300993344 /* PartyTonight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartyTonight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		175489971DC5222300993344 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		175489991DC5222300993344 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +148,7 @@
 		1754899E1DC5222300993344 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		175489A11DC5222300993344 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		175489A31DC5222300993344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		175608391E441AF300570A2A /* BuyLiquorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BuyLiquorViewController.swift; path = Controllers/Goer/BuyLiquorViewController.swift; sourceTree = "<group>"; };
 		17563E881DDE22FE00ED545F /* Date+DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+DateFormatter.swift"; path = "Extentions/Date+DateFormatter.swift"; sourceTree = "<group>"; };
 		17563E8B1DDE405400ED545F /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Wireframe.swift; path = Services/Wireframe.swift; sourceTree = "<group>"; };
 		175FCAFE1DDB4DA4004014C9 /* ChooseLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChooseLocationViewController.swift; path = Controllers/Map/ChooseLocationViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +179,12 @@
 		1785053E1DD288D900D5BD79 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventCollectionViewCell.swift; path = UI/EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		1785053F1DD288D900D5BD79 /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventCollectionViewCell.xib; path = UI/EventCollectionViewCell.xib; sourceTree = "<group>"; };
 		178505421DD28A5A00D5BD79 /* PromoterEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoterEventsViewController.swift; path = Controllers/Promoter/PromoterEventsViewController.swift; sourceTree = "<group>"; };
+		179743841E74B49900D169B2 /* TermsAndConditionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TermsAndConditionsView.xib; path = UI/TermsAndConditionsView.xib; sourceTree = "<group>"; };
+		179743861E74B4EB00D169B2 /* TermsAndConditionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TermsAndConditionsView.swift; path = UI/TermsAndConditionsView.swift; sourceTree = "<group>"; };
+		17A8D59D1E7548C300CE82C7 /* TermsAndConditions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TermsAndConditions.txt; path = Assets.xcassets/TermsAndConditions.txt; sourceTree = "<group>"; };
+		17A8D59F1E75580A00CE82C7 /* ContactUs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ContactUs.txt; path = Assets.xcassets/ContactUs.txt; sourceTree = "<group>"; };
+		17A8D5A21E75B79700CE82C7 /* GoerMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoerMenuViewController.swift; path = Controllers/Goer/Menu/GoerMenuViewController.swift; sourceTree = "<group>"; };
+		17A8D5A51E75B7CE00CE82C7 /* PromoterMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoterMenuViewController.swift; path = Controllers/Promoter/Menu/PromoterMenuViewController.swift; sourceTree = "<group>"; };
 		17ABBAEF1DE9A85A00DA8AAA /* PromoterEventViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoterEventViewModel.swift; path = VM/Promoter/PromoterEventViewModel.swift; sourceTree = "<group>"; };
 		17ABBAF11DE9CF9100DA8AAA /* EventStatementTotalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventStatementTotalViewModel.swift; path = VM/Promoter/EventStatementTotalViewModel.swift; sourceTree = "<group>"; };
 		17B49F441DC80458002FFA00 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -184,6 +204,11 @@
 		17CA19851DE0693400BD67A9 /* BottlesTablesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BottlesTablesCell.swift; path = UI/BottlesTablesCell.swift; sourceTree = "<group>"; };
 		17DE96C01DD51CCD00FA5C43 /* TypePriceQuantityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypePriceQuantityView.swift; path = UI/TypePriceQuantityView.swift; sourceTree = "<group>"; };
 		17DE96C21DD51CF600FA5C43 /* TypePriceQuantityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TypePriceQuantityView.xib; path = UI/TypePriceQuantityView.xib; sourceTree = "<group>"; };
+		17F705861E4526C700B33D39 /* BuyLiquorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BuyLiquorViewModel.swift; path = VM/Goer/BuyLiquorViewModel.swift; sourceTree = "<group>"; };
+		17F705881E45584600B33D39 /* LiquorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LiquorView.xib; path = UI/LiquorView.xib; sourceTree = "<group>"; };
+		17F7058A1E455BD400B33D39 /* LiquorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiquorView.swift; path = UI/LiquorView.swift; sourceTree = "<group>"; };
+		17FEE9F11E4664B100E7C8A9 /* LiquorTypePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiquorTypePickerViewController.swift; path = Controllers/Goer/LiquorTypePickerViewController.swift; sourceTree = "<group>"; };
+		17FEE9F41E46681900E7C8A9 /* BuyLiquorViewController+TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BuyLiquorViewController+TextField.swift"; sourceTree = "<group>"; };
 		213E09A20FF03D5C94A30589 /* Pods_PartyTonight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartyTonight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		821866A83DBAF48E25583913 /* Pods-PartyTonight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyTonight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartyTonight/Pods-PartyTonight.debug.xcconfig"; sourceTree = "<group>"; };
 		EF07FB577222FA3485322B90 /* Pods-PartyTonight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyTonight.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartyTonight/Pods-PartyTonight.release.xcconfig"; sourceTree = "<group>"; };
@@ -305,6 +330,7 @@
 		174BB8831DC6814400CDAE86 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				174FB91E1E7813B6007E8FCB /* Sumptuous_Light.otf */,
 				174959D61DC9ED760004903D /* FalkinSansPERSONAL.ttf */,
 				174BB88A1DC69E3300CDAE86 /* Aguda Bold.ttf */,
 				174BB8881DC691C900CDAE86 /* Aguda Regular.ttf */,
@@ -357,8 +383,10 @@
 				175489991DC5222300993344 /* ViewController.swift */,
 				1754899B1DC5222300993344 /* Main.storyboard */,
 				1754899E1DC5222300993344 /* Assets.xcassets */,
+				17A8D59D1E7548C300CE82C7 /* TermsAndConditions.txt */,
 				175489A01DC5222300993344 /* LaunchScreen.storyboard */,
 				175489A31DC5222300993344 /* Info.plist */,
+				17A8D59F1E75580A00CE82C7 /* ContactUs.txt */,
 			);
 			path = PartyTonight;
 			sourceTree = "<group>";
@@ -383,9 +411,11 @@
 		176708561DF1EF420049BAD5 /* Event */ = {
 			isa = PBXGroup;
 			children = (
+				175608391E441AF300570A2A /* BuyLiquorViewController.swift */,
 				176708571DF1EF730049BAD5 /* FindVenueViewController.swift */,
 				1767085D1DF21B7D0049BAD5 /* EventDetailsViewController.swift */,
 				176708601DF21C530049BAD5 /* EventPageViewController.swift */,
+				17FEE9F11E4664B100E7C8A9 /* LiquorTypePickerViewController.swift */,
 			);
 			name = Event;
 			sourceTree = "<group>";
@@ -394,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				17760E1B1DF73DF600D7C06B /* FindVenueViewModel.swift */,
+				17F705861E4526C700B33D39 /* BuyLiquorViewModel.swift */,
 			);
 			name = Goer;
 			sourceTree = "<group>";
@@ -410,6 +441,8 @@
 		178505331DD2575B00D5BD79 /* Goer */ = {
 			isa = PBXGroup;
 			children = (
+				17A8D5A11E75B72F00CE82C7 /* Menu */,
+				17FEE9F31E4667EF00E7C8A9 /* Extentions */,
 				176708561DF1EF420049BAD5 /* Event */,
 			);
 			name = Goer;
@@ -418,6 +451,7 @@
 		178505341DD2576200D5BD79 /* Promoter */ = {
 			isa = PBXGroup;
 			children = (
+				17A8D5A41E75B7A900CE82C7 /* Menu */,
 				173611431DDF6CC200050048 /* Event */,
 				17B8B52B1DD5A3ED00B784B8 /* Extentions */,
 				173510811DDC9DCD008CCCF9 /* DateTimePickerViewController.swift */,
@@ -435,8 +469,28 @@
 				17DE96C01DD51CCD00FA5C43 /* TypePriceQuantityView.swift */,
 				17DE96C21DD51CF600FA5C43 /* TypePriceQuantityView.xib */,
 				17CA19851DE0693400BD67A9 /* BottlesTablesCell.swift */,
+				17F705881E45584600B33D39 /* LiquorView.xib */,
+				17F7058A1E455BD400B33D39 /* LiquorView.swift */,
+				179743841E74B49900D169B2 /* TermsAndConditionsView.xib */,
+				179743861E74B4EB00D169B2 /* TermsAndConditionsView.swift */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		17A8D5A11E75B72F00CE82C7 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				17A8D5A21E75B79700CE82C7 /* GoerMenuViewController.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		17A8D5A41E75B7A900CE82C7 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				17A8D5A51E75B7CE00CE82C7 /* PromoterMenuViewController.swift */,
+			);
+			name = Menu;
 			sourceTree = "<group>";
 		};
 		17B8B52B1DD5A3ED00B784B8 /* Extentions */ = {
@@ -467,6 +521,14 @@
 				17C5B1B21DCC6FB30093BC07 /* String+Encoding.swift */,
 				17563E881DDE22FE00ED545F /* Date+DateFormatter.swift */,
 				173611411DDF419300050048 /* UIApplication+TopViewController.swift */,
+			);
+			name = Extentions;
+			sourceTree = "<group>";
+		};
+		17FEE9F31E4667EF00E7C8A9 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				17FEE9F41E46681900E7C8A9 /* BuyLiquorViewController+TextField.swift */,
 			);
 			name = Extentions;
 			sourceTree = "<group>";
@@ -545,15 +607,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17A8D59E1E7548C300CE82C7 /* TermsAndConditions.txt in Resources */,
 				175489A21DC5222300993344 /* LaunchScreen.storyboard in Resources */,
 				174BB88B1DC69E3300CDAE86 /* Aguda Bold.ttf in Resources */,
+				17A8D5A01E75580A00CE82C7 /* ContactUs.txt in Resources */,
 				1754899F1DC5222300993344 /* Assets.xcassets in Resources */,
 				17DE96C31DD51CF600FA5C43 /* TypePriceQuantityView.xib in Resources */,
+				17F705891E45584600B33D39 /* LiquorView.xib in Resources */,
 				174959D71DC9ED760004903D /* FalkinSansPERSONAL.ttf in Resources */,
 				1785053B1DD25A1B00D5BD79 /* EventTableViewCell.xib in Resources */,
 				174BB8891DC691C900CDAE86 /* Aguda Regular.ttf in Resources */,
 				174BB8871DC683D000CDAE86 /* Sugar Plums.ttf in Resources */,
 				1754899D1DC5222300993344 /* Main.storyboard in Resources */,
+				179743851E74B49900D169B2 /* TermsAndConditionsView.xib in Resources */,
 				178505411DD288D900D5BD79 /* EventCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,6 +700,7 @@
 				173510821DDC9DCD008CCCF9 /* DateTimePickerViewController.swift in Sources */,
 				17760E1C1DF73DF600D7C06B /* FindVenueViewModel.swift in Sources */,
 				17C5B1B31DCC6FB30093BC07 /* String+Encoding.swift in Sources */,
+				17F705871E4526C700B33D39 /* BuyLiquorViewModel.swift in Sources */,
 				17C5B1B01DCBF2240093BC07 /* RegistrationViewModel.swift in Sources */,
 				174BB8761DC665D000CDAE86 /* APIManager.swift in Sources */,
 				174BB8821DC6774A00CDAE86 /* LoginViewModel.swift in Sources */,
@@ -646,16 +713,23 @@
 				17B8B52D1DD5A43300B784B8 /* PromoterEventsViewController+CollectionView.swift in Sources */,
 				175FCAFF1DDB4DA4004014C9 /* ChooseLocationViewController.swift in Sources */,
 				177771A81DEEE10400BEE874 /* CreateEventViewController+ImageChooser.swift in Sources */,
+				17FEE9F21E4664B100E7C8A9 /* LiquorTypePickerViewController.swift in Sources */,
 				17CA197E1DE03F0800BD67A9 /* PromoterStatementTotalViewController.swift in Sources */,
 				1736114B1DDFA64D00050048 /* GoerNavController.swift in Sources */,
 				174BB87E1DC6729000CDAE86 /* PromoterRegistrationViewController.swift in Sources */,
+				179743871E74B4EB00D169B2 /* TermsAndConditionsView.swift in Sources */,
 				17B8B52F1DD5A50E00B784B8 /* CreateEventViewController.swift in Sources */,
 				1731E7451DE4E2A4005DE42A /* SplashScreenViewController.swift in Sources */,
+				1756083A1E441AF300570A2A /* BuyLiquorViewController.swift in Sources */,
 				178505321DD23F3300D5BD79 /* PromoterNavController.swift in Sources */,
 				175489981DC5222300993344 /* AppDelegate.swift in Sources */,
 				17CA19841DE0407600BD67A9 /* PromoterBottlesViewController.swift in Sources */,
+				17A8D5A31E75B79700CE82C7 /* GoerMenuViewController.swift in Sources */,
+				17A8D5A61E75B7CE00CE82C7 /* PromoterMenuViewController.swift in Sources */,
 				175FCB011DDB76AE004014C9 /* CreateEventViewController+TextField.swift in Sources */,
+				17FEE9F51E46681900E7C8A9 /* BuyLiquorViewController+TextField.swift in Sources */,
 				1767085E1DF21B7D0049BAD5 /* EventDetailsViewController.swift in Sources */,
+				17F7058B1E455BD400B33D39 /* LiquorView.swift in Sources */,
 				17563E8C1DDE405400ED545F /* Wireframe.swift in Sources */,
 				173510801DDC9D46008CCCF9 /* CreateEventViewController+Popover.swift in Sources */,
 				171CF2621DC7C84C00CD4335 /* User.swift in Sources */,

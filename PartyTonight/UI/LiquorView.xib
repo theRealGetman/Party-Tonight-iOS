@@ -13,56 +13,55 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TypePriceQuantityView" customModule="PartyTonight" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LiquorView" customModule="PartyTonight" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="iN0-l3-epB" id="smx-rg-uT9"/>
-                <outlet property="priceTextField" destination="BBq-YO-68y" id="Ft6-TZ-3pT"/>
-                <outlet property="quantityTextField" destination="vuJ-MD-l3Z" id="TWb-do-T0y"/>
-                <outlet property="stackView" destination="K0x-0q-21T" id="A6h-CQ-yPc"/>
-                <outlet property="typeTextField" destination="KuJ-oM-mD1" id="oNf-SJ-Drc"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="BNj-Md-vK1"/>
+                <outlet property="priceTextField" destination="pAo-ID-aXs" id="j4D-17-EEY"/>
+                <outlet property="quantityTextField" destination="ZGE-Ta-FPF" id="dD5-dd-zi4"/>
+                <outlet property="stackView" destination="aJ7-0Y-5q6" id="yYW-Uh-Bse"/>
+                <outlet property="typeTextField" destination="p3o-sY-Y7d" id="Ta8-pl-N5x"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view opaque="NO" contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="K0x-0q-21T">
-                    <rect key="frame" x="0.5" y="249" width="375" height="170"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aJ7-0Y-5q6">
+                    <rect key="frame" x="0.0" y="248.5" width="375" height="170"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KuJ-oM-mD1">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bottle type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p3o-sY-Y7d">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30242456899999998" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="7G8-k1-2eA"/>
+                                <constraint firstAttribute="height" constant="50" id="ehc-wd-HB5"/>
                             </constraints>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BBq-YO-68y">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bottle price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pAo-ID-aXs">
                             <rect key="frame" x="0.0" y="60" width="375" height="50"/>
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30242456899999998" colorSpace="calibratedRGB"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
-                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vuJ-MD-l3Z">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZGE-Ta-FPF">
                             <rect key="frame" x="0.0" y="120" width="375" height="50"/>
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30242456899999998" colorSpace="calibratedRGB"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
-                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
                 </stackView>
             </subviews>
             <constraints>
-                <constraint firstItem="K0x-0q-21T" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9tC-Me-V94"/>
-                <constraint firstItem="K0x-0q-21T" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="CXr-Va-Oco"/>
-                <constraint firstItem="K0x-0q-21T" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="pET-Zi-7Oi"/>
+                <constraint firstItem="aJ7-0Y-5q6" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="8vr-fb-rXE"/>
+                <constraint firstItem="aJ7-0Y-5q6" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="b7o-2X-eEJ"/>
+                <constraint firstItem="aJ7-0Y-5q6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="c0S-b5-rED"/>
             </constraints>
-            <point key="canvasLocation" x="27" y="-189"/>
         </view>
     </objects>
 </document>

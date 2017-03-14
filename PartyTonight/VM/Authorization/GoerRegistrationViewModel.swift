@@ -14,16 +14,18 @@ class GoerRegistrationViewModel {
     
     init(input: (
         username: Observable<String>,
+        address: Observable<String>,
+        birthday: Observable<String>,
         email: Observable<String>,
         password: Observable<String>,
         signupTaps: Observable<Void>
         
         ), API: (APIManager)) {
         
-        let signupCredentials = Observable.combineLatest(input.username, input.email,  input.password) { ($0, $1, $2) }
+        let signupCredentials = Observable.combineLatest(input.username, input.address, input.birthday, input.email,  input.password) { ($0, $1, $2, $3, $4) }
         
         userToken = input.signupTaps.withLatestFrom(signupCredentials)
-            .flatMapLatest ({ (username, email, password) -> Observable<Result<Token>> in
+            .flatMapLatest ({ (username, address, birthday, email, password) -> Observable<Result<Token>> in
                 
                 let validatedPassword = ValidationService.validate(password: password);
                 if(!validatedPassword.isValid){
@@ -33,7 +35,7 @@ class GoerRegistrationViewModel {
                     return Observable.just(Result.Failure(ValidationResult.failed(message: "Incorrect email")));
                 }
                 
-                return API.signup(goer: User(username: username, phone: nil, email: email, billingInfo: nil, emergencyContact: nil, password: password))
+                return API.signup(goer: User(username: username, address: address, birthday: birthday, phone: nil, email: email, billingInfo: nil, emergencyContact: nil, password: password))
                     .observeOn(MainScheduler.instance)
             }).shareReplay(1)
     }

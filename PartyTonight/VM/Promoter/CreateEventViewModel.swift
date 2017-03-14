@@ -37,8 +37,10 @@ class CreateEventViewModel{
                 return elem;
             }
         }
+       
         
         let rxBottles = input.bottles.flatMapLatest{(v) -> Observable<[Bottle]> in
+            
             self.bottlesArray.append(v)
             return  Observable.combineLatest(self.bottlesArray) { (elem) -> [Bottle] in
                 return elem;
@@ -64,14 +66,21 @@ class CreateEventViewModel{
                 return Observable.just(Result.Failure(ValidationResult.failed(message: "Incorrect tickets price")));
             }
             
+            if(tables.count == 0){
+                return Observable.just(Result.Failure(ValidationResult.failed(message: "Tables should be added")));
+            }
             for (index,table) in tables.enumerated(){
                 if(!ValidationService.validate(quantity: table.available) || !ValidationService.validate(price: table.price)){
-                    return Observable.just(Result.Failure(ValidationResult.failed(message: "Incorrect \(index+1) bottle type")));
+                    return Observable.just(Result.Failure(ValidationResult.failed(message: "Incorrect \(index+1) table type")));
                 }
+            }
+            
+            if(bottles.count == 0){
+                return Observable.just(Result.Failure(ValidationResult.failed(message: "Bottles should be added")));
             }
             for (index,bottle) in bottles.enumerated(){
                 if(!ValidationService.validate(quantity: bottle.available) || !ValidationService.validate(price: bottle.price)){
-                    return Observable.just(Result.Failure(ValidationResult.failed(message: "Incorrect \(index+1) table type")));
+                    return Observable.just(Result.Failure(ValidationResult.failed(message: "Incorrect \(index+1) bottle type")));
                 }
             }
             //---------

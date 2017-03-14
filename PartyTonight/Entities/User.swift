@@ -13,6 +13,8 @@ class User : Mappable{
 
     var id: Int?
     var username: String?
+    var address:String?
+    var birthday:String?
     var phoneNumber: String?
     var email: String?
     var emergencyContact: String?
@@ -28,8 +30,10 @@ class User : Mappable{
         self.password = password;
     }
     
-    init(username:String?, phone:String?, email:String?, billingInfo:BillingInfo?, emergencyContact:String?, password:String?){
+    init(username:String?,  address:String?, birthday: String?, phone:String?, email:String?, billingInfo:BillingInfo?, emergencyContact:String?, password:String?){
         self.username = username;
+        self.address = address;
+        self.birthday = birthday;
         self.phoneNumber = phone;
         self.email = email;
         self.billingInfo = billingInfo;
@@ -45,6 +49,8 @@ class User : Mappable{
     func mapping(map: Map) {
         id                <- map["idUser"]
         username          <- map["userName"]
+        birthday          <- map["birthday"]
+        address           <- map["address"]
         phoneNumber       <- map["phoneNumber"]
         email             <- map["email"]
         emergencyContact  <- map["emergencyContact"]

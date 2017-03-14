@@ -8,6 +8,7 @@
 	<string></string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Sumptuous_Light.otf</string>
 		<string>FalkinSansPERSONAL.ttf</string>
 		<string>Sugar Plums.ttf</string>
 		<string>Aguda Regular.ttf</string>

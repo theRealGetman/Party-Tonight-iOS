@@ -19,13 +19,7 @@ class LoginViewModel{
         email: Observable<String>,
         password: Observable<String>,
         loginTaps: Observable<Void>
-        ),
-         API: (
-        APIManager
-
-        )
-        ) {
-
+        ), API: (APIManager)) {
         
         let usernameAndPassword = Observable.combineLatest(input.email, input.password) { ($0, $1) }
         userToken = input.loginTaps.withLatestFrom(usernameAndPassword)
@@ -37,7 +31,6 @@ class LoginViewModel{
                 return API.signin(user: User(email: email, password: password))
                     .observeOn(MainScheduler.instance)
             }).shareReplay(1)
- 
         
     }
 }
