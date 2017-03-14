@@ -579,7 +579,7 @@
 				TargetAttributes = {
 					175489931DC5222300993344 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 4ZMR62ZPC8;
+						DevelopmentTeam = 24D54SZRL9;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -862,7 +862,7 @@
 			baseConfigurationReference = 821866A83DBAF48E25583913 /* Pods-PartyTonight.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4ZMR62ZPC8;
+				DEVELOPMENT_TEAM = 24D54SZRL9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -881,7 +881,7 @@
 			baseConfigurationReference = EF07FB577222FA3485322B90 /* Pods-PartyTonight.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4ZMR62ZPC8;
+				DEVELOPMENT_TEAM = 24D54SZRL9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
