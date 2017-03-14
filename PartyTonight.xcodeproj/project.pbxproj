@@ -45,8 +45,6 @@
 		1775F1451DD21ECD00B90EEA /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F13C1DD21ECD00B90EEA /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1775F1461DD21ECD00B90EEA /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F13D1DD21ECD00B90EEA /* ObjectMapper.framework */; };
 		1775F1471DD21ECD00B90EEA /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F13D1DD21ECD00B90EEA /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1775F1481DD21ECD00B90EEA /* RxAlamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F13E1DD21ECD00B90EEA /* RxAlamofire.framework */; };
-		1775F1491DD21ECD00B90EEA /* RxAlamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F13E1DD21ECD00B90EEA /* RxAlamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1775F14A1DD21ECD00B90EEA /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F13F1DD21ECD00B90EEA /* RxBlocking.framework */; };
 		1775F14B1DD21ECD00B90EEA /* RxBlocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F13F1DD21ECD00B90EEA /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1775F14C1DD21ECD00B90EEA /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F1401DD21ECD00B90EEA /* RxCocoa.framework */; };
@@ -56,6 +54,11 @@
 		17760E1C1DF73DF600D7C06B /* FindVenueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17760E1B1DF73DF600D7C06B /* FindVenueViewModel.swift */; };
 		1777718A1DEDF42A00BEE874 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177771891DEDF42A00BEE874 /* ValidationService.swift */; };
 		177771A81DEEE10400BEE874 /* CreateEventViewController+ImageChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177771A71DEEE10400BEE874 /* CreateEventViewController+ImageChooser.swift */; };
+		177AF9881E7852C400AC4D05 /* RxAlamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171CF2671DC7F12800CD4335 /* RxAlamofire.framework */; };
+		177AF98B1E78534100AC4D05 /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C9C21D1E26DB2E00CBD84F /* WebImage.framework */; };
+		177AF98C1E78534100AC4D05 /* WebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17C9C21D1E26DB2E00CBD84F /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		177AF98D1E78534100AC4D05 /* RxAlamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F13E1DD21ECD00B90EEA /* RxAlamofire.framework */; };
+		177AF98E1E78534100AC4D05 /* RxAlamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F13E1DD21ECD00B90EEA /* RxAlamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1785052A1DD234AA00D5BD79 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178505291DD234AA00D5BD79 /* SwiftyJSON.framework */; };
 		1785052B1DD234AA00D5BD79 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 178505291DD234AA00D5BD79 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		178505321DD23F3300D5BD79 /* PromoterNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178505311DD23F3300D5BD79 /* PromoterNavController.swift */; };
@@ -80,8 +83,6 @@
 		17C5B1AE1DCBE6C40093BC07 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5B1AD1DCBE6C40093BC07 /* Token.swift */; };
 		17C5B1B01DCBF2240093BC07 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5B1AF1DCBF2240093BC07 /* RegistrationViewModel.swift */; };
 		17C5B1B31DCC6FB30093BC07 /* String+Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5B1B21DCC6FB30093BC07 /* String+Encoding.swift */; };
-		17C9C21E1E26DB2E00CBD84F /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C9C21D1E26DB2E00CBD84F /* WebImage.framework */; };
-		17C9C21F1E26DB2E00CBD84F /* WebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17C9C21D1E26DB2E00CBD84F /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		17C9FB891DF0EA3700695507 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C9FB881DF0EA3700695507 /* Photo.swift */; };
 		17CA197E1DE03F0800BD67A9 /* PromoterStatementTotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA197D1DE03F0800BD67A9 /* PromoterStatementTotalViewController.swift */; };
 		17CA19821DE0405700BD67A9 /* PromoterTablesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA19811DE0405700BD67A9 /* PromoterTablesViewController.swift */; };
@@ -107,11 +108,11 @@
 				1775F14D1DD21ECD00B90EEA /* RxCocoa.framework in Embed Frameworks */,
 				1775F1471DD21ECD00B90EEA /* ObjectMapper.framework in Embed Frameworks */,
 				1785052B1DD234AA00D5BD79 /* SwiftyJSON.framework in Embed Frameworks */,
+				177AF98E1E78534100AC4D05 /* RxAlamofire.framework in Embed Frameworks */,
 				1775F14F1DD21ECD00B90EEA /* RxSwift.framework in Embed Frameworks */,
+				177AF98C1E78534100AC4D05 /* WebImage.framework in Embed Frameworks */,
 				1775F14B1DD21ECD00B90EEA /* RxBlocking.framework in Embed Frameworks */,
 				1775F1451DD21ECD00B90EEA /* Alamofire.framework in Embed Frameworks */,
-				1775F1491DD21ECD00B90EEA /* RxAlamofire.framework in Embed Frameworks */,
-				17C9C21F1E26DB2E00CBD84F /* WebImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,14 +221,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				177AF9881E7852C400AC4D05 /* RxAlamofire.framework in Frameworks */,
+				177AF98D1E78534100AC4D05 /* RxAlamofire.framework in Frameworks */,
 				1775F14C1DD21ECD00B90EEA /* RxCocoa.framework in Frameworks */,
 				1775F1461DD21ECD00B90EEA /* ObjectMapper.framework in Frameworks */,
+				177AF98B1E78534100AC4D05 /* WebImage.framework in Frameworks */,
 				1785052A1DD234AA00D5BD79 /* SwiftyJSON.framework in Frameworks */,
-				17C9C21E1E26DB2E00CBD84F /* WebImage.framework in Frameworks */,
 				1775F14E1DD21ECD00B90EEA /* RxSwift.framework in Frameworks */,
 				1775F14A1DD21ECD00B90EEA /* RxBlocking.framework in Frameworks */,
 				1775F1441DD21ECD00B90EEA /* Alamofire.framework in Frameworks */,
-				1775F1481DD21ECD00B90EEA /* RxAlamofire.framework in Frameworks */,
 				43A92A685466E00A8BD84307 /* Pods_PartyTonight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,6 +559,7 @@
 				2E94D1289F8426367EF06DD1 /* [CP] Embed Pods Frameworks */,
 				A3DEBE27F625EAD93C2B38E6 /* [CP] Copy Pods Resources */,
 				17B49F431DC803FD002FFA00 /* Embed Frameworks */,
+				177AF9911E78543700AC4D05 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -629,6 +632,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		177AF9911E78543700AC4D05 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/WebImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxAlamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		2E94D1289F8426367EF06DD1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
