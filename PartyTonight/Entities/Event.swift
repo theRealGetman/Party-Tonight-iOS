@@ -10,29 +10,8 @@ import Foundation
 import ObjectMapper
 
 class Event : Mappable {
-//    {
-//    "club_name":"234f",
-//    "date":"date and time here",
-//    "location":"df",
-//    "club_capacity":"2ewd",
-//    "party_name":"partymaker tonight",(unique) or you will get 401(+ http staus forbidden)
-//    "zip_code":"43253",
-//    "bottles":
-//    [{ "type":"водка", "prise":"prise", "available":"343"}]
-//    ,
-//    "tickets":[{
-//    "price":"34543$"
-//    }],
-//    "tables":[{
-//    "price":"34535$",
-//    "available":"3232",
-//    "type":"typetaable"
-//    }]
-//    }
-//    /maker/event/create
-//    + header x-auth-token
-//    successful response 201(created)
-    
+
+    var id: Int?
     var clubName,location,clubCapacity,partyName,zipCode: String?
     var date: Date?
     var photos:[Photo]?
@@ -78,19 +57,23 @@ class Event : Mappable {
 
 class Table:Mappable {
     var price,type,available,booked:String?
-    
-    
+    var id:Int?
+    init() {
+        
+    }
     
     required init?(map: Map){
         
     }
-    init(price:String?,type:String?, available: String?){
+    init(price:String?,type:String?, available: String?, booked:String? = nil){
         self.price = price;
         self.type = type;
         self.available = available;
+        self.booked = booked
     }
     
     func mapping(map: Map) {
+        id        <- map["id_table"]
         price     <- map["price"]
         type      <- map["type"]
         available <- map["available"]
@@ -100,7 +83,11 @@ class Table:Mappable {
 }
 
 class Ticket:Mappable{
+    var id:Int?
     var price:String?
+    var type:String?
+    var available: String? = "0"
+    var booked: String? = "0"
     
     init(price: String) {
         self.price = price;
@@ -111,18 +98,22 @@ class Ticket:Mappable{
     }
     
     func mapping(map: Map) {
+        id        <- map["id_ticket"]
         price     <- map["price"]
+        available <- map["available"]
+        booked    <- map["booked"]
     }
 }
 
 class Bottle:Mappable{
     var price,type,available, booked:String?
+    var id:Int?
     
-    
-    init(price:String?,type:String?, available: String?){
+    init(price:String?,type:String?, available: String?, booked: String? = "0"){
         self.price = price;
         self.type = type;
         self.available = available;
+        self.booked = booked
     }
 
     required init?(map: Map){
@@ -130,6 +121,7 @@ class Bottle:Mappable{
     }
     
     func mapping(map: Map) {
+        id <- map["id_bottle"]
         price     <- map["price"]
         type      <- map["type"]
         available <- map["available"]

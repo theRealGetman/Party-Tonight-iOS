@@ -12,46 +12,32 @@ import RxCocoa
 
 
 class CreateEventViewController: UIViewController, DataEnteredDelegate {
-    
+    @IBOutlet weak var uploadPhotosButton: UIButton!
+    @IBOutlet weak var bottlesStackView: UIStackView!
+    @IBOutlet weak var addMoreLiquorTypeButton: UIButton!
+    @IBOutlet weak var addMoreTableTypeButton: UIButton!
+    @IBOutlet weak var tablesStackView: UIStackView!
+    @IBOutlet weak var clubNameTextField: UITextField!
+    @IBOutlet weak var dateAndTimeTextField: UITextField!
+    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var clubCapacityTextField: UITextField!
+    @IBOutlet weak var ticketsPriceTextView: UITextField!
+    @IBOutlet weak var partyNameTextView: UITextField!
+    @IBOutlet weak var createEventButton: UIButton!
+
+    let disposeBag = DisposeBag();
+    var zipCode = Variable<String?>("");
     var images: NSArray! = []
     var maxImagesToChoose:UInt = 5;
     var uiImages:Variable<[UIImage]> = Variable<[UIImage]>([])
     
     @IBAction func createTouched(_ sender: UIButton) {
         
-        //print("location! \(locationTextField.text)")
     }
-    
-    @IBOutlet weak var uploadPhotosButton: UIButton!
-    @IBOutlet weak var bottlesStackView: UIStackView!
-    @IBOutlet weak var addMoreLiquorTypeButton: UIButton!
-    @IBOutlet weak var addMoreTableTypeButton: UIButton!
-    @IBOutlet weak var tablesStackView: UIStackView!
-    
-    @IBOutlet weak var clubNameTextField: UITextField!
-    
-    @IBOutlet weak var dateAndTimeTextField: UITextField!
-    
-    @IBOutlet weak var locationTextField: UITextField!
-    
-    @IBOutlet weak var clubCapacityTextField: UITextField!
-    
-    @IBOutlet weak var ticketsPriceTextView: UITextField!
-    
-    @IBOutlet weak var partyNameTextView: UITextField!
-    
-    @IBOutlet weak var createEventButton: UIButton!
-    
-    let disposeBag = DisposeBag();
-    
-    var zipCode = Variable<String?>("");
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setTextFieldPlaceholders()
-        
-        
         locationTextField.delegate = self;
         dateAndTimeTextField.delegate = self;
         

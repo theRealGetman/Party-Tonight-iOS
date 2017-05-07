@@ -13,66 +13,57 @@ import RxCocoa
 protocol BottleChosenDelegate {
     func choose(bottle:Bottle)
 }
+
+
 class BuyLiquorViewController: UIViewController,BottleChosenDelegate {
   
 
     @IBOutlet weak var addMoreLiquorTypeButton: UIButton!
 
     @IBOutlet weak var bottlesStackView: UIStackView!
+    var vm:BuyLiquorViewModel?
     
+    @IBOutlet weak var addToCartButton: UIButton!
+    
+   
     @IBAction func addToCartButtonTouched(_ sender: UIButton) {
-        print("addToCart")
+        
     }
     var disposeBag = DisposeBag();
     var bottles:[Bottle] = [];
+    var eventId:Int? = 0
+    var ticket:Ticket?
     
     func choose(bottle: Bottle) {
         
     }
     
+    func addToCart(orderedBottles:[Bottle]){
+        do{
+            SharedCart.shared[eventId].ticket = ticket
+         try SharedCart.shared[eventId].add(bottles: orderedBottles)
+            navigationController?.popViewController(animated: true)
+        } catch {
+           print("addToCart bottle error \(error)")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-             let bottlesResponse = Observable.from([1,3,7]).map({ (tst) -> Bottle in
-                print("one \(tst)")
-                let bottle = Bottle(price:"6",type:"\(tst)", available: "99");
-                 self.bottles.append(bottle)
-                return bottle;
-             }).toArray()
+//             let bottlesResponse = Observable.from([1,3,7]).map({ (tst) -> Bottle in
+//                print("one \(tst)")
+//                let bottle = Bottle(price:"6",type:"\(tst)", available: "99");
+//                bottle.id = 666
+//                 self.bottles.append(bottle)
+//                return bottle;
+//             }).toArray()
         
         
-        let rxBottles = addMoreLiquorTypeButton.rx.tap.asObservable().withLatestFrom(bottlesResponse).map{ (bottlesList) -> Observable<Bottle> in
-            print("array$$$")
-            print(bottlesList)
-            
+      //  let bottlesResponse = Observable.from(bottles)
+        let rxBottles = addMoreLiquorTypeButton.rx.tap.asObservable().map{ (bottlesList) -> Observable<Bottle> in
             let view = LiquorView(frame: CGRect(x: 0, y: 0, width: 144, height: 200))
-            
-            
-         
-            
-//            view.typeTextField.rx.controlEvent(UIControlEvents.allEvents).subscribe(onNext: { (_) in
-//                print("kl")
-//                
-//                
-//             
-//                self.popover(sourceView: view, data: self.bottles)
-//                
-//              
-//            }, onError: { (_) in
-//                
-//            }, onCompleted: {
-//               
-//            }, onDisposed: {
-//                
-//            }).addDisposableTo(self.disposeBag)
-                
-//                .asObservable().map({ (_) -> Void in
-//                print("test")
-//                view.typeTextField.text = "hghghgh";
-//            })
-            
-            
-            //addTarget(self, action: #selector(BuyLiquorViewController.myTargetFunction(textField:)), for: UIControlEvents.touchDown)
+   
             
             view.typeTextField.delegate = self;
             
@@ -85,20 +76,57 @@ class BuyLiquorViewController: UIViewController,BottleChosenDelegate {
             let quantity = view.quantityTextField.rx.text.orEmpty.asObservable()
             let bottleEntity = Observable.combineLatest(type, typeEntity, price, quantity) { ($0, $1, $2, $3)}.flatMap({  (type, typeEntity, price, quantity) -> Observable<Bottle> in
                 
-                return  Observable.just(Bottle(price: price,type: type,available: quantity));
+                var avail = 0
+                if let entity = typeEntity{
+                    if let available = entity.available, let booked = entity.booked{
+                        if let available = Int(available), let booked = Int(booked){
+                            avail = available - booked
+                        }
+                    }
+                    
+                }
+                
+                
+                let b = Bottle(price: price,type: typeEntity?.type ?? type,available: String(avail), booked: quantity)
+                b.id = typeEntity?.id;
+                
+                return  Observable.just(b);
             })
             return bottleEntity;
-        }.subscribe(onNext: { (bottle) in
-            
-        }, onError: { (err) in
-            
-        }, onCompleted: {
-            
-        }) { 
-            
         }
-        addMoreLiquorTypeButton.sendActions(for: UIControlEvents.touchUpInside)
+//            .subscribe(onNext: { (b) in
+//           
+//        }, onError: { (err) in
+//            
+//        }, onCompleted: {
+//            
+//        }) { 
+//            
+//        }
+        vm = BuyLiquorViewModel(input:(eventId: eventId, addToCartTap: addToCartButton.rx.tap.asObservable() , bottles: rxBottles), API: APIManager.sharedAPI)
+        
+        
+       vm?.validatedBottles.subscribe(onNext: { (result) in
+        switch result {
+        case .Success(let bottles):
+            
+            self.addToCart(orderedBottles: bottles)
+           
+            
+        case .Failure(let error):
+            print(error)
+        }
+
+       }, onError: { (err) in
+        
+       }, onCompleted: {
+        
+       }, onDisposed: {
+        
+       }).addDisposableTo(disposeBag)
         // Do any additional setup after loading the view.
+        
+        addMoreLiquorTypeButton.sendActions(for: UIControlEvents.touchUpInside)
     }
 
     
@@ -107,7 +135,7 @@ class BuyLiquorViewController: UIViewController,BottleChosenDelegate {
     }
     
     func popover(sourceView: LiquorView, data:[Bottle]){
-        var controller = self.storyboard?.instantiateViewController(withIdentifier: "LiquorTypePickerViewController") as! LiquorTypePickerViewController; // your initialization goes here
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "LiquorTypePickerViewController") as! LiquorTypePickerViewController; // your initialization goes here
         controller.bottleList = data;
         
         // set modal presentation style to popover on your view controller
@@ -118,7 +146,7 @@ class BuyLiquorViewController: UIViewController,BottleChosenDelegate {
         
         
         // configure popover style & delegate
-        var popover =  controller.popoverPresentationController;
+        let popover =  controller.popoverPresentationController;
         controller.delegate = sourceView
         popover?.delegate = controller;
         popover?.sourceView = sourceView.typeTextField;

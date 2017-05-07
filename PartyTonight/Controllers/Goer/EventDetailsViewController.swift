@@ -11,14 +11,14 @@ import UIKit
 class EventDetailsViewController: UIViewController, UIPageViewControllerDataSource {
     
     @IBOutlet weak var sliderView: UIView!
-    var event:Event?
-    
+   
     @IBOutlet weak var aboutVenueLabel: UILabel!
     
     @IBOutlet weak var dateTimeLabel: UIButton!
     
     @IBOutlet weak var locationLabel: UIButton!
    
+    var event:Event?
     
     
     override func viewDidLoad() {
@@ -109,15 +109,6 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
-        //        let itemController = viewController as! PageItemController
-        //
-        //        if itemController.itemIndex+1 < contentImages.count {
-        //            return getItemController(itemController.itemIndex+1)
-        //        }
-        //
-        //        return nil
-        //
-        
         let pageContent: PageItemController? = viewController as? PageItemController
         guard var index = pageContent?.itemIndex else{
             return nil;
@@ -190,14 +181,36 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
     
     
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
+        switch segue.destination {
+        case is BuyLiquorViewController:
+        let buyLiq = segue.destination as? BuyLiquorViewController
+        if let bottles = event?.bottles{
+             buyLiq?.eventId = event?.id
+             buyLiq?.ticket = event?.tickets?.first
+             buyLiq?.bottles = bottles
+        }
+            break
+        case is BookTableViewController:
+            let bookTab = segue.destination as? BookTableViewController
+            if let tables = event?.tables{
+                
+                bookTab?.eventId = event?.id
+                bookTab?.ticket = event?.tickets?.first
+                bookTab?.tables = tables
+            }
+            break
+
+        default:
+            break
+        }
      }
-     */
+ 
     
 }

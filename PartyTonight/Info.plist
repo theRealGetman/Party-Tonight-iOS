@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>PartyTonight</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -17,13 +19,50 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1.1</string>
+	<string>1.7</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>yourdomain.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
+		</dict>
+	</dict>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>to use media</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>bluetooth</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>to use calendar</string>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>To take photos</string>
+	<key>NSContactsUsageDescription</key>
+	<string>to search contacts</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>To track user</string>
+	<key>NSLocationUsageDescription</key>
+	<string>To choose place</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To track location</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>to record voice</string>
+	<key>NSMotionUsageDescription</key>
+	<string>to use motions</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
+	<string>$(PRODUCT_NAME) uses photos</string>
+	<key>NSSiriUsageDescription</key>
+	<string>to use siri</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>to recognize speech</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Sumptuous_Light.otf</string>
@@ -39,6 +78,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -52,5 +93,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>kTCCServiceMediaLibrary</key>
+	<string>to use music</string>
 </dict>
 </plist>

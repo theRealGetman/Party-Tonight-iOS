@@ -56,6 +56,12 @@ class LiquorView:UIView {
         //contentView.frame = CGRect(x: 0, y: 0, width: 100, height: 100);
         addSubview(contentView)
         
+        typeTextField.leftView = UIView(frame:CGRect(x: 0, y: 0, width: 60, height: 30))
+        typeTextField.leftViewMode = UITextFieldViewMode.always
+        priceTextField.leftView = UIView(frame:CGRect(x: 0, y: 0, width: 60, height: 30))
+        priceTextField.leftViewMode = UITextFieldViewMode.always
+        quantityTextField.leftView = UIView(frame:CGRect(x: 0, y: 0, width: 60, height: 30))
+        quantityTextField.leftViewMode = UITextFieldViewMode.always
         // custom initialization logic
         //...
     }

@@ -10,6 +10,8 @@ import UIKit
 
 class GoerMenuViewController: UIViewController {
     
+    let cart:Cart = Cart()
+    
     @IBAction func contactUsButtonTouched(_ sender: UIButton) {
         contactUsAlert()
     }

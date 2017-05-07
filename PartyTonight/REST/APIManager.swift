@@ -50,7 +50,8 @@ class APIManager{
     var userToken: Token?
     
     struct Constants {
-        static let baseURL = "http://45.55.226.134:8382/partymaker/"
+        static let baseURL = "http://localhost:8080/"
+       // static let baseURL = "http://45.55.226.134:8080/partymaker/"
     }
     
     enum PromoterPath: String {
@@ -79,6 +80,15 @@ class APIManager{
             return Constants.baseURL + rawValue
         }
     }
+    
+    enum PurchasesPath: String {
+        case ValidateBooking = "dancer/event/validate_booking"
+        var path: String {
+            return Constants.baseURL + rawValue
+        }
+    }
+    
+
     
     
     
@@ -271,8 +281,6 @@ class APIManager{
                 return response.validate(statusCode: self.successfulStatusCodes).rx.json()
             }).map(JSON.init)
             .flatMap { json -> Observable<Result<Total>> in
-//                print("json.rawString()")
-//                print(json.rawString())
                 guard let revenue = Mapper<Total>().map(JSONString: json.rawString() ?? "" ) else {
                     return Observable.just(Result.Failure(APIError.CannotParse("can not parse response")))
                 }
@@ -283,6 +291,53 @@ class APIManager{
                 
             })
     }
+    
+    
+    struct JSONArrayEncoding: ParameterEncoding {
+        private let array: [Parameters]
+        
+        init(array: [Parameters]) {
+            self.array = array
+        }
+        
+        func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
+            var urlRequest = try urlRequest.asURLRequest()
+            
+            let data = try JSONSerialization.data(withJSONObject: array, options: [])
+            
+            if urlRequest.value(forHTTPHeaderField: "Content-Type") == nil {
+                urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            }
+            
+            urlRequest.httpBody = data
+            
+            return urlRequest
+        }
+    }
+    
+    
+    func validate(bookings validatingBookings: [Booking]) -> Observable<Result<[Booking]>> {
+        print("validating booking")
+        
+        let parameters : [Parameters] = Mapper<Booking>().toJSONArray(validatingBookings)
+        let headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
+        return request(.post, PurchasesPath.ValidateBooking.path,  encoding: JSONArrayEncoding(array: parameters),  headers: headers  )
+            .flatMap({ (response) -> Observable<Any> in
+                return response.validate(statusCode: self.successfulStatusCodes).rx.json()
+            }).map(JSON.init)
+            .flatMap { json -> Observable<Result<[Booking]>> in
+                guard let bookings = Mapper<Booking>().mapArray(JSONObject: json ) else {
+                    return Observable.just(Result.Failure(APIError.CannotParse("can not parse response")))
+                }
+                return Observable.just(Result.Success(bookings))
+                
+            }.catchError({ (err) -> Observable<Result<[Booking]>> in
+                return Observable.just(Result.Failure(APIError.BadStatusCode(err.localizedDescription)));
+            })
+    }
+
+    
+    
     
     
     func uploadData(images:[UIImage]) -> Observable<[String]>{

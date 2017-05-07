@@ -30,7 +30,7 @@ class PromoterStatementTotalViewController: UIViewController {
         guard let evt = event else {
             return
         }
-        print("statement")
+        
         let viewModel = EventStatementTotalViewModel(dependency: (API: APIManager.sharedAPI, event: evt))
         viewModel.statementTotal.subscribe(onNext: { (total) in
             
