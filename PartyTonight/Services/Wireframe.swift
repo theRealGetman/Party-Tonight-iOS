@@ -49,10 +49,10 @@ class DefaultWireframe: Wireframe {
     }
     #endif
     
-    static func presentAlert(_ message: String) {
+    static func presentAlert(_ message: String, completion:((_:UIAlertAction) -> Swift.Void)? = nil) {
         #if os(iOS)
             let alertView = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-            alertView.addAction(UIAlertAction(title: "OK", style: .cancel) { _ in })
+            alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: completion))
             OperationQueue.main.addOperation {
                 rootViewController().present(alertView, animated: true, completion: nil)
             }

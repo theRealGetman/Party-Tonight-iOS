@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		171408521EC08E5800F9A604 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171408511EC08E5800F9A604 /* Security.framework */; };
+		171408551EC0909000F9A604 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 171408531EC08F1200F9A604 /* libxml2.tbd */; };
+		1714099E1EC0925700F9A604 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 171408F41EC090BF00F9A604 /* libz.tbd */; };
 		171CF2621DC7C84C00CD4335 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171CF2611DC7C84C00CD4335 /* User.swift */; };
 		172435A71EBE456300160BBF /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172435A61EBE456300160BBF /* CartViewModel.swift */; };
 		172435A91EBE4FB900160BBF /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172435A81EBE4FB900160BBF /* Booking.swift */; };
@@ -113,7 +116,7 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		17B49F431DC803FD002FFA00 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
@@ -132,6 +135,165 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		171408511EC08E5800F9A604 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		171408531EC08F1200F9A604 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		171408561EC090AD00F9A604 /* libxslt.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxslt.tbd; path = usr/lib/libxslt.tbd; sourceTree = SDKROOT; };
+		171408591EC090BE00F9A604 /* IOABPLib.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = IOABPLib.tbd; path = usr/lib/IOABPLib.tbd; sourceTree = SDKROOT; };
+		1714085A1EC090BE00F9A604 /* libAccessibility.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAccessibility.tbd; path = usr/lib/libAccessibility.tbd; sourceTree = SDKROOT; };
+		1714085B1EC090BE00F9A604 /* libacmobileshim.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libacmobileshim.tbd; path = usr/lib/libacmobileshim.tbd; sourceTree = SDKROOT; };
+		1714085C1EC090BE00F9A604 /* libafc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libafc.tbd; path = usr/lib/libafc.tbd; sourceTree = SDKROOT; };
+		1714085D1EC090BE00F9A604 /* libamsupport.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libamsupport.tbd; path = usr/lib/libamsupport.tbd; sourceTree = SDKROOT; };
+		1714085E1EC090BE00F9A604 /* libAppPatch.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAppPatch.tbd; path = usr/lib/libAppPatch.tbd; sourceTree = SDKROOT; };
+		1714085F1EC090BE00F9A604 /* libarchive.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libarchive.2.tbd; path = usr/lib/libarchive.2.tbd; sourceTree = SDKROOT; };
+		171408601EC090BE00F9A604 /* libarchive.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libarchive.tbd; path = usr/lib/libarchive.tbd; sourceTree = SDKROOT; };
+		171408611EC090BE00F9A604 /* libARI.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libARI.tbd; path = usr/lib/libARI.tbd; sourceTree = SDKROOT; };
+		171408621EC090BE00F9A604 /* libARIServer.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libARIServer.tbd; path = usr/lib/libARIServer.tbd; sourceTree = SDKROOT; };
+		171408631EC090BE00F9A604 /* libassertion_launchd.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libassertion_launchd.tbd; path = usr/lib/libassertion_launchd.tbd; sourceTree = SDKROOT; };
+		171408641EC090BE00F9A604 /* libate.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libate.tbd; path = usr/lib/libate.tbd; sourceTree = SDKROOT; };
+		171408651EC090BE00F9A604 /* libauthinstall.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libauthinstall.tbd; path = usr/lib/libauthinstall.tbd; sourceTree = SDKROOT; };
+		171408661EC090BE00F9A604 /* libAWDProtobufBluetooth.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAWDProtobufBluetooth.tbd; path = usr/lib/libAWDProtobufBluetooth.tbd; sourceTree = SDKROOT; };
+		171408671EC090BE00F9A604 /* libAWDProtobufFacetime.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAWDProtobufFacetime.tbd; path = usr/lib/libAWDProtobufFacetime.tbd; sourceTree = SDKROOT; };
+		171408681EC090BE00F9A604 /* libAWDProtobufFacetimeiMessage.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAWDProtobufFacetimeiMessage.tbd; path = usr/lib/libAWDProtobufFacetimeiMessage.tbd; sourceTree = SDKROOT; };
+		171408691EC090BE00F9A604 /* libAWDProtobufGCK.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAWDProtobufGCK.tbd; path = usr/lib/libAWDProtobufGCK.tbd; sourceTree = SDKROOT; };
+		1714086A1EC090BE00F9A604 /* libAWDProtobufLocation.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAWDProtobufLocation.tbd; path = usr/lib/libAWDProtobufLocation.tbd; sourceTree = SDKROOT; };
+		1714086B1EC090BE00F9A604 /* libAWDSupport.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAWDSupport.tbd; path = usr/lib/libAWDSupport.tbd; sourceTree = SDKROOT; };
+		1714086C1EC090BE00F9A604 /* libAWDSupportFramework.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAWDSupportFramework.tbd; path = usr/lib/libAWDSupportFramework.tbd; sourceTree = SDKROOT; };
+		1714086D1EC090BE00F9A604 /* libAXSafeCategoryBundle.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAXSafeCategoryBundle.tbd; path = usr/lib/libAXSafeCategoryBundle.tbd; sourceTree = SDKROOT; };
+		1714086E1EC090BE00F9A604 /* libAXSpeechManager.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libAXSpeechManager.tbd; path = usr/lib/libAXSpeechManager.tbd; sourceTree = SDKROOT; };
+		1714086F1EC090BE00F9A604 /* libBasebandManager.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libBasebandManager.tbd; path = usr/lib/libBasebandManager.tbd; sourceTree = SDKROOT; };
+		171408701EC090BE00F9A604 /* libBasebandUSB.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libBasebandUSB.tbd; path = usr/lib/libBasebandUSB.tbd; sourceTree = SDKROOT; };
+		171408711EC090BE00F9A604 /* libbsm.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbsm.0.tbd; path = usr/lib/libbsm.0.tbd; sourceTree = SDKROOT; };
+		171408721EC090BE00F9A604 /* libbsm.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbsm.tbd; path = usr/lib/libbsm.tbd; sourceTree = SDKROOT; };
+		171408731EC090BE00F9A604 /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = usr/lib/libbz2.1.0.tbd; sourceTree = SDKROOT; };
+		171408741EC090BE00F9A604 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		171408751EC090BE00F9A604 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		171408761EC090BE00F9A604 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		171408771EC090BE00F9A604 /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
+		171408781EC090BE00F9A604 /* libc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libc.tbd; path = usr/lib/libc.tbd; sourceTree = SDKROOT; };
+		171408791EC090BE00F9A604 /* libcharset.1.0.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcharset.1.0.0.tbd; path = usr/lib/libcharset.1.0.0.tbd; sourceTree = SDKROOT; };
+		1714087A1EC090BE00F9A604 /* libcharset.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcharset.1.tbd; path = usr/lib/libcharset.1.tbd; sourceTree = SDKROOT; };
+		1714087B1EC090BE00F9A604 /* libcharset.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcharset.tbd; path = usr/lib/libcharset.tbd; sourceTree = SDKROOT; };
+		1714087C1EC090BE00F9A604 /* libChineseTokenizer.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libChineseTokenizer.tbd; path = usr/lib/libChineseTokenizer.tbd; sourceTree = SDKROOT; };
+		1714087D1EC090BE00F9A604 /* libcmph.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcmph.tbd; path = usr/lib/libcmph.tbd; sourceTree = SDKROOT; };
+		1714087E1EC090BE00F9A604 /* libcompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcompression.tbd; path = usr/lib/libcompression.tbd; sourceTree = SDKROOT; };
+		1714087F1EC090BE00F9A604 /* libcoretls.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcoretls.tbd; path = usr/lib/libcoretls.tbd; sourceTree = SDKROOT; };
+		171408801EC090BE00F9A604 /* libcoretls_cfhelpers.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcoretls_cfhelpers.tbd; path = usr/lib/libcoretls_cfhelpers.tbd; sourceTree = SDKROOT; };
+		171408811EC090BE00F9A604 /* libCRFSuite.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libCRFSuite.tbd; path = usr/lib/libCRFSuite.tbd; sourceTree = SDKROOT; };
+		171408821EC090BE00F9A604 /* libCRFSuite0.12.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libCRFSuite0.12.tbd; path = usr/lib/libCRFSuite0.12.tbd; sourceTree = SDKROOT; };
+		171408831EC090BE00F9A604 /* libCTLogHelper.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libCTLogHelper.tbd; path = usr/lib/libCTLogHelper.tbd; sourceTree = SDKROOT; };
+		171408841EC090BE00F9A604 /* libcupolicy.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcupolicy.tbd; path = usr/lib/libcupolicy.tbd; sourceTree = SDKROOT; };
+		171408851EC090BE00F9A604 /* libcurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurses.tbd; path = usr/lib/libcurses.tbd; sourceTree = SDKROOT; };
+		171408861EC090BE00F9A604 /* libdbm.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libdbm.tbd; path = usr/lib/libdbm.tbd; sourceTree = SDKROOT; };
+		171408871EC090BE00F9A604 /* libDHCPServer.A.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libDHCPServer.A.tbd; path = usr/lib/libDHCPServer.A.tbd; sourceTree = SDKROOT; };
+		171408881EC090BE00F9A604 /* libDHCPServer.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libDHCPServer.tbd; path = usr/lib/libDHCPServer.tbd; sourceTree = SDKROOT; };
+		171408891EC090BE00F9A604 /* libdl.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libdl.tbd; path = usr/lib/libdl.tbd; sourceTree = SDKROOT; };
+		1714088A1EC090BE00F9A604 /* libdns_services.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libdns_services.tbd; path = usr/lib/libdns_services.tbd; sourceTree = SDKROOT; };
+		1714088B1EC090BE00F9A604 /* libdscsym.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libdscsym.tbd; path = usr/lib/libdscsym.tbd; sourceTree = SDKROOT; };
+		1714088C1EC090BE00F9A604 /* libedit.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libedit.2.tbd; path = usr/lib/libedit.2.tbd; sourceTree = SDKROOT; };
+		1714088D1EC090BE00F9A604 /* libedit.3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libedit.3.0.tbd; path = usr/lib/libedit.3.0.tbd; sourceTree = SDKROOT; };
+		1714088E1EC090BE00F9A604 /* libedit.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libedit.3.tbd; path = usr/lib/libedit.3.tbd; sourceTree = SDKROOT; };
+		1714088F1EC090BE00F9A604 /* libedit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libedit.tbd; path = usr/lib/libedit.tbd; sourceTree = SDKROOT; };
+		171408901EC090BE00F9A604 /* libenergytrace.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libenergytrace.tbd; path = usr/lib/libenergytrace.tbd; sourceTree = SDKROOT; };
+		171408911EC090BE00F9A604 /* libETLDIAGLoggingDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libETLDIAGLoggingDynamic.tbd; path = usr/lib/libETLDIAGLoggingDynamic.tbd; sourceTree = SDKROOT; };
+		171408921EC090BE00F9A604 /* libETLDLFDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libETLDLFDynamic.tbd; path = usr/lib/libETLDLFDynamic.tbd; sourceTree = SDKROOT; };
+		171408931EC090BE00F9A604 /* libETLDLOADCoreDumpDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libETLDLOADCoreDumpDynamic.tbd; path = usr/lib/libETLDLOADCoreDumpDynamic.tbd; sourceTree = SDKROOT; };
+		171408941EC090BE00F9A604 /* libETLDLOADDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libETLDLOADDynamic.tbd; path = usr/lib/libETLDLOADDynamic.tbd; sourceTree = SDKROOT; };
+		171408951EC090BE00F9A604 /* libETLDMCDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libETLDMCDynamic.tbd; path = usr/lib/libETLDMCDynamic.tbd; sourceTree = SDKROOT; };
+		171408961EC090BE00F9A604 /* libETLDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libETLDynamic.tbd; path = usr/lib/libETLDynamic.tbd; sourceTree = SDKROOT; };
+		171408971EC090BE00F9A604 /* libETLEFSDumpDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libETLEFSDumpDynamic.tbd; path = usr/lib/libETLEFSDumpDynamic.tbd; sourceTree = SDKROOT; };
+		171408981EC090BE00F9A604 /* libETLSAHDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libETLSAHDynamic.tbd; path = usr/lib/libETLSAHDynamic.tbd; sourceTree = SDKROOT; };
+		171408991EC090BE00F9A604 /* libETLTransportDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libETLTransportDynamic.tbd; path = usr/lib/libETLTransportDynamic.tbd; sourceTree = SDKROOT; };
+		1714089A1EC090BE00F9A604 /* libexslt.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libexslt.0.tbd; path = usr/lib/libexslt.0.tbd; sourceTree = SDKROOT; };
+		1714089B1EC090BE00F9A604 /* libexslt.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libexslt.tbd; path = usr/lib/libexslt.tbd; sourceTree = SDKROOT; };
+		1714089C1EC090BE00F9A604 /* libextension.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libextension.tbd; path = usr/lib/libextension.tbd; sourceTree = SDKROOT; };
+		1714089D1EC090BE00F9A604 /* libform.5.4.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libform.5.4.tbd; path = usr/lib/libform.5.4.tbd; sourceTree = SDKROOT; };
+		1714089E1EC090BE00F9A604 /* libform.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libform.tbd; path = usr/lib/libform.tbd; sourceTree = SDKROOT; };
+		1714089F1EC090BE00F9A604 /* libgcc_s.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libgcc_s.1.tbd; path = usr/lib/libgcc_s.1.tbd; sourceTree = SDKROOT; };
+		171408A01EC090BE00F9A604 /* libgermantok.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libgermantok.tbd; path = usr/lib/libgermantok.tbd; sourceTree = SDKROOT; };
+		171408A11EC090BE00F9A604 /* libH5Dynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libH5Dynamic.tbd; path = usr/lib/libH5Dynamic.tbd; sourceTree = SDKROOT; };
+		171408A21EC090BE00F9A604 /* libHDLCDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libHDLCDynamic.tbd; path = usr/lib/libHDLCDynamic.tbd; sourceTree = SDKROOT; };
+		171408A31EC090BE00F9A604 /* libheimdal-asn1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libheimdal-asn1.tbd"; path = "usr/lib/libheimdal-asn1.tbd"; sourceTree = SDKROOT; };
+		171408A41EC090BE00F9A604 /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = usr/lib/libiconv.2.4.0.tbd; sourceTree = SDKROOT; };
+		171408A51EC090BE00F9A604 /* libiconv.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.tbd; path = usr/lib/libiconv.2.tbd; sourceTree = SDKROOT; };
+		171408A61EC090BE00F9A604 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		171408A71EC090BE00F9A604 /* libicucore.A.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.A.tbd; path = usr/lib/libicucore.A.tbd; sourceTree = SDKROOT; };
+		171408A81EC090BE00F9A604 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		171408A91EC090BE00F9A604 /* libInFieldCollection.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libInFieldCollection.tbd; path = usr/lib/libInFieldCollection.tbd; sourceTree = SDKROOT; };
+		171408AA1EC090BE00F9A604 /* libinfo.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libinfo.tbd; path = usr/lib/libinfo.tbd; sourceTree = SDKROOT; };
+		171408AB1EC090BE00F9A604 /* libIOAccessoryManager.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libIOAccessoryManager.tbd; path = usr/lib/libIOAccessoryManager.tbd; sourceTree = SDKROOT; };
+		171408AC1EC090BE00F9A604 /* libipconfig.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libipconfig.tbd; path = usr/lib/libipconfig.tbd; sourceTree = SDKROOT; };
+		171408AD1EC090BE00F9A604 /* libipsec.A.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libipsec.A.tbd; path = usr/lib/libipsec.A.tbd; sourceTree = SDKROOT; };
+		171408AE1EC090BE00F9A604 /* libipsec.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libipsec.tbd; path = usr/lib/libipsec.tbd; sourceTree = SDKROOT; };
+		171408AF1EC090BE00F9A604 /* libktrace.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libktrace.tbd; path = usr/lib/libktrace.tbd; sourceTree = SDKROOT; };
+		171408B01EC090BE00F9A604 /* liblangid.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = liblangid.tbd; path = usr/lib/liblangid.tbd; sourceTree = SDKROOT; };
+		171408B11EC090BE00F9A604 /* libLLVM-C.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libLLVM-C.tbd"; path = "usr/lib/libLLVM-C.tbd"; sourceTree = SDKROOT; };
+		171408B21EC090BE00F9A604 /* libLLVM.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libLLVM.tbd; path = usr/lib/libLLVM.tbd; sourceTree = SDKROOT; };
+		171408B31EC090BE00F9A604 /* liblockdown.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = liblockdown.tbd; path = usr/lib/liblockdown.tbd; sourceTree = SDKROOT; };
+		171408B41EC090BE00F9A604 /* liblzma.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = liblzma.5.tbd; path = usr/lib/liblzma.5.tbd; sourceTree = SDKROOT; };
+		171408B51EC090BE00F9A604 /* liblzma.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = liblzma.tbd; path = usr/lib/liblzma.tbd; sourceTree = SDKROOT; };
+		171408B61EC090BE00F9A604 /* libm.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libm.tbd; path = usr/lib/libm.tbd; sourceTree = SDKROOT; };
+		171408B71EC090BE00F9A604 /* libmarisa.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libmarisa.tbd; path = usr/lib/libmarisa.tbd; sourceTree = SDKROOT; };
+		171408B81EC090BE00F9A604 /* libMatch.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libMatch.1.tbd; path = usr/lib/libMatch.1.tbd; sourceTree = SDKROOT; };
+		171408B91EC090BE00F9A604 /* libMatch.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libMatch.tbd; path = usr/lib/libMatch.tbd; sourceTree = SDKROOT; };
+		171408BA1EC090BE00F9A604 /* libmav_ipc_router_dynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libmav_ipc_router_dynamic.tbd; path = usr/lib/libmav_ipc_router_dynamic.tbd; sourceTree = SDKROOT; };
+		171408BB1EC090BE00F9A604 /* libmecab_em.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libmecab_em.tbd; path = usr/lib/libmecab_em.tbd; sourceTree = SDKROOT; };
+		171408BC1EC090BE00F9A604 /* libmecabra.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libmecabra.tbd; path = usr/lib/libmecabra.tbd; sourceTree = SDKROOT; };
+		171408BD1EC090BE00F9A604 /* libmis.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libmis.tbd; path = usr/lib/libmis.tbd; sourceTree = SDKROOT; };
+		171408BE1EC090BE00F9A604 /* libMobileCheckpoint.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libMobileCheckpoint.tbd; path = usr/lib/libMobileCheckpoint.tbd; sourceTree = SDKROOT; };
+		171408BF1EC090BE00F9A604 /* libMobileGestalt.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libMobileGestalt.tbd; path = usr/lib/libMobileGestalt.tbd; sourceTree = SDKROOT; };
+		171408C01EC090BE00F9A604 /* libMobileGestaltExtensions.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libMobileGestaltExtensions.tbd; path = usr/lib/libMobileGestaltExtensions.tbd; sourceTree = SDKROOT; };
+		171408C11EC090BE00F9A604 /* libncurses.5.4.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.5.4.tbd; path = usr/lib/libncurses.5.4.tbd; sourceTree = SDKROOT; };
+		171408C21EC090BE00F9A604 /* libncurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.tbd; path = usr/lib/libncurses.tbd; sourceTree = SDKROOT; };
+		171408C31EC090BE00F9A604 /* libnetwork.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libnetwork.tbd; path = usr/lib/libnetwork.tbd; sourceTree = SDKROOT; };
+		171408C41EC090BE00F9A604 /* libnfshared.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libnfshared.tbd; path = usr/lib/libnfshared.tbd; sourceTree = SDKROOT; };
+		171408C51EC090BE00F9A604 /* libobjc.A.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libobjc.A.tbd; path = usr/lib/libobjc.A.tbd; sourceTree = SDKROOT; };
+		171408C61EC090BE00F9A604 /* libobjc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libobjc.tbd; path = usr/lib/libobjc.tbd; sourceTree = SDKROOT; };
+		171408C71EC090BE00F9A604 /* libomadm.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libomadm.tbd; path = usr/lib/libomadm.tbd; sourceTree = SDKROOT; };
+		171408C81EC090BE00F9A604 /* libPCITransport.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libPCITransport.tbd; path = usr/lib/libPCITransport.tbd; sourceTree = SDKROOT; };
+		171408C91EC090BE00F9A604 /* libpoll.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpoll.tbd; path = usr/lib/libpoll.tbd; sourceTree = SDKROOT; };
+		171408CA1EC090BE00F9A604 /* libPPM.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libPPM.tbd; path = usr/lib/libPPM.tbd; sourceTree = SDKROOT; };
+		171408CB1EC090BE00F9A604 /* libprequelite.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libprequelite.tbd; path = usr/lib/libprequelite.tbd; sourceTree = SDKROOT; };
+		171408CC1EC090BE00F9A604 /* libproc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libproc.tbd; path = usr/lib/libproc.tbd; sourceTree = SDKROOT; };
+		171408CD1EC090BE00F9A604 /* libprotobuf.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libprotobuf.tbd; path = usr/lib/libprotobuf.tbd; sourceTree = SDKROOT; };
+		171408CE1EC090BE00F9A604 /* libpthread.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpthread.tbd; path = usr/lib/libpthread.tbd; sourceTree = SDKROOT; };
+		171408CF1EC090BE00F9A604 /* libQLCharts.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libQLCharts.tbd; path = usr/lib/libQLCharts.tbd; sourceTree = SDKROOT; };
+		171408D01EC090BE00F9A604 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		171408D11EC090BE00F9A604 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		171408D21EC090BE00F9A604 /* librpcsvc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = librpcsvc.tbd; path = usr/lib/librpcsvc.tbd; sourceTree = SDKROOT; };
+		171408D31EC090BE00F9A604 /* libsandbox.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsandbox.1.tbd; path = usr/lib/libsandbox.1.tbd; sourceTree = SDKROOT; };
+		171408D41EC090BE00F9A604 /* libsandbox.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsandbox.tbd; path = usr/lib/libsandbox.tbd; sourceTree = SDKROOT; };
+		171408D51EC090BE00F9A604 /* libsp.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsp.tbd; path = usr/lib/libsp.tbd; sourceTree = SDKROOT; };
+		171408D61EC090BE00F9A604 /* libspindump.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libspindump.tbd; path = usr/lib/libspindump.tbd; sourceTree = SDKROOT; };
+		171408D71EC090BE00F9A604 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		171408D81EC090BE00F9A604 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		171408D91EC090BE00F9A604 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		171408DA1EC090BE00F9A604 /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
+		171408DB1EC090BE00F9A604 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		171408DC1EC090BE00F9A604 /* libsysdiagnose.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsysdiagnose.tbd; path = usr/lib/libsysdiagnose.tbd; sourceTree = SDKROOT; };
+		171408DD1EC090BE00F9A604 /* libSystem.B.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libSystem.B.tbd; path = usr/lib/libSystem.B.tbd; sourceTree = SDKROOT; };
+		171408DE1EC090BE00F9A604 /* libSystem.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libSystem.tbd; path = usr/lib/libSystem.tbd; sourceTree = SDKROOT; };
+		171408DF1EC090BE00F9A604 /* libsystemstats.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsystemstats.tbd; path = usr/lib/libsystemstats.tbd; sourceTree = SDKROOT; };
+		171408E01EC090BE00F9A604 /* libtailspin.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libtailspin.tbd; path = usr/lib/libtailspin.tbd; sourceTree = SDKROOT; };
+		171408E11EC090BE00F9A604 /* libTelephonyBasebandBulkUSBDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libTelephonyBasebandBulkUSBDynamic.tbd; path = usr/lib/libTelephonyBasebandBulkUSBDynamic.tbd; sourceTree = SDKROOT; };
+		171408E21EC090BE00F9A604 /* libTelephonyBasebandDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libTelephonyBasebandDynamic.tbd; path = usr/lib/libTelephonyBasebandDynamic.tbd; sourceTree = SDKROOT; };
+		171408E31EC090BF00F9A604 /* libTelephonyDebugDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libTelephonyDebugDynamic.tbd; path = usr/lib/libTelephonyDebugDynamic.tbd; sourceTree = SDKROOT; };
+		171408E41EC090BF00F9A604 /* libTelephonyIOKitDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libTelephonyIOKitDynamic.tbd; path = usr/lib/libTelephonyIOKitDynamic.tbd; sourceTree = SDKROOT; };
+		171408E51EC090BF00F9A604 /* libTelephonyUSBDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libTelephonyUSBDynamic.tbd; path = usr/lib/libTelephonyUSBDynamic.tbd; sourceTree = SDKROOT; };
+		171408E61EC090BF00F9A604 /* libTelephonyUtilDynamic.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libTelephonyUtilDynamic.tbd; path = usr/lib/libTelephonyUtilDynamic.tbd; sourceTree = SDKROOT; };
+		171408E71EC090BF00F9A604 /* libThaiTokenizer.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libThaiTokenizer.tbd; path = usr/lib/libThaiTokenizer.tbd; sourceTree = SDKROOT; };
+		171408E81EC090BF00F9A604 /* libtidy.A.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libtidy.A.tbd; path = usr/lib/libtidy.A.tbd; sourceTree = SDKROOT; };
+		171408E91EC090BF00F9A604 /* libtidy.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libtidy.tbd; path = usr/lib/libtidy.tbd; sourceTree = SDKROOT; };
+		171408EA1EC090BF00F9A604 /* libtzupdate.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libtzupdate.tbd; path = usr/lib/libtzupdate.tbd; sourceTree = SDKROOT; };
+		171408EB1EC090BF00F9A604 /* libutil.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libutil.tbd; path = usr/lib/libutil.tbd; sourceTree = SDKROOT; };
+		171408EC1EC090BF00F9A604 /* libutil1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libutil1.0.tbd; path = usr/lib/libutil1.0.tbd; sourceTree = SDKROOT; };
+		171408ED1EC090BF00F9A604 /* libWAPI.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libWAPI.tbd; path = usr/lib/libWAPI.tbd; sourceTree = SDKROOT; };
+		171408EE1EC090BF00F9A604 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		171408EF1EC090BF00F9A604 /* libxslt.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxslt.1.tbd; path = usr/lib/libxslt.1.tbd; sourceTree = SDKROOT; };
+		171408F01EC090BF00F9A604 /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
+		171408F11EC090BF00F9A604 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		171408F21EC090BF00F9A604 /* libz.1.2.8.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.8.tbd; path = usr/lib/libz.1.2.8.tbd; sourceTree = SDKROOT; };
+		171408F31EC090BF00F9A604 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
+		171408F41EC090BF00F9A604 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		171CF25E1DC7C5B600CD4335 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		171CF2611DC7C84C00CD4335 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Entities/User.swift; sourceTree = "<group>"; };
 		171CF2631DC7D57200CD4335 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
@@ -256,6 +418,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1714099E1EC0925700F9A604 /* libz.tbd in Frameworks */,
+				171408551EC0909000F9A604 /* libxml2.tbd in Frameworks */,
+				171408521EC08E5800F9A604 /* Security.framework in Frameworks */,
 				177AF9881E7852C400AC4D05 /* RxAlamofire.framework in Frameworks */,
 				177AF98D1E78534100AC4D05 /* RxAlamofire.framework in Frameworks */,
 				1775F14C1DD21ECD00B90EEA /* RxCocoa.framework in Frameworks */,
@@ -276,6 +441,165 @@
 		171CF25D1DC7C5B400CD4335 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				171408591EC090BE00F9A604 /* IOABPLib.tbd */,
+				1714085A1EC090BE00F9A604 /* libAccessibility.tbd */,
+				1714085B1EC090BE00F9A604 /* libacmobileshim.tbd */,
+				1714085C1EC090BE00F9A604 /* libafc.tbd */,
+				1714085D1EC090BE00F9A604 /* libamsupport.tbd */,
+				1714085E1EC090BE00F9A604 /* libAppPatch.tbd */,
+				1714085F1EC090BE00F9A604 /* libarchive.2.tbd */,
+				171408601EC090BE00F9A604 /* libarchive.tbd */,
+				171408611EC090BE00F9A604 /* libARI.tbd */,
+				171408621EC090BE00F9A604 /* libARIServer.tbd */,
+				171408631EC090BE00F9A604 /* libassertion_launchd.tbd */,
+				171408641EC090BE00F9A604 /* libate.tbd */,
+				171408651EC090BE00F9A604 /* libauthinstall.tbd */,
+				171408661EC090BE00F9A604 /* libAWDProtobufBluetooth.tbd */,
+				171408671EC090BE00F9A604 /* libAWDProtobufFacetime.tbd */,
+				171408681EC090BE00F9A604 /* libAWDProtobufFacetimeiMessage.tbd */,
+				171408691EC090BE00F9A604 /* libAWDProtobufGCK.tbd */,
+				1714086A1EC090BE00F9A604 /* libAWDProtobufLocation.tbd */,
+				1714086B1EC090BE00F9A604 /* libAWDSupport.tbd */,
+				1714086C1EC090BE00F9A604 /* libAWDSupportFramework.tbd */,
+				1714086D1EC090BE00F9A604 /* libAXSafeCategoryBundle.tbd */,
+				1714086E1EC090BE00F9A604 /* libAXSpeechManager.tbd */,
+				1714086F1EC090BE00F9A604 /* libBasebandManager.tbd */,
+				171408701EC090BE00F9A604 /* libBasebandUSB.tbd */,
+				171408711EC090BE00F9A604 /* libbsm.0.tbd */,
+				171408721EC090BE00F9A604 /* libbsm.tbd */,
+				171408731EC090BE00F9A604 /* libbz2.1.0.tbd */,
+				171408741EC090BE00F9A604 /* libbz2.tbd */,
+				171408751EC090BE00F9A604 /* libc++.1.tbd */,
+				171408761EC090BE00F9A604 /* libc++.tbd */,
+				171408771EC090BE00F9A604 /* libc++abi.tbd */,
+				171408781EC090BE00F9A604 /* libc.tbd */,
+				171408791EC090BE00F9A604 /* libcharset.1.0.0.tbd */,
+				1714087A1EC090BE00F9A604 /* libcharset.1.tbd */,
+				1714087B1EC090BE00F9A604 /* libcharset.tbd */,
+				1714087C1EC090BE00F9A604 /* libChineseTokenizer.tbd */,
+				1714087D1EC090BE00F9A604 /* libcmph.tbd */,
+				1714087E1EC090BE00F9A604 /* libcompression.tbd */,
+				1714087F1EC090BE00F9A604 /* libcoretls.tbd */,
+				171408801EC090BE00F9A604 /* libcoretls_cfhelpers.tbd */,
+				171408811EC090BE00F9A604 /* libCRFSuite.tbd */,
+				171408821EC090BE00F9A604 /* libCRFSuite0.12.tbd */,
+				171408831EC090BE00F9A604 /* libCTLogHelper.tbd */,
+				171408841EC090BE00F9A604 /* libcupolicy.tbd */,
+				171408851EC090BE00F9A604 /* libcurses.tbd */,
+				171408861EC090BE00F9A604 /* libdbm.tbd */,
+				171408871EC090BE00F9A604 /* libDHCPServer.A.tbd */,
+				171408881EC090BE00F9A604 /* libDHCPServer.tbd */,
+				171408891EC090BE00F9A604 /* libdl.tbd */,
+				1714088A1EC090BE00F9A604 /* libdns_services.tbd */,
+				1714088B1EC090BE00F9A604 /* libdscsym.tbd */,
+				1714088C1EC090BE00F9A604 /* libedit.2.tbd */,
+				1714088D1EC090BE00F9A604 /* libedit.3.0.tbd */,
+				1714088E1EC090BE00F9A604 /* libedit.3.tbd */,
+				1714088F1EC090BE00F9A604 /* libedit.tbd */,
+				171408901EC090BE00F9A604 /* libenergytrace.tbd */,
+				171408911EC090BE00F9A604 /* libETLDIAGLoggingDynamic.tbd */,
+				171408921EC090BE00F9A604 /* libETLDLFDynamic.tbd */,
+				171408931EC090BE00F9A604 /* libETLDLOADCoreDumpDynamic.tbd */,
+				171408941EC090BE00F9A604 /* libETLDLOADDynamic.tbd */,
+				171408951EC090BE00F9A604 /* libETLDMCDynamic.tbd */,
+				171408961EC090BE00F9A604 /* libETLDynamic.tbd */,
+				171408971EC090BE00F9A604 /* libETLEFSDumpDynamic.tbd */,
+				171408981EC090BE00F9A604 /* libETLSAHDynamic.tbd */,
+				171408991EC090BE00F9A604 /* libETLTransportDynamic.tbd */,
+				1714089A1EC090BE00F9A604 /* libexslt.0.tbd */,
+				1714089B1EC090BE00F9A604 /* libexslt.tbd */,
+				1714089C1EC090BE00F9A604 /* libextension.tbd */,
+				1714089D1EC090BE00F9A604 /* libform.5.4.tbd */,
+				1714089E1EC090BE00F9A604 /* libform.tbd */,
+				1714089F1EC090BE00F9A604 /* libgcc_s.1.tbd */,
+				171408A01EC090BE00F9A604 /* libgermantok.tbd */,
+				171408A11EC090BE00F9A604 /* libH5Dynamic.tbd */,
+				171408A21EC090BE00F9A604 /* libHDLCDynamic.tbd */,
+				171408A31EC090BE00F9A604 /* libheimdal-asn1.tbd */,
+				171408A41EC090BE00F9A604 /* libiconv.2.4.0.tbd */,
+				171408A51EC090BE00F9A604 /* libiconv.2.tbd */,
+				171408A61EC090BE00F9A604 /* libiconv.tbd */,
+				171408A71EC090BE00F9A604 /* libicucore.A.tbd */,
+				171408A81EC090BE00F9A604 /* libicucore.tbd */,
+				171408A91EC090BE00F9A604 /* libInFieldCollection.tbd */,
+				171408AA1EC090BE00F9A604 /* libinfo.tbd */,
+				171408AB1EC090BE00F9A604 /* libIOAccessoryManager.tbd */,
+				171408AC1EC090BE00F9A604 /* libipconfig.tbd */,
+				171408AD1EC090BE00F9A604 /* libipsec.A.tbd */,
+				171408AE1EC090BE00F9A604 /* libipsec.tbd */,
+				171408AF1EC090BE00F9A604 /* libktrace.tbd */,
+				171408B01EC090BE00F9A604 /* liblangid.tbd */,
+				171408B11EC090BE00F9A604 /* libLLVM-C.tbd */,
+				171408B21EC090BE00F9A604 /* libLLVM.tbd */,
+				171408B31EC090BE00F9A604 /* liblockdown.tbd */,
+				171408B41EC090BE00F9A604 /* liblzma.5.tbd */,
+				171408B51EC090BE00F9A604 /* liblzma.tbd */,
+				171408B61EC090BE00F9A604 /* libm.tbd */,
+				171408B71EC090BE00F9A604 /* libmarisa.tbd */,
+				171408B81EC090BE00F9A604 /* libMatch.1.tbd */,
+				171408B91EC090BE00F9A604 /* libMatch.tbd */,
+				171408BA1EC090BE00F9A604 /* libmav_ipc_router_dynamic.tbd */,
+				171408BB1EC090BE00F9A604 /* libmecab_em.tbd */,
+				171408BC1EC090BE00F9A604 /* libmecabra.tbd */,
+				171408BD1EC090BE00F9A604 /* libmis.tbd */,
+				171408BE1EC090BE00F9A604 /* libMobileCheckpoint.tbd */,
+				171408BF1EC090BE00F9A604 /* libMobileGestalt.tbd */,
+				171408C01EC090BE00F9A604 /* libMobileGestaltExtensions.tbd */,
+				171408C11EC090BE00F9A604 /* libncurses.5.4.tbd */,
+				171408C21EC090BE00F9A604 /* libncurses.tbd */,
+				171408C31EC090BE00F9A604 /* libnetwork.tbd */,
+				171408C41EC090BE00F9A604 /* libnfshared.tbd */,
+				171408C51EC090BE00F9A604 /* libobjc.A.tbd */,
+				171408C61EC090BE00F9A604 /* libobjc.tbd */,
+				171408C71EC090BE00F9A604 /* libomadm.tbd */,
+				171408C81EC090BE00F9A604 /* libPCITransport.tbd */,
+				171408C91EC090BE00F9A604 /* libpoll.tbd */,
+				171408CA1EC090BE00F9A604 /* libPPM.tbd */,
+				171408CB1EC090BE00F9A604 /* libprequelite.tbd */,
+				171408CC1EC090BE00F9A604 /* libproc.tbd */,
+				171408CD1EC090BE00F9A604 /* libprotobuf.tbd */,
+				171408CE1EC090BE00F9A604 /* libpthread.tbd */,
+				171408CF1EC090BE00F9A604 /* libQLCharts.tbd */,
+				171408D01EC090BE00F9A604 /* libresolv.9.tbd */,
+				171408D11EC090BE00F9A604 /* libresolv.tbd */,
+				171408D21EC090BE00F9A604 /* librpcsvc.tbd */,
+				171408D31EC090BE00F9A604 /* libsandbox.1.tbd */,
+				171408D41EC090BE00F9A604 /* libsandbox.tbd */,
+				171408D51EC090BE00F9A604 /* libsp.tbd */,
+				171408D61EC090BE00F9A604 /* libspindump.tbd */,
+				171408D71EC090BE00F9A604 /* libsqlite3.0.tbd */,
+				171408D81EC090BE00F9A604 /* libsqlite3.tbd */,
+				171408D91EC090BE00F9A604 /* libstdc++.6.0.9.tbd */,
+				171408DA1EC090BE00F9A604 /* libstdc++.6.tbd */,
+				171408DB1EC090BE00F9A604 /* libstdc++.tbd */,
+				171408DC1EC090BE00F9A604 /* libsysdiagnose.tbd */,
+				171408DD1EC090BE00F9A604 /* libSystem.B.tbd */,
+				171408DE1EC090BE00F9A604 /* libSystem.tbd */,
+				171408DF1EC090BE00F9A604 /* libsystemstats.tbd */,
+				171408E01EC090BE00F9A604 /* libtailspin.tbd */,
+				171408E11EC090BE00F9A604 /* libTelephonyBasebandBulkUSBDynamic.tbd */,
+				171408E21EC090BE00F9A604 /* libTelephonyBasebandDynamic.tbd */,
+				171408E31EC090BF00F9A604 /* libTelephonyDebugDynamic.tbd */,
+				171408E41EC090BF00F9A604 /* libTelephonyIOKitDynamic.tbd */,
+				171408E51EC090BF00F9A604 /* libTelephonyUSBDynamic.tbd */,
+				171408E61EC090BF00F9A604 /* libTelephonyUtilDynamic.tbd */,
+				171408E71EC090BF00F9A604 /* libThaiTokenizer.tbd */,
+				171408E81EC090BF00F9A604 /* libtidy.A.tbd */,
+				171408E91EC090BF00F9A604 /* libtidy.tbd */,
+				171408EA1EC090BF00F9A604 /* libtzupdate.tbd */,
+				171408EB1EC090BF00F9A604 /* libutil.tbd */,
+				171408EC1EC090BF00F9A604 /* libutil1.0.tbd */,
+				171408ED1EC090BF00F9A604 /* libWAPI.tbd */,
+				171408EE1EC090BF00F9A604 /* libxml2.2.tbd */,
+				171408EF1EC090BF00F9A604 /* libxslt.1.tbd */,
+				171408F01EC090BF00F9A604 /* libz.1.1.3.tbd */,
+				171408F11EC090BF00F9A604 /* libz.1.2.5.tbd */,
+				171408F21EC090BF00F9A604 /* libz.1.2.8.tbd */,
+				171408F31EC090BF00F9A604 /* libz.1.tbd */,
+				171408F41EC090BF00F9A604 /* libz.tbd */,
+				171408561EC090AD00F9A604 /* libxslt.tbd */,
+				171408531EC08F1200F9A604 /* libxml2.tbd */,
+				171408511EC08E5800F9A604 /* Security.framework */,
 				1785052C1DD2357A00D5BD79 /* XCTest.framework */,
 				17B49F441DC80458002FFA00 /* RxCocoa.framework */,
 				171CF2691DC802DA00CD4335 /* Alamofire.framework */,
@@ -979,6 +1303,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/CardIO\"",
+				);
 				INFOPLIST_FILE = PartyTonight/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1003,6 +1332,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/CardIO\"",
 				);
 				INFOPLIST_FILE = PartyTonight/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

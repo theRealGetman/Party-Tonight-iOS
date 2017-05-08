@@ -12,6 +12,7 @@ enum CartError:Error {
     case BookedAvailable
     case NothingBooked
     case AboveLimit
+    case WrongData
 }
 
 class BookedBottle: Mappable {
@@ -31,7 +32,7 @@ class BookedBottle: Mappable {
     
     
     required init?(map: Map){
-    
+        
     }
     
     func mapping(map: Map) {
@@ -76,7 +77,7 @@ class BookedTable: Mappable{
         
     }
     
-
+    
     
     init(id:Int, price:String, type:String,booked:Int) {
         self.id = id
@@ -107,6 +108,17 @@ class SharedCart{
     
     private var allCarts:[Int:Cart] = [Int:Cart]()
     
+    var total:Double {
+        get {
+            var sum:Double = 0
+            for (_,cart) in carts{
+                sum += cart.total
+            }
+            return sum
+        }
+    }
+    
+    
     func clear()  {
         allCarts.removeAll()
     }
@@ -127,9 +139,11 @@ class SharedCart{
         get {
             let index = ind ?? 0
             if let cart = allCarts[index] {
+                cart.eventId = index
                 return cart
             }else{
                 let cart = Cart()
+                cart.eventId = index
                 allCarts[index] = cart
                 return cart
             }
@@ -155,7 +169,9 @@ class SharedCart{
     var bookings: [Booking] {
         get{
             return allCarts.map({ (key, value) -> Booking in
-                return value.booking
+                //value.booking.idEvent = key
+                let booking = value.booking
+                return booking
             })
             
         }
@@ -170,20 +186,20 @@ class SharedCart{
             
         }
     }
-
-
+    
+    
 }
 
 class Cart {
-//    private static var instance:Cart = Cart()
-//    static var shared:Cart {
-//        get {
-//            return instance
-//        }
-//        set(newVal){
-//            instance = newVal
-//        }
-//    }
+    //    private static var instance:Cart = Cart()
+    //    static var shared:Cart {
+    //        get {
+    //            return instance
+    //        }
+    //        set(newVal){
+    //            instance = newVal
+    //        }
+    //    }
     
     
     var eventId:Int = 0
@@ -211,11 +227,14 @@ class Cart {
         get {
             var sum = 0.0
             for item in bookedTables{
-               sum += Double(item.booked) * (Double(item.price) ?? 0.0)
+                sum += (Double(item.booked) ?? 0.0) * (Double(item.price) ?? 0.0)
             }
             
-            for item in bottles{
-                 sum += Double(item.booked) * (Double(item.price) ?? 0.0)
+            for item in bookedBottles{
+                sum += (Double(item.booked) ?? 0.0) * (Double(item.price) ?? 0.0)
+            }
+            if let ticketPrice = ticket?.price{
+                sum += Double(ticketPrice) ?? 0
             }
             return sum
         }
@@ -223,15 +242,17 @@ class Cart {
     
     var booking: Booking {
         get{
-           return Booking(idEvent: eventId, bottles: bookedBottles, ticket: ticket, table: bookedTables.first)
+            return Booking(idEvent: eventId, bottles: bookedBottles, ticket: ticket, table: bookedTables.first)
             
         }
         
         set(newVal){
             if let id = newVal.idEvent{
                 eventId = id
+            }else{
+                print("eventId for booking not found")
             }
-           
+            
             bottles = newVal.bottles ?? []
             tables = newVal.table != nil ? [newVal.table!] : []
             ticket = newVal.ticket
@@ -264,11 +285,13 @@ class Cart {
         }).flatMap { $0 }
         
         for bottle in bottles {
-            if(Int(bottle.booked ?? "0")! <= 0){
+            guard let booked = Int(bottle.booked ?? "0"), let _ = Int(bottle.available ?? "0") else{
+                throw CartError.WrongData
+            }
+            if(booked <= 0){
                 throw CartError.NothingBooked
             }
             
-            print("bottle id \(bottle.id)")
             if let foundBottle = get(bottleById: bottle.id) {
                 
                 if(Int(bottle.booked ?? "0")! + foundBottle.booked > Int(bottle.available ?? "0")! ){
@@ -329,19 +352,25 @@ class Cart {
     func get(bottleById id: Int?) -> BookedBottle? {
         for bottle in bottles {
             if(bottle.id == id){
-               return bottle
+                return bottle
             }
         }
         return nil
-//        return bottles.first(where: { (bottle) -> Bool in
-//            bottle.id == id
-//        })
+        //        return bottles.first(where: { (bottle) -> Bool in
+        //            bottle.id == id
+        //        })
     }
     
     func get(tableById id: Int?) -> BookedTable? {
-        return tables.first(where: { (table) -> Bool in
-            table.id == id
-        })
+        for table in tables {
+            if(table.id == id){
+                return table
+            }
+        }
+        return nil
+        //        return tables.first(where: { (table) -> Bool in
+        //            table.id == id
+        //        })
     }
     
 }

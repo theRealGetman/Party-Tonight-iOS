@@ -14,6 +14,7 @@ class LiquorTypePickerViewController: UIViewController,UIPopoverPresentationCont
     @IBAction func applyTouched(_ sender: UIButton) {
         delegate?.typeEntity.value = bottleList[picker.selectedRow(inComponent: 0)]
         delegate?.typeTextField.text = delegate?.typeEntity.value?.type
+        delegate?.priceTextField.text = delegate?.typeEntity.value?.price
         dismiss(animated: true, completion: nil)
     }
     

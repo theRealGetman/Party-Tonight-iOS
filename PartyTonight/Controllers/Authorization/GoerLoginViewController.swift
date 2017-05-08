@@ -118,7 +118,8 @@ class GoerLoginViewController: UIViewController {
             case .Failure(let error):
                 print(error)
                 if let e = error as? APIError{
-                    DefaultWireframe.presentAlert(e.description)
+                    
+                     DefaultWireframe.presentAlert(e.description)
                 } else if let e = error as? ValidationResult{
                     DefaultWireframe.presentAlert(e.description)
                 }
@@ -135,6 +136,9 @@ class GoerLoginViewController: UIViewController {
             present(goerNavVC, animated: true, completion: nil)
         }
     }
+    
+    
+    
     
     
     /*

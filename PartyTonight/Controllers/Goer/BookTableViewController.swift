@@ -22,7 +22,6 @@ class BookTableViewController: UIViewController {
             let selected = vm?.selectedTables(tables: selectableTables) ?? []
             if let firstTable = selected.first {
                 firstTable.booked = "1"
-                
                 SharedCart.shared[eventId].ticket = ticket
                 SharedCart.shared[eventId].clearTables()
                 try SharedCart.shared[eventId].add(tables:  [firstTable])

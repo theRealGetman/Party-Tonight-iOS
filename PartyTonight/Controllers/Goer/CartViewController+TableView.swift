@@ -39,11 +39,18 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CartCell", for: indexPath) as! CartTableViewCell
         if (indexPath.row < carts[indexPath.section].bookedTables.count){
             cell.titleLabel.text = "Table (\(carts[indexPath.section].bookedTables[indexPath.row].type ))"
-            cell.priceLabel.text = "$\(carts[indexPath.section].bookedTables[indexPath.row].price )"
+            
+            let priceForBookedItems = (Double(carts[indexPath.section].bookedTables[indexPath.row].price) ?? 0) * (Double(carts[indexPath.section].bookedTables[indexPath.row].booked) ?? 0 )
+            
+            cell.priceLabel.text = "$\(priceForBookedItems)"
 
         }else{
-            cell.titleLabel.text = "Bottle \(carts[indexPath.section].bookedBottles[indexPath.row].type ) x\(carts[indexPath.section].bookedBottles[indexPath.row].booked )"
-            cell.priceLabel.text = "$\(carts[indexPath.section].bookedBottles[indexPath.row].price )"
+            let bottleRow = indexPath.row - carts[indexPath.section].bookedTables.count
+            cell.titleLabel.text = "Bottle \(carts[indexPath.section].bookedBottles[bottleRow].type ) x\(carts[indexPath.section].bookedBottles[bottleRow].booked )"
+            let priceForBookedItems = (Double(carts[indexPath.section].bookedBottles[bottleRow].price) ?? 0) * (Double(carts[indexPath.section].bookedBottles[bottleRow].booked) ?? 0)
+            cell.priceLabel.text = "$\(priceForBookedItems)"
+            
+            print("bottle price \(carts[indexPath.section].bookedBottles[bottleRow].price) booked \(carts[indexPath.section].bookedBottles[bottleRow].booked) priceForBookedItems \(priceForBookedItems)")
         }
         
 //        switch indexPath.section {

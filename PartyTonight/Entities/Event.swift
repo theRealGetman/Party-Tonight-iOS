@@ -38,6 +38,7 @@ class Event : Mappable {
     }
     
     func mapping(map: Map) {
+        id           <- map["id_event"]
         clubName     <- map["club_name"]
         location     <- map["location"]
         clubCapacity <- map["club_capacity"]

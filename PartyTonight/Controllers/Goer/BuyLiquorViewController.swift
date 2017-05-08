@@ -50,6 +50,8 @@ class BuyLiquorViewController: UIViewController,BottleChosenDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
 //             let bottlesResponse = Observable.from([1,3,7]).map({ (tst) -> Bottle in
 //                print("one \(tst)")
@@ -87,7 +89,7 @@ class BuyLiquorViewController: UIViewController,BottleChosenDelegate {
                 }
                 
                 
-                let b = Bottle(price: price,type: typeEntity?.type ?? type,available: String(avail), booked: quantity)
+                let b = Bottle(price: typeEntity?.price,type: typeEntity?.type ?? type,available: String(avail), booked: quantity)
                 b.id = typeEntity?.id;
                 
                 return  Observable.just(b);
@@ -114,7 +116,8 @@ class BuyLiquorViewController: UIViewController,BottleChosenDelegate {
            
             
         case .Failure(let error):
-            print(error)
+            
+            DefaultWireframe.presentAlert("\(error)")
         }
 
        }, onError: { (err) in

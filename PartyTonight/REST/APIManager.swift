@@ -169,7 +169,7 @@ class APIManager{
                 print("Got token: \(token.token)")
                 return Observable.just(Result.Success(token))
             }.catchError({ (err) -> Observable<Result<Token>> in
-                
+                print("login err api \(err)")
                 return Observable.just(Result.Failure(APIError.UnsuccessfulSignin(err.localizedDescription)));
                 
             })

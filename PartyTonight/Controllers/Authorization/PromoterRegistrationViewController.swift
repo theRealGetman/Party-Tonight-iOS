@@ -68,7 +68,18 @@ class PromoterRegistrationViewController: UIViewController {
                 case .Failure(let error):
                     
                     if let e = error as? APIError{
-                        DefaultWireframe.presentAlert(e.description)
+                        
+                        print("Promoter api error \(e.description)")
+                        if e.description.range(of:"401") != nil{
+                            DefaultWireframe.presentAlert("Check your email for registration and confirm your account.", completion: { action in self.goToPromoterLoginScreen()  })
+                        } else if e.description.range(of:"500") != nil{
+                             DefaultWireframe.presentAlert("Internal server error. Please, contact our administrator to verify your account manually")
+                        }else{
+                            DefaultWireframe.presentAlert("Wrong input data, please, change it\n\(e.description)")
+                        }
+
+            
+                        
                     } else if let e = error as? ValidationResult{
                         DefaultWireframe.presentAlert(e.description)
                     }
@@ -97,6 +108,10 @@ class PromoterRegistrationViewController: UIViewController {
         if let promoterNavVC = self.storyboard?.instantiateViewController(withIdentifier: "PromoterNavVC") as? PromoterNavController{
             present(promoterNavVC, animated: true, completion: nil)
         }
+    }
+    
+    private func goToPromoterLoginScreen(){
+        performSegue(withIdentifier: "promoterLoginScreenSegue", sender: nil)
     }
     
     func setTextFieldInsets(){

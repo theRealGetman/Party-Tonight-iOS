@@ -39,7 +39,7 @@
                             <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bottle price" textAlignment="natural" minimumFontSize="17" background="bottle_price_bg" translatesAutoresizingMaskIntoConstraints="NO" id="pAo-ID-aXs">
+                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bottle price" textAlignment="natural" minimumFontSize="17" background="bottle_price_bg" translatesAutoresizingMaskIntoConstraints="NO" id="pAo-ID-aXs">
                             <rect key="frame" x="0.0" y="60" width="375" height="50"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" name="Aguda-Regular2" family="Aguda" pointSize="18"/>

@@ -36,7 +36,7 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
     
     func initEventData(){
        
-        
+        navigationItem.title = event?.partyName ?? ""
         aboutVenueLabel.text = event?.partyName
         dateTimeLabel.setTitle(event?.date?.string(format: "h:mm a dd.MM.yyyy"), for: .normal);
         locationLabel.setTitle(event?.location, for: .normal);

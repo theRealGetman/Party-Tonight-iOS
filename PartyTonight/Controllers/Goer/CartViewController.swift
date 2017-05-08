@@ -118,8 +118,16 @@ class CartViewController: UIViewController
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    
-    var carts = [Cart]()
+    private var allCarts = [Cart]()
+    var carts: [Cart]{
+        get {
+            return allCarts
+        }
+        set (newVal){
+            allCarts = newVal
+            updateTotalPrice()
+        }
+    }
     var vm:CartViewModel?
     var disposeBag = DisposeBag()
     
@@ -145,6 +153,7 @@ class CartViewController: UIViewController
     func setViewModel() {
          carts = SharedCart.shared.asArray
         
+        
         vm = CartViewModel(input: (payWithPaypalTap: payWithPayPalButton.rx.tap.asObservable() , clearCartTap: clearBarButton.rx.tap.asObservable()), API: APIManager.sharedAPI)
         
         vm?.transaction.asObservable().subscribe(onNext: { (tr) in
@@ -165,6 +174,10 @@ class CartViewController: UIViewController
         
     }
     
+    
+    func updateTotalPrice(){
+        totalLabel.text = "\(SharedCart.shared.total)"
+    }
     
 
     /*
