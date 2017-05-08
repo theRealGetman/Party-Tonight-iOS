@@ -10,30 +10,52 @@ import Foundation
 import ObjectMapper
 
 class Transaction : Mappable {
+    //
+    //    var id:Int?
+    //    var eventId: Int?
+    //    var payKey:String?
+    //    var billingEmail:String?
+    //    var subtotal: Double?
+    //    var customerEmail: String?
+    //
     
+    //
     var id:Int?
-    var eventId: Int?
     var payKey:String?
-    var billingEmail:String?
+    var sellerBillingEmail:String?
+    var customerBillingEmail: String?
     var subtotal: Double?
-    var customerEmail: String?
-    
+    var serviceBillingEmail:String?
+    var serviceTax:Double?
+    var order:[Booking] = []
     
     required init?(map: Map){
         
     }
     
-    init(id:Int?,eventId: Int?, payKey:String?, billingEmail:String?, subtotal: Double?, customerEmail: String?){
-
+    init(sharedCart:SharedCart){
+        order = sharedCart.bookings;
+    }
+    
+    init(id: Int?, payKey: String?, sellerBillingEmail: String?, customerBillingEmail: String?, subtotal: Double?, serviceBillingEmail: String?, serviceTax: Double?) {
+        self.id = id
+        self.payKey = payKey
+        self.sellerBillingEmail = sellerBillingEmail
+        self.customerBillingEmail = customerBillingEmail
+        self.subtotal = subtotal
+        self.serviceBillingEmail = serviceBillingEmail
+        self.serviceTax = serviceTax
     }
     
     func mapping(map: Map) {
-        id            <- map["id_transaction"]
-        eventId       <- map["id_event"]
-        payKey        <- map["pay_key"]
-        billingEmail  <- map["billing_email"]
-        subtotal      <- map["subtotal"]
-        customerEmail <- map["customer_email"]
+        id                       <- map["id_transaction"]
+        sellerBillingEmail       <- map["seller_billing_email"]
+        payKey                   <- map["pay_key"]
+        customerBillingEmail     <- map["customer_billing_email"]
+        subtotal                 <- map["subtotal"]
+        serviceBillingEmail      <- map["service_billing_email"]
+        serviceTax               <- map["service_tax"]
+        order                    <- map["order"]
     }
     
     

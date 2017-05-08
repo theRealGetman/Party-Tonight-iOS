@@ -118,7 +118,8 @@ class CartViewController: UIViewController
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var carts = SharedCart.shared.asArray
+    
+    var carts = [Cart]()
     var vm:CartViewModel?
     var disposeBag = DisposeBag()
     
@@ -142,10 +143,13 @@ class CartViewController: UIViewController
     }
     
     func setViewModel() {
+         carts = SharedCart.shared.asArray
+        
         vm = CartViewModel(input: (payWithPaypalTap: payWithPayPalButton.rx.tap.asObservable() , clearCartTap: clearBarButton.rx.tap.asObservable()), API: APIManager.sharedAPI)
         
-        vm?.sharedCart.asObservable().subscribe(onNext: { (sc) in
-            self.carts = sc.asArray
+        vm?.transaction.asObservable().subscribe(onNext: { (tr) in
+            SharedCart.shared.bookings = tr.order
+            self.carts = SharedCart.shared.asArray
             self.tableView.reloadData()
         }, onError: { (error) in
             print("sharedCart error \(error.localizedDescription)")
@@ -154,7 +158,14 @@ class CartViewController: UIViewController
         }, onDisposed: {
             
         }).addDisposableTo(disposeBag)
+        
+        
+       
+        
+        
     }
+    
+    
 
     /*
     // MARK: - Navigation

@@ -11,20 +11,6 @@ import ObjectMapper
 
 class Booking : Mappable {
     
-//    "id_event": 3,
-//    "bottles": [{
-//    "title": "Small",
-//    "amount": 4,
-//    "price": 10.0
-//    }, {
-//    "title": "Big",
-//    "amount": 5,
-//    "price": 25.0
-//    }],
-//    "table": null,
-//    "ticket": null
-    
-    
         var idEvent: Int?
         var bottles: [BookedBottle]?
         var ticket: Ticket?

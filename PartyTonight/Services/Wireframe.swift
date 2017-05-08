@@ -44,8 +44,8 @@ class DefaultWireframe: Wireframe {
         // cheating, I know
         
         return UIApplication.topViewController() ?? UIApplication.shared.keyWindow!.rootViewController!
-
-       
+        
+        
     }
     #endif
     
@@ -53,8 +53,9 @@ class DefaultWireframe: Wireframe {
         #if os(iOS)
             let alertView = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
             alertView.addAction(UIAlertAction(title: "OK", style: .cancel) { _ in })
-          
-            rootViewController().present(alertView, animated: true, completion: nil)
+            OperationQueue.main.addOperation {
+                rootViewController().present(alertView, animated: true, completion: nil)
+            }
         #endif
     }
     

@@ -83,6 +83,7 @@ class APIManager{
     
     enum PurchasesPath: String {
         case ValidateBooking = "dancer/event/validate_booking"
+        case GetInvoices = "dancer/event/get_invoices"
         var path: String {
             return Constants.baseURL + rawValue
         }
@@ -292,6 +293,7 @@ class APIManager{
             })
     }
     
+    //payment
     
     struct JSONArrayEncoding: ParameterEncoding {
         private let array: [Parameters]
@@ -315,6 +317,26 @@ class APIManager{
         }
     }
     
+    func transaction(bookings validatingBookings: [Booking]) -> Observable<Result<Transaction>> {
+        print("validating booking, getting transaction")
+        
+        let parameters : [Parameters] = Mapper<Booking>().toJSONArray(validatingBookings)
+        let headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
+        return request(.post, PurchasesPath.ValidateBooking.path,  encoding: JSONArrayEncoding(array: parameters),  headers: headers  )
+            .flatMap({ (response) -> Observable<Any> in
+                return response.validate(statusCode: self.successfulStatusCodes).rx.json()
+            }).map(JSON.init)
+            .flatMap { json -> Observable<Result<Transaction>> in
+                guard let bookings = Mapper<Transaction>().map(JSONObject: json ) else {
+                    return Observable.just(Result.Failure(APIError.CannotParse("can not parse response")))
+                }
+                return Observable.just(Result.Success(bookings))
+                
+            }.catchError({ (err) -> Observable<Result<Transaction>> in
+                return Observable.just(Result.Failure(APIError.BadStatusCode(err.localizedDescription)));
+            })
+    }
+
     
     func validate(bookings validatingBookings: [Booking]) -> Observable<Result<[Booking]>> {
         print("validating booking")
@@ -336,6 +358,27 @@ class APIManager{
             })
     }
 
+    
+    
+    func invoices(for bookings: [Booking]) ->  Observable<Result<[Transaction]>> {
+        let headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
+        let parameters : [Parameters] = Mapper<Booking>().toJSONArray(bookings)
+        return request(.post, PurchasesPath.GetInvoices.path , encoding: JSONArrayEncoding(array: parameters), headers: headers  )
+            .flatMap({ (response) -> Observable<Any> in
+                return response.validate(statusCode: self.successfulStatusCodes).rx.json()
+            }).map(JSON.init)
+            .flatMap { json -> Observable<Result<[Transaction]>> in
+                guard let transactions = Mapper<Transaction>().mapArray(JSONObject: json ) else {
+                    return Observable.just(Result.Failure(APIError.CannotParse("")))
+                }
+                return Observable.just(Result.Success(transactions))
+            }.catchError({ (err) -> Observable<Result<[Transaction]>> in
+                return Observable.just(Result.Failure(APIError.BadStatusCode(err.localizedDescription)));
+                
+            })
+    }
+
+    
     
     
     
