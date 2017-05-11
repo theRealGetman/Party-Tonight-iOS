@@ -32,7 +32,7 @@ class BuyLiquorViewController: UIViewController,BottleChosenDelegate {
     var disposeBag = DisposeBag();
     var bottles:[Bottle] = [];
     var eventId:Int? = 0
-    var ticket:Ticket?
+    //var ticket:Ticket?
     
     func choose(bottle: Bottle) {
         
@@ -40,7 +40,8 @@ class BuyLiquorViewController: UIViewController,BottleChosenDelegate {
     
     func addToCart(orderedBottles:[Bottle]){
         do{
-            SharedCart.shared[eventId].ticket = ticket
+//            ticket?.booked = "1"
+//            SharedCart.shared[eventId].ticket = ticket
          try SharedCart.shared[eventId].add(bottles: orderedBottles)
             navigationController?.popViewController(animated: true)
         } catch {

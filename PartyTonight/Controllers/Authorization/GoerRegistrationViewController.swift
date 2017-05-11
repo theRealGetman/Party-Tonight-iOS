@@ -69,6 +69,7 @@ class GoerRegistrationViewController: UIViewController {
                         DefaultWireframe.presentAlert("Internal server error. Please, contact our administrator to verify your account manually")
                     }else{
                         DefaultWireframe.presentAlert("Wrong input data, please, change it\n\(e.description)")
+                        return
                     }
 
                     

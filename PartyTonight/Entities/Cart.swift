@@ -203,12 +203,32 @@ class Cart {
     
     
     var eventId:Int = 0
-    var ticket:Ticket?
+    var bookedTicket:Ticket?
     private var bottles:[BookedBottle] = []
     private var tables:[BookedTable] = []
     private var limit = (table: 1, bottle: 0)
     
-    
+    var ticket:Ticket? {
+        get{
+            return bookedTicket
+        }
+        set(newVal){
+            if let booked = newVal?.booked , let available = newVal?.available{
+                if let booked = Int(booked), let available = Int(available){
+                    if (available - booked > 0){
+                        let newTicket = Ticket(id: newVal?.id, price: newVal?.price, type: newVal?.type, available: newVal?.available, booked: newVal?.booked)
+                        self.bookedTicket = newTicket
+                        bookedTicket?.booked = "1"
+                        return
+                    }else{
+                        DefaultWireframe.presentAlert("No tickets available")
+                    }
+                }
+            }
+            
+            self.bookedTicket = nil
+        }
+    }
     
     
     var bookedBottles:[BookedBottle] {

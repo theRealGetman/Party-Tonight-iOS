@@ -10,15 +10,40 @@ import UIKit
 
 class EventDetailsViewController: UIViewController, UIPageViewControllerDataSource {
     
+    @IBOutlet weak var RSVPButton: UIButton!
     @IBOutlet weak var sliderView: UIView!
-   
+    
     @IBOutlet weak var aboutVenueLabel: UILabel!
     
     @IBOutlet weak var dateTimeLabel: UIButton!
     
     @IBOutlet weak var locationLabel: UIButton!
-   
+    
     var event:Event?
+    
+    @IBAction func RSVPButtonTouched(_ sender: UIButton) {
+        if let eventId = event?.id{
+            if !sender.isSelected {
+                SharedCart.shared[eventId].ticket = event?.tickets?.first
+                sender.isSelected = SharedCart.shared[eventId].ticket != nil
+            }else{
+                SharedCart.shared[eventId].ticket = nil
+                sender.isSelected = false
+            }
+        }else{
+            sender.isSelected = false
+        }
+    }
+    
+    func checkRSVP() {
+        if let eventId = event?.id{
+            RSVPButton.isSelected = SharedCart.shared[eventId].ticket != nil
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        checkRSVP()
+    }
     
     
     override func viewDidLoad() {
@@ -26,8 +51,14 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
         initEventData()
         createPageViewController()
         setupPageControl()
+        checkRSVP()
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -35,7 +66,7 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
     }
     
     func initEventData(){
-       
+        
         navigationItem.title = event?.partyName ?? ""
         aboutVenueLabel.text = event?.partyName
         dateTimeLabel.setTitle(event?.date?.string(format: "h:mm a dd.MM.yyyy"), for: .normal);
@@ -46,10 +77,11 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
     fileprivate var pageViewController: UIPageViewController?
     
     // Initialize it right away here
-//    fileprivate let contentImages:[String] = ["nature_pic_1",
-//         "nature_pic_2",
-//         "nature_pic_3",
-//         "nature_pic_4"]
+    //    fileprivate let contentImages:[String] = ["nature_pic_1",
+    //         "nature_pic_2",
+    //         "nature_pic_3",
+    //         "nature_pic_4"]
+    
     
     
     
@@ -133,7 +165,7 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
         if itemIndex < event?.photos?.count ?? 0 {
             let pageItemController = self.storyboard!.instantiateViewController(withIdentifier: "ItemController") as! PageItemController
             pageItemController.itemIndex = itemIndex
-             //pageItemController.imageName = contentImages[0]
+            //pageItemController.imageName = contentImages[0]
             
             
             if let urlStr = event?.photos?[itemIndex].url {
@@ -182,35 +214,39 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
     
     
     
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
         switch segue.destination {
         case is BuyLiquorViewController:
-        let buyLiq = segue.destination as? BuyLiquorViewController
-        if let bottles = event?.bottles{
-             buyLiq?.eventId = event?.id
-             buyLiq?.ticket = event?.tickets?.first
-             buyLiq?.bottles = bottles
-        }
+            let buyLiq = segue.destination as? BuyLiquorViewController
+            if let bottles = event?.bottles{
+                buyLiq?.eventId = event?.id
+                //                buyLiq?.ticket = event?.tickets?.first
+                buyLiq?.bottles = bottles
+            }
+            break
+        case is LocationOnMapViewController :
+            let vc = segue.destination as? LocationOnMapViewController
+            vc?.event = event
             break
         case is BookTableViewController:
             let bookTab = segue.destination as? BookTableViewController
             if let tables = event?.tables{
                 
                 bookTab?.eventId = event?.id
-                bookTab?.ticket = event?.tickets?.first
+                //                bookTab?.ticket = event?.tickets?.first
                 bookTab?.tables = tables
             }
             break
-
+            
         default:
             break
         }
-     }
- 
+    }
+    
     
 }

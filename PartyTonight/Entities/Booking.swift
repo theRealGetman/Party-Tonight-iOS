@@ -11,28 +11,37 @@ import ObjectMapper
 
 class Booking : Mappable {
     
-        var idEvent: Int?
-        var bottles: [BookedBottle]?
-        var ticket: Ticket?
-        var table: BookedTable?
-        
-        required init?(map: Map){
-            
-        }
-        
-        init(idEvent:Int?,  bottles:[BookedBottle], ticket: Ticket?, table:BookedTable?){
-            self.idEvent = idEvent;
-            self.bottles = bottles;
-            self.ticket = ticket;
-            self.table = table;
-        }
-        
-        func mapping(map: Map) {
-            idEvent     <- map["id_event"]
-            bottles     <- map["bottles"]
-            ticket      <- map["table"]
-            table       <- map["ticket"]
-        }
+    var subtotal: Double?
+    var sellerBillingEmail:String?
+    var idEvent: Int?
+    var bottles: [BookedBottle]?
+    var ticket: Ticket?
+    var table: BookedTable?
     
-
+    required init?(map: Map){
+        
+    }
+    
+    init(idEvent:Int?,  bottles:[BookedBottle], ticket: Ticket?, table:BookedTable?,  subtotal: Double? = 0, sellerBillingEmail:String? = ""){
+        self.idEvent = idEvent;
+        self.bottles = bottles;
+        self.ticket = ticket;
+        self.table = table;
+        
+        self.subtotal = subtotal
+        self.sellerBillingEmail = sellerBillingEmail
+        
+    }
+    
+    func mapping(map: Map) {
+        idEvent     <- map["id_event"]
+        bottles     <- map["bottles"]
+        ticket      <- map["table"]
+        table       <- map["ticket"]
+        sellerBillingEmail       <- map["seller_billing_email"]
+        subtotal                 <- map["subtotal"]
+       
+    }
+    
+    
 }

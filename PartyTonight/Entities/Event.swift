@@ -29,7 +29,9 @@ class Event : Mappable {
         self.location = location;
         self.zipCode = zipCode;
         self.clubCapacity = clubCapacity;
-        self.tickets = [Ticket(price: ticketsPrice)]
+        let t = Ticket(price: ticketsPrice)
+        t.available = clubCapacity
+        self.tickets = [t]
         self.partyName = partyName;
         self.tables = tables;
         self.bottles = bottles;
@@ -93,6 +95,15 @@ class Ticket:Mappable{
     init(price: String) {
         self.price = price;
     }
+    
+    init(id: Int?,price:String?,type:String?,available: String? = "0",booked: String? = "0") {
+        self.id = id
+        self.price = price
+        self.type = type
+        self.available = available
+        self.booked = booked
+    }
+
     
     required init?(map: Map){
         

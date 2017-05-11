@@ -24,17 +24,10 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return carts[section].bookedTables.count + carts[section].bookedBottles.count
-//        switch section {
-//        case 0:
-//            return cart?.bookedTables.count ?? 0
-//        case 1:
-//            return cart?.bookedBottles.count ?? 0
-//        default:
-//            return 0
-//        }
-        
+        let rowsCount = carts[section].ticket == nil ? carts[section].bookedTables.count + carts[section].bookedBottles.count : carts[section].bookedTables.count + carts[section].bookedBottles.count + 1
+        return rowsCount
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CartCell", for: indexPath) as! CartTableViewCell
         if (indexPath.row < carts[indexPath.section].bookedTables.count){
@@ -43,28 +36,22 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             let priceForBookedItems = (Double(carts[indexPath.section].bookedTables[indexPath.row].price) ?? 0) * (Double(carts[indexPath.section].bookedTables[indexPath.row].booked) ?? 0 )
             
             cell.priceLabel.text = "$\(priceForBookedItems)"
-
-        }else{
+            
+        }else if (indexPath.row >= carts[indexPath.section].bookedTables.count && indexPath.row < carts[indexPath.section].bookedTables.count + carts[indexPath.section].bookedBottles.count){
             let bottleRow = indexPath.row - carts[indexPath.section].bookedTables.count
             cell.titleLabel.text = "Bottle \(carts[indexPath.section].bookedBottles[bottleRow].type ) x\(carts[indexPath.section].bookedBottles[bottleRow].booked )"
             let priceForBookedItems = (Double(carts[indexPath.section].bookedBottles[bottleRow].price) ?? 0) * (Double(carts[indexPath.section].bookedBottles[bottleRow].booked) ?? 0)
             cell.priceLabel.text = "$\(priceForBookedItems)"
             
-            print("bottle price \(carts[indexPath.section].bookedBottles[bottleRow].price) booked \(carts[indexPath.section].bookedBottles[bottleRow].booked) priceForBookedItems \(priceForBookedItems)")
+            
+        }else{
+            if let price = carts[indexPath.section].ticket?.price, let booked = carts[indexPath.section].ticket?.booked {
+                cell.titleLabel.text = "Ticket \(carts[indexPath.section].ticket?.type ?? "") x\(booked )"
+                let priceForBookedItems = (Double(price) ?? 0) * (Double(booked) ?? 0)
+                cell.priceLabel.text = "$\(priceForBookedItems)"
+            }
         }
         
-//        switch indexPath.section {
-//        case 0:
-//            cell.titleLabel.text = "Table (\(cart?.bookedTables[indexPath.row].type ?? "-"))"
-//            cell.priceLabel.text = "$\(cart?.bookedTables[indexPath.row].price ?? "0")"
-//        case 1:
-//            
-//            cell.titleLabel.text = "Bottle \(cart?.bookedBottles[indexPath.row].type ?? "-") x\(cart?.bookedBottles[indexPath.row].booked ?? 0)"
-//            cell.priceLabel.text = "$\(cart?.bookedBottles[indexPath.row].price ?? "0")"
-//        default:
-//           break
-//        }
-        
         return cell
-}
+    }
 }

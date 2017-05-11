@@ -15,14 +15,15 @@ class BookTableViewController: UIViewController {
     var vm: BookTableViewModel?
     var tables: [Table] = []
     var eventId:Int? = 0
-    var ticket:Ticket?
+//    var ticket:Ticket?
     
     @IBAction func addToCartButtonTouched(_ sender: UIButton) {
         do {
             let selected = vm?.selectedTables(tables: selectableTables) ?? []
             if let firstTable = selected.first {
                 firstTable.booked = "1"
-                SharedCart.shared[eventId].ticket = ticket
+//                ticket?.booked = "1"
+//                SharedCart.shared[eventId].ticket = ticket
                 SharedCart.shared[eventId].clearTables()
                 try SharedCart.shared[eventId].add(tables:  [firstTable])
                 

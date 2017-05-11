@@ -50,8 +50,8 @@ class APIManager{
     var userToken: Token?
     
     struct Constants {
-        static let baseURL = "http://localhost:8080/"
-       // static let baseURL = "http://45.55.226.134:8080/partymaker/"
+        //static let baseURL = "http://localhost:8080/"
+        static let baseURL = "http://45.55.226.134:8080/partymaker/"
     }
     
     enum PromoterPath: String {
@@ -130,14 +130,9 @@ class APIManager{
         }
         return request(.get, eventPath,  headers: headers  )
             .flatMap({ (response) -> Observable<Any> in
-                print("json event request")
-                print(JSON(response.request?.allHTTPHeaderFields).rawString())
                 return response.validate(statusCode: self.successfulStatusCodes).rx.json()
             }).map(JSON.init)
             .flatMap { json -> Observable<Result<[Event]>> in
-                
-                print("got events")
-                print(json.rawString())
                 
                 guard let events = Mapper<Event>().mapArray(JSONString: json.rawString() ?? "" ) else {
                     return Observable.just(Result.Failure(APIError.CannotParse("")))
@@ -327,7 +322,7 @@ class APIManager{
                 return response.validate(statusCode: self.successfulStatusCodes).rx.json()
             }).map(JSON.init)
             .flatMap { json -> Observable<Result<Transaction>> in
-                guard let bookings = Mapper<Transaction>().map(JSONObject: json ) else {
+                guard let bookings = Mapper<Transaction>().map(JSONString: json.rawString() ?? "") else {
                     return Observable.just(Result.Failure(APIError.CannotParse("can not parse response")))
                 }
                 return Observable.just(Result.Success(bookings))
@@ -348,7 +343,7 @@ class APIManager{
                 return response.validate(statusCode: self.successfulStatusCodes).rx.json()
             }).map(JSON.init)
             .flatMap { json -> Observable<Result<[Booking]>> in
-                guard let bookings = Mapper<Booking>().mapArray(JSONObject: json ) else {
+                guard let bookings = Mapper<Booking>().mapArray(JSONString: json.rawString() ?? "" ) else {
                     return Observable.just(Result.Failure(APIError.CannotParse("can not parse response")))
                 }
                 return Observable.just(Result.Success(bookings))
@@ -368,7 +363,7 @@ class APIManager{
                 return response.validate(statusCode: self.successfulStatusCodes).rx.json()
             }).map(JSON.init)
             .flatMap { json -> Observable<Result<[Transaction]>> in
-                guard let transactions = Mapper<Transaction>().mapArray(JSONObject: json ) else {
+                guard let transactions = Mapper<Transaction>().mapArray(JSONString: json.rawString() ?? "" ) else {
                     return Observable.just(Result.Failure(APIError.CannotParse("")))
                 }
                 return Observable.just(Result.Success(transactions))

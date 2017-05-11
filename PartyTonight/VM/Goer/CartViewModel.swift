@@ -13,6 +13,9 @@ import RxCocoa
 enum PayPalError:Error{
     case InstanceError
     case MissingParametersForPayment
+    case NotInitialized
+    case InvalidBooking
+    case NoItemsToPayFor
 }
 
 class CartViewModel {
@@ -23,38 +26,6 @@ class CartViewModel {
     private var disposeBag = DisposeBag()
     
     init(input:(payWithPaypalTap:Observable<Void>,clearCartTap:Observable<Void>),API: APIManager) {
-        
-        
-        
-//        
-//        input.payWithPaypalTap.withLatestFrom(sharedCart.asObservable()).flatMapLatest { (c) -> Observable<Result<[Booking]>> in
-//            return API.validate(bookings: c.bookings)
-//            }.subscribe(onNext: { (items) in
-//                
-//                switch items {
-//                case .Success(let bookings):
-//                    
-//                    self.sharedCart.value.bookings = bookings
-//                    
-//                case .Failure(let error):
-//                    print(error)
-//                    if let e = error as? APIError{
-//                        DefaultWireframe.presentAlert(e.description)
-//                    } else if let e = error as? ValidationResult{
-//                        DefaultWireframe.presentAlert(e.description)
-//                    }
-//                }
-//                
-//            }, onError: { (err) in
-//                DefaultWireframe.presentAlert(err.localizedDescription)
-//            }, onCompleted: {
-//                
-//            }) {
-//                
-//            }.addDisposableTo(disposeBag)
-        
-        
-        
         
         input.payWithPaypalTap.withLatestFrom(transaction.asObservable()).flatMapLatest { (t) -> Observable<Result<Transaction>> in
             return API.transaction(bookings: t.order)
@@ -87,7 +58,7 @@ class CartViewModel {
             }) {
                 
             }.addDisposableTo(disposeBag)
-
+        
         
     }
     
@@ -104,60 +75,111 @@ class CartViewModel {
         // payment.paymentType = paymentType;
         // payment.paymentSubType = "";
         payment.receiverPaymentDetails = [];
-
-        if let sellerBillingEmail = transaction.sellerBillingEmail, let subtotal = transaction.subtotal, let serviceBillingEmail = transaction.serviceBillingEmail, let serviceTax = transaction.serviceTax {
-            let orderPayment = orderPaymentDetails(sellerBillingEmail: sellerBillingEmail, order: transaction.order, subtotal: subtotal, description: "Payment for order")
-            let taxForOrderPayment = taxForOrderPaymentDetails(serviceBillingEmail: serviceBillingEmail, serviceTax: serviceTax, description: "Payment for tax of the order")
-            
-            payment.receiverPaymentDetails.add(orderPayment);
-            payment.receiverPaymentDetails.add(taxForOrderPayment);
+        
+        
+        let orderPayments = try orderPaymentDetails( transaction: transaction)
+        
+        if orderPayments.count > 0 {
+            for p in orderPayments{
+                payment.receiverPaymentDetails.add(p);
+            }
         }else {
-            throw PayPalError.MissingParametersForPayment
+            throw PayPalError.NoItemsToPayFor
         }
-        OperationQueue.main.addOperation {
-            ppMEP.advancedCheckout(with: payment);
+        
+        
+        if (PayPal.initializationStatus() == STATUS_COMPLETED_SUCCESS) {
+            //We have successfully initialized and are ready to pay
+            OperationQueue.main.addOperation {
+                ppMEP.advancedCheckout(with: payment);
+            }
+        } else {
+            PayPal.initialize(withAppID: PayPalUtils.appId, for: ENV_LIVE)
+            throw PayPalError.NotInitialized
+            //An error occurred
         }
     }
     
-   private func orderPaymentDetails(sellerBillingEmail: String, order:[Booking], subtotal:Double, description: String, tax: String = "0", totalShipping: String = "0") -> PayPalReceiverPaymentDetails {
-        let details: PayPalReceiverPaymentDetails = PayPalReceiverPaymentDetails()
-        details.invoiceData = PayPalInvoiceData();
-        details.invoiceData.totalTax = NSDecimalNumber(string:tax);
-        details.invoiceData.totalShipping = NSDecimalNumber(string:totalShipping);
-        details.description = description;
-        details.recipient = sellerBillingEmail;
-        details.merchantName = String(format:"Recipient %@",sellerBillingEmail);
+    private func orderPaymentDetails( transaction:Transaction, totalShipping: String = "0", totalTax:String = "0") throws -> [PayPalReceiverPaymentDetails] {
         
-        var items = [PayPalInvoiceItem]()
+        
+        let order = transaction.order
+        
+        var detailsList = [PayPalReceiverPaymentDetails]()
+        
         for booking in order {
             
-            if let bottles = booking.bottles{
-                for bottle in bottles {
+            if let sellerBillingEmail = booking.sellerBillingEmail, let subtotal = booking.subtotal{
+                
+                let details: PayPalReceiverPaymentDetails = PayPalReceiverPaymentDetails()
+                details.invoiceData = PayPalInvoiceData();
+                details.invoiceData.totalTax = NSDecimalNumber(string:totalTax);
+                details.invoiceData.totalShipping = NSDecimalNumber(string:totalShipping);
+                details.description = "Payment for order in event #\(booking.idEvent)";
+                details.recipient = sellerBillingEmail;
+                details.merchantName = String(format:"Recipient %@",sellerBillingEmail);
+                
+                
+                
+                var items = [PayPalInvoiceItem]()
+                if let bottles = booking.bottles{
+                    for bottle in bottles {
+                        let item = PayPalInvoiceItem()
+                        item.itemId = String(bottle.id)
+                        item.name = bottle.type
+                        item.itemCount = NSNumber(value: bottle.booked)
+                        item.itemPrice = NSDecimalNumber(string: bottle.price)
+                        items.append(item)
+                    }
+                }
+                
+                if let table = booking.table{
                     let item = PayPalInvoiceItem()
-                    item.itemId = String(bottle.id)
-                    item.name = bottle.type
-                    item.itemCount = NSNumber(value: bottle.booked)
-                    item.itemPrice = NSDecimalNumber(string: bottle.price)
+                    item.itemId = String(table.id)
+                    item.name = table.type
+                    item.itemCount = NSNumber(value: table.booked)
+                    item.itemPrice = NSDecimalNumber(string: table.price)
                     items.append(item)
                 }
+                
+                if let ticket = booking.ticket{
+                    if let booked = ticket.booked, let price = ticket.price{
+                        let item = PayPalInvoiceItem()
+                        item.itemId = "\(ticket.id)"
+                        item.name =  ticket.type
+                        item.itemCount = NSNumber(value: Int(booked) ?? 1)
+                        item.itemPrice = NSDecimalNumber(string: price)
+                        items.append(item)
+                    }
+                }
+                
+                for item in items{
+                    details.invoiceData.invoiceItems.add(item)
+                }
+                details.subTotal = NSDecimalNumber(value:subtotal);
+                
+                detailsList.append(details)
+            }else{
+                throw PayPalError.InvalidBooking
+                //todo throw
             }
             
-            if let table = booking.table{
-                let item = PayPalInvoiceItem()
-                item.itemId = String(table.id)
-                item.name = table.type
-                item.itemCount = NSNumber(value: table.booked)
-                item.itemPrice = NSDecimalNumber(string: table.price)
-                items.append(item)
-            }
         }
         
-        details.subTotal = NSDecimalNumber(value:subtotal);
         
-        return details
+        if let serviceBillingEmail = transaction.serviceBillingEmail, let serviceTax = transaction.serviceTax{
+            let taxForOrderPayment = taxForOrderPaymentDetails(serviceBillingEmail: serviceBillingEmail, serviceTax: serviceTax, description: "Transaction tax",tax: totalTax, totalShipping: totalShipping)
+            detailsList.append(taxForOrderPayment)
+        }else{
+            print("Payment without tax")
+        }
+        
+        
+        
+        return detailsList
     }
     
-   private func taxForOrderPaymentDetails(serviceBillingEmail: String, serviceTax: Double, description: String, tax: String = "0", totalShipping: String = "0") -> PayPalReceiverPaymentDetails {
+    private func taxForOrderPaymentDetails(serviceBillingEmail: String, serviceTax: Double, description: String, tax: String = "0", totalShipping: String = "0") -> PayPalReceiverPaymentDetails {
         let details: PayPalReceiverPaymentDetails = PayPalReceiverPaymentDetails()
         details.invoiceData = PayPalInvoiceData();
         details.invoiceData.totalTax = NSDecimalNumber(string:tax);
@@ -216,8 +238,8 @@ class CartViewModel {
     //        }
     //        ppMEP.advancedCheckout(with: payment);
     //    }
-    //    
-    //    
+    //
+    //
     
     
 }
