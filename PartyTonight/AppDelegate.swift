@@ -18,12 +18,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Thread.detachNewThreadSelector(#selector(AppDelegate.initializePayPal), toTarget: self, with: nil)
         
+     
+        checkLoginStatus()
+        
         // Override point for customization after application launch.
         return true
     }
     
     func initializePayPal() {
         PayPal.initialize(withAppID: PayPalUtils.appId, for: ENV_LIVE)
+    }
+    
+    func checkLoginStatus(){
+        // Load Root view controller
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        var identifier = "LaunchScreenVC";
+        
+        if let _ = APIManager.sharedAPI.authToken?.token, let type = APIManager.sharedAPI.authToken?.type{
+            switch type {
+            case .Goer:
+                identifier = "GoerNavVC"
+            case .Promoter:
+                identifier = "PromoterNavVC"
+            }
+        }else{
+            APIManager.sharedAPI.authToken?.invalidate()
+        }
+        
+        let rootViewController = storyboard.instantiateViewController(withIdentifier: identifier)
+        self.window?.rootViewController = rootViewController
+        self.window?.makeKeyAndVisible()
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

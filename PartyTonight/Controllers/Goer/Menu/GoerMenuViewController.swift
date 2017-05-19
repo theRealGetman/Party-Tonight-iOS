@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import RxSwift
 
 class GoerMenuViewController: UIViewController {
     
-    let cart:Cart = Cart()
+    let disposeBag = DisposeBag();
     
     @IBAction func contactUsButtonTouched(_ sender: UIButton) {
         contactUsAlert()
@@ -19,6 +20,52 @@ class GoerMenuViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+    }
+    @IBAction func logoutButtonTouched(_ sender: UIBarButtonItem) {
+        logout()
+    }
+    @IBAction func callACabButtonTouched(_ sender: UIButton) {
+        callACabUsingUber()
+    }
+    
+    private func callACabUsingUber(){
+        
+//        let uberUrlString = String(format:"uber://?client_id=YOUR_CLIENT_ID&action=setPickup&pickup=my_location&dropoff[formatted_address]=%@","")
+ 
+        if let uberURL = URL(string:"uber://"), let  appStoreURL = URL(string:"itms-apps://itunes.apple.com/us/app/uber/id368677368?mt=8"){
+            if (UIApplication.shared.canOpenURL(uberURL))
+            {
+                UIApplication.shared.openURL(uberURL);
+            }
+            else
+            {
+                UIApplication.shared.openURL(appStoreURL);
+            }
+        }else{
+            //
+        }
+    }
+    
+    private func goToGoerPromoterMenu(){
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "GoerPromoterMenu") {
+            present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    private func logout(){
+        SharedCart.shared.clear()
+        
+        APIManager.sharedAPI.logout().subscribe(onNext: { (result) in
+            self.goToGoerPromoterMenu()
+        }, onError: { (error) in
+            DefaultWireframe.presentAlert("\(error)", completion: { (action) in
+                self.goToGoerPromoterMenu()
+            })
+        }, onCompleted: {
+            
+        }) {
+            
+            }.addDisposableTo(disposeBag)
     }
     
     override func didReceiveMemoryWarning() {

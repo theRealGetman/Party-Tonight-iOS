@@ -113,7 +113,8 @@ class GoerLoginViewController: UIViewController {
             switch token {
             case .Success(let token):
                 print("User signed: \(token.token)")
-                APIManager.sharedAPI.userToken = token
+                token.type = .Goer
+                APIManager.sharedAPI.authToken = token
                 self.goToGoerScreen()
             case .Failure(let error):
                 print(error)

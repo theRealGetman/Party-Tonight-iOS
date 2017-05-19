@@ -7,10 +7,37 @@
 //
 
 import UIKit
-
+import RxSwift
 class PromoterMenuViewController: UIViewController {
+    
+    let disposeBag = DisposeBag();
+    
     @IBAction func contactUsButtonTouched(_ sender: UIButton) {
         contactUsAlert()
+    }
+    @IBAction func logoutButtonTouched(_ sender: UIBarButtonItem) {
+        logout()
+        
+    }
+    private func goToGoerPromoterMenu(){
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "GoerPromoterMenu") {
+            present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    private func logout(){
+        SharedCart.shared.clear()
+        APIManager.sharedAPI.logout().subscribe(onNext: { (result) in
+            self.goToGoerPromoterMenu()
+        }, onError: { (error) in
+            DefaultWireframe.presentAlert("\(error)", completion: { (action) in
+                self.goToGoerPromoterMenu()
+            })
+        }, onCompleted: {
+            
+        }) { 
+            
+        }.addDisposableTo(disposeBag)
     }
 
     override func viewDidLoad() {

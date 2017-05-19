@@ -57,7 +57,8 @@ class GoerRegistrationViewController: UIViewController {
             switch token {
             case .Success(let token):
                 print("User registered: \(token)")
-                APIManager.sharedAPI.userToken = token
+                token.type = .Goer
+                APIManager.sharedAPI.authToken = token
                 self.goToGoerScreen()
             case .Failure(let error):
                  print("Goer error \(error.localizedDescription)")

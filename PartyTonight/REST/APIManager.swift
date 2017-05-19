@@ -44,10 +44,26 @@ extension APIError: CustomStringConvertible {
     }
 }
 
+
+
 class APIManager{
     static let sharedAPI = APIManager()
     
-    var userToken: Token?
+    var authToken:Token?{
+        get{
+            return userToken
+        }
+        set(newVal){
+            userToken?.invalidate()
+            userToken = newVal
+            userToken?.save()
+        }
+    }
+    
+   private var userToken: Token? = Token()
+    
+    //
+    
     
     struct Constants {
         //static let baseURL = "http://localhost:8080/"
@@ -57,7 +73,7 @@ class APIManager{
     enum PromoterPath: String {
         case SignUp = "maker/signup"
         case SignIn = "signin"
-        
+        case Logout = "logout"
         case CreateEvent = "maker/event/create"
         case GetEvents = "maker/event/get"
         case GetRevenue = "maker/event/revenue"
@@ -75,7 +91,7 @@ class APIManager{
         case SignUp = "dancer/signup"
         case SignIn = "signin"
         case GetEvents = "dancer/event/get"
-        
+        case Logout = "logout"
         var path: String {
             return Constants.baseURL + rawValue
         }
@@ -162,6 +178,7 @@ class APIManager{
                     return Observable.just(Result.Failure(APIError.CannotParse("")))
                 }
                 print("Got token: \(token.token)")
+                
                 return Observable.just(Result.Success(token))
             }.catchError({ (err) -> Observable<Result<Token>> in
                 print("login err api \(err)")
@@ -190,6 +207,9 @@ class APIManager{
         //.catchErrorJustReturn(Result.Failure(APIError.UnsuccessfulSignup("")))
     }
     
+    
+    
+    
     func signup(goer: User)-> Observable<Result<Token>> {
         //print("goer signup")
        // print(JSON(Mapper<User>().toJSON(goer)).rawString())
@@ -208,6 +228,23 @@ class APIManager{
         
     }
     
+    
+    
+    func logout()-> Observable<Result<Int>> {
+        authToken?.invalidate()
+        let headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
+        return request(.get, PromoterPath.Logout.path, headers: headers)
+            .map { response  in
+                return response.validate(statusCode: self.successfulStatusCodes)
+            }.flatMap { response -> Observable<Result<Int>> in
+                  return Observable.just(Result.Success(200));
+            }.catchError({ (err) -> Observable<Result<Int>> in
+                return Observable.just(Result.Failure(APIError.UnsuccessfulSignup(err.localizedDescription)));
+                
+            })
+    }
+    
+
     
     
     func revenue(getFor partyName: String) ->  Observable<Result<Revenue>> {
