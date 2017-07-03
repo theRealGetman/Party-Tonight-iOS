@@ -66,8 +66,8 @@ class APIManager{
     
     
     struct Constants {
-        //static let baseURL = "http://localhost:8080/"
-        static let baseURL = "http://45.55.226.134:8080/partymaker/"
+        static let baseURL = "http://localhost:8080/"
+        //static let baseURL = "http://45.55.226.134:8080/partymaker/"
     }
     
     enum PromoterPath: String {
@@ -100,6 +100,8 @@ class APIManager{
     enum PurchasesPath: String {
         case ValidateBooking = "dancer/event/validate_booking"
         case GetInvoices = "dancer/event/get_invoices"
+        case PostInvoices = "dancer/event/invoices"
+        case ConfirmInvoices = "dancer/event/confirm_invoices"
         var path: String {
             return Constants.baseURL + rawValue
         }
@@ -354,7 +356,7 @@ class APIManager{
         
         let parameters : [Parameters] = Mapper<Booking>().toJSONArray(validatingBookings)
         let headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
-        return request(.post, PurchasesPath.ValidateBooking.path,  encoding: JSONArrayEncoding(array: parameters),  headers: headers  )
+        return request(.post, PurchasesPath.PostInvoices.path,  encoding: JSONArrayEncoding(array: parameters),  headers: headers  )
             .flatMap({ (response) -> Observable<Any> in
                 return response.validate(statusCode: self.successfulStatusCodes).rx.json()
             }).map(JSON.init)
@@ -365,6 +367,21 @@ class APIManager{
                 return Observable.just(Result.Success(bookings))
                 
             }.catchError({ (err) -> Observable<Result<Transaction>> in
+                return Observable.just(Result.Failure(APIError.BadStatusCode(err.localizedDescription)));
+            })
+    }
+
+    func confirm(transaction inputTransaction: Transaction) -> Observable<Result<Int>> {
+        print("confirming transaction")
+        let headers = (userToken?.token != nil) ? ["x-auth-token": userToken!.token!] : [:]
+        return request(.post, PurchasesPath.PostInvoices.path, parameters: Mapper<Transaction>().toJSON(inputTransaction) , encoding:  JSONEncoding.default, headers: headers  )
+            .flatMap({ (response) -> Observable<Data> in
+                return response.validate(statusCode: self.successfulStatusCodes).rx.data()
+            })
+            .flatMap { json -> Observable<Result<Int>> in
+                               return Observable.just(Result.Success(200))
+                
+            }.catchError({ (err) -> Observable<Result<Int>> in
                 return Observable.just(Result.Failure(APIError.BadStatusCode(err.localizedDescription)));
             })
     }

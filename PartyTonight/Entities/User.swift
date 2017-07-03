@@ -18,24 +18,27 @@ class User : Mappable{
     var phoneNumber: String?
     var email: String?
     var emergencyContact: String?
+    var emergencyNumber: String?
     var password: String?
     var enable: Bool?
     var updatedDate: Date?
     var createdDate: Date?
     var role: Int?
     var billingInfo: BillingInfo?
+    var billingEmail:String?
     
     init(email: String, password: String){
         self.email = email;
         self.password = password;
     }
     
-    init(username:String?,  address:String?, birthday: String?, phone:String?, email:String?, billingInfo:BillingInfo?, emergencyContact:String?, password:String?){
+    init(username:String?,  address:String?, birthday: String?, phone:String?, email:String?,  billingInfo:BillingInfo?, emergencyContact:String?, emergencyNumber: String?, password:String?){
         self.username = username;
         self.address = address;
         self.birthday = birthday;
         self.phoneNumber = phone;
         self.email = email;
+       self.emergencyNumber = emergencyNumber
         self.billingInfo = billingInfo;
         self.emergencyContact = emergencyContact;
         self.password = password;
@@ -53,13 +56,15 @@ class User : Mappable{
         address           <- map["address"]
         phoneNumber       <- map["phoneNumber"]
         email             <- map["email"]
-        emergencyContact  <- map["emergencyContact"]
+        emergencyContact  <- map["emergencyName"]
+        emergencyNumber  <- map["emergencyPhone"]
         password          <- map["password"]
         enable            <- map["enable"]
         updatedDate       <- (map["updatedDate"], DateTransform())
         createdDate       <- (map["createdDate"], DateTransform())
         role              <- map["role"]
         billingInfo       <- map["billing"]
+        billingEmail      <- map["billingEmail"]
         
     }
 }

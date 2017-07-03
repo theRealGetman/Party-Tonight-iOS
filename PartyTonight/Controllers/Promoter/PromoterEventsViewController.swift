@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import WebImage
+import SDWebImage
 
 class PromoterEventsViewController: UIViewController{
     @IBOutlet weak var eventsCollectionView: UICollectionView!

@@ -23,7 +23,6 @@
 		1736114B1DDFA64D00050048 /* GoerNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1736114A1DDFA64D00050048 /* GoerNavController.swift */; };
 		1736114D1DDFAD0900050048 /* GoerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1736114C1DDFAD0900050048 /* GoerLoginViewController.swift */; };
 		1736114F1DDFAD3500050048 /* GoerRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1736114E1DDFAD3500050048 /* GoerRegistrationViewController.swift */; };
-		174959D71DC9ED760004903D /* FalkinSansPERSONAL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 174959D61DC9ED760004903D /* FalkinSansPERSONAL.ttf */; };
 		174BB8761DC665D000CDAE86 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BB8751DC665D000CDAE86 /* APIManager.swift */; };
 		174BB87C1DC6726000CDAE86 /* PromoterLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BB87B1DC6726000CDAE86 /* PromoterLoginViewController.swift */; };
 		174BB87E1DC6729000CDAE86 /* PromoterRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BB87D1DC6729000CDAE86 /* PromoterRegistrationViewController.swift */; };
@@ -53,26 +52,10 @@
 		176AB8CB1EBD02C20013D263 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176AB8CA1EBD02C20013D263 /* CartTableViewCell.swift */; };
 		17702ADC1EBFB15500B85543 /* libPayPalMPL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17702AD11EBFB15500B85543 /* libPayPalMPL.a */; };
 		17702ADE1EBFD6FD00B85543 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17702ADD1EBFD6FD00B85543 /* Transaction.swift */; };
-		1775F1441DD21ECD00B90EEA /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F13C1DD21ECD00B90EEA /* Alamofire.framework */; };
-		1775F1451DD21ECD00B90EEA /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F13C1DD21ECD00B90EEA /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1775F1461DD21ECD00B90EEA /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F13D1DD21ECD00B90EEA /* ObjectMapper.framework */; };
-		1775F1471DD21ECD00B90EEA /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F13D1DD21ECD00B90EEA /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1775F14A1DD21ECD00B90EEA /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F13F1DD21ECD00B90EEA /* RxBlocking.framework */; };
-		1775F14B1DD21ECD00B90EEA /* RxBlocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F13F1DD21ECD00B90EEA /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1775F14C1DD21ECD00B90EEA /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F1401DD21ECD00B90EEA /* RxCocoa.framework */; };
-		1775F14D1DD21ECD00B90EEA /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F1401DD21ECD00B90EEA /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1775F14E1DD21ECD00B90EEA /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F1411DD21ECD00B90EEA /* RxSwift.framework */; };
-		1775F14F1DD21ECD00B90EEA /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F1411DD21ECD00B90EEA /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		17760E1C1DF73DF600D7C06B /* FindVenueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17760E1B1DF73DF600D7C06B /* FindVenueViewModel.swift */; };
 		1777718A1DEDF42A00BEE874 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177771891DEDF42A00BEE874 /* ValidationService.swift */; };
 		177771A81DEEE10400BEE874 /* CreateEventViewController+ImageChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177771A71DEEE10400BEE874 /* CreateEventViewController+ImageChooser.swift */; };
 		177AF9881E7852C400AC4D05 /* RxAlamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171CF2671DC7F12800CD4335 /* RxAlamofire.framework */; };
-		177AF98B1E78534100AC4D05 /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C9C21D1E26DB2E00CBD84F /* WebImage.framework */; };
-		177AF98C1E78534100AC4D05 /* WebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17C9C21D1E26DB2E00CBD84F /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		177AF98D1E78534100AC4D05 /* RxAlamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F13E1DD21ECD00B90EEA /* RxAlamofire.framework */; };
-		177AF98E1E78534100AC4D05 /* RxAlamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1775F13E1DD21ECD00B90EEA /* RxAlamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1785052A1DD234AA00D5BD79 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178505291DD234AA00D5BD79 /* SwiftyJSON.framework */; };
-		1785052B1DD234AA00D5BD79 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 178505291DD234AA00D5BD79 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		178505321DD23F3300D5BD79 /* PromoterNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178505311DD23F3300D5BD79 /* PromoterNavController.swift */; };
 		1785053A1DD25A1B00D5BD79 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178505381DD25A1B00D5BD79 /* EventTableViewCell.swift */; };
 		1785053B1DD25A1B00D5BD79 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 178505391DD25A1B00D5BD79 /* EventTableViewCell.xib */; };
@@ -113,23 +96,16 @@
 		17FEE9F21E4664B100E7C8A9 /* LiquorTypePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FEE9F11E4664B100E7C8A9 /* LiquorTypePickerViewController.swift */; };
 		17FEE9F51E46681900E7C8A9 /* BuyLiquorViewController+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FEE9F41E46681900E7C8A9 /* BuyLiquorViewController+TextField.swift */; };
 		43A92A685466E00A8BD84307 /* Pods_PartyTonight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213E09A20FF03D5C94A30589 /* Pods_PartyTonight.framework */; };
+		7891EF3E1F080C760090D508 /* FalkinSansPERSONAL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7891EF3D1F080C760090D508 /* FalkinSansPERSONAL.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		17B49F431DC803FD002FFA00 /* Embed Frameworks */ = {
+		7891EF451F080EDA0090D508 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1775F14D1DD21ECD00B90EEA /* RxCocoa.framework in Embed Frameworks */,
-				1775F1471DD21ECD00B90EEA /* ObjectMapper.framework in Embed Frameworks */,
-				1785052B1DD234AA00D5BD79 /* SwiftyJSON.framework in Embed Frameworks */,
-				177AF98E1E78534100AC4D05 /* RxAlamofire.framework in Embed Frameworks */,
-				1775F14F1DD21ECD00B90EEA /* RxSwift.framework in Embed Frameworks */,
-				177AF98C1E78534100AC4D05 /* WebImage.framework in Embed Frameworks */,
-				1775F14B1DD21ECD00B90EEA /* RxBlocking.framework in Embed Frameworks */,
-				1775F1451DD21ECD00B90EEA /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,19 +333,9 @@
 		17702ADA1EBFB15500B85543 /* PayPalReceiverAmounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalReceiverAmounts.h; sourceTree = "<group>"; };
 		17702ADB1EBFB15500B85543 /* PayPalReceiverPaymentDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalReceiverPaymentDetails.h; sourceTree = "<group>"; };
 		17702ADD1EBFD6FD00B85543 /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Transaction.swift; path = Entities/Transaction.swift; sourceTree = "<group>"; };
-		1775F13C1DD21ECD00B90EEA /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		1775F13D1DD21ECD00B90EEA /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
-		1775F13E1DD21ECD00B90EEA /* RxAlamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAlamofire.framework; path = Carthage/Build/iOS/RxAlamofire.framework; sourceTree = "<group>"; };
-		1775F13F1DD21ECD00B90EEA /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
-		1775F1401DD21ECD00B90EEA /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		1775F1411DD21ECD00B90EEA /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		1775F1421DD21ECD00B90EEA /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
-		1775F1431DD21ECD00B90EEA /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		1775F1541DD21F3100B90EEA /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		17760E1B1DF73DF600D7C06B /* FindVenueViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindVenueViewModel.swift; path = VM/Goer/FindVenueViewModel.swift; sourceTree = "<group>"; };
 		177771891DEDF42A00BEE874 /* ValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidationService.swift; path = Services/ValidationService.swift; sourceTree = "<group>"; };
 		177771A71DEEE10400BEE874 /* CreateEventViewController+ImageChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CreateEventViewController+ImageChooser.swift"; path = "Controllers/Promoter/Extentions/CreateEventViewController+ImageChooser.swift"; sourceTree = "<group>"; };
-		178505291DD234AA00D5BD79 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		1785052C1DD2357A00D5BD79 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		178505311DD23F3300D5BD79 /* PromoterNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoterNavController.swift; path = Controllers/Navigation/PromoterNavController.swift; sourceTree = "<group>"; };
 		178505381DD25A1B00D5BD79 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = UI/EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -399,7 +365,6 @@
 		17C5B1AD1DCBE6C40093BC07 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Token.swift; path = Entities/Token.swift; sourceTree = "<group>"; };
 		17C5B1AF1DCBF2240093BC07 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationViewModel.swift; path = VM/Authorization/RegistrationViewModel.swift; sourceTree = "<group>"; };
 		17C5B1B21DCC6FB30093BC07 /* String+Encoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Encoding.swift"; path = "Extentions/String+Encoding.swift"; sourceTree = "<group>"; };
-		17C9C21D1E26DB2E00CBD84F /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		17C9FB881DF0EA3700695507 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Photo.swift; path = Entities/Photo.swift; sourceTree = "<group>"; };
 		17CA197D1DE03F0800BD67A9 /* PromoterStatementTotalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoterStatementTotalViewController.swift; path = Controllers/Promoter/PromoterStatementTotalViewController.swift; sourceTree = "<group>"; };
 		17CA19811DE0405700BD67A9 /* PromoterTablesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoterTablesViewController.swift; path = Controllers/Promoter/PromoterTablesViewController.swift; sourceTree = "<group>"; };
@@ -413,6 +378,7 @@
 		17FEE9F11E4664B100E7C8A9 /* LiquorTypePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiquorTypePickerViewController.swift; path = Controllers/Goer/LiquorTypePickerViewController.swift; sourceTree = "<group>"; };
 		17FEE9F41E46681900E7C8A9 /* BuyLiquorViewController+TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BuyLiquorViewController+TextField.swift"; sourceTree = "<group>"; };
 		213E09A20FF03D5C94A30589 /* Pods_PartyTonight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartyTonight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7891EF3D1F080C760090D508 /* FalkinSansPERSONAL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FalkinSansPERSONAL.ttf; sourceTree = "<group>"; };
 		821866A83DBAF48E25583913 /* Pods-PartyTonight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyTonight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartyTonight/Pods-PartyTonight.debug.xcconfig"; sourceTree = "<group>"; };
 		EF07FB577222FA3485322B90 /* Pods-PartyTonight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyTonight.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartyTonight/Pods-PartyTonight.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -426,15 +392,7 @@
 				171408551EC0909000F9A604 /* libxml2.tbd in Frameworks */,
 				171408521EC08E5800F9A604 /* Security.framework in Frameworks */,
 				177AF9881E7852C400AC4D05 /* RxAlamofire.framework in Frameworks */,
-				177AF98D1E78534100AC4D05 /* RxAlamofire.framework in Frameworks */,
-				1775F14C1DD21ECD00B90EEA /* RxCocoa.framework in Frameworks */,
-				1775F1461DD21ECD00B90EEA /* ObjectMapper.framework in Frameworks */,
-				177AF98B1E78534100AC4D05 /* WebImage.framework in Frameworks */,
 				17702ADC1EBFB15500B85543 /* libPayPalMPL.a in Frameworks */,
-				1785052A1DD234AA00D5BD79 /* SwiftyJSON.framework in Frameworks */,
-				1775F14E1DD21ECD00B90EEA /* RxSwift.framework in Frameworks */,
-				1775F14A1DD21ECD00B90EEA /* RxBlocking.framework in Frameworks */,
-				1775F1441DD21ECD00B90EEA /* Alamofire.framework in Frameworks */,
 				43A92A685466E00A8BD84307 /* Pods_PartyTonight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -712,19 +670,9 @@
 		1754898B1DC5222300993344 = {
 			isa = PBXGroup;
 			children = (
+				7891EF3D1F080C760090D508 /* FalkinSansPERSONAL.ttf */,
 				17702ACF1EBFB13900B85543 /* PayPal */,
 				17702ACE1EBFA72E00B85543 /* PartyTonight-Bridging-Header.h */,
-				17C9C21D1E26DB2E00CBD84F /* WebImage.framework */,
-				178505291DD234AA00D5BD79 /* SwiftyJSON.framework */,
-				1775F1541DD21F3100B90EEA /* SwiftyJSON.framework */,
-				1775F13C1DD21ECD00B90EEA /* Alamofire.framework */,
-				1775F13D1DD21ECD00B90EEA /* ObjectMapper.framework */,
-				1775F13E1DD21ECD00B90EEA /* RxAlamofire.framework */,
-				1775F13F1DD21ECD00B90EEA /* RxBlocking.framework */,
-				1775F1401DD21ECD00B90EEA /* RxCocoa.framework */,
-				1775F1411DD21ECD00B90EEA /* RxSwift.framework */,
-				1775F1421DD21ECD00B90EEA /* RxTest.framework */,
-				1775F1431DD21ECD00B90EEA /* SwiftyJSON.framework */,
 				175489961DC5222300993344 /* PartyTonight */,
 				175489951DC5222300993344 /* Products */,
 				171CF25D1DC7C5B400CD4335 /* Frameworks */,
@@ -964,8 +912,8 @@
 				175489921DC5222300993344 /* Resources */,
 				2E94D1289F8426367EF06DD1 /* [CP] Embed Pods Frameworks */,
 				A3DEBE27F625EAD93C2B38E6 /* [CP] Copy Pods Resources */,
-				17B49F431DC803FD002FFA00 /* Embed Frameworks */,
 				177AF9911E78543700AC4D05 /* ShellScript */,
+				7891EF451F080EDA0090D508 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -988,7 +936,7 @@
 				TargetAttributes = {
 					175489931DC5222300993344 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 24D54SZRL9;
+						DevelopmentTeam = 4ZMR62ZPC8;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -1023,9 +971,9 @@
 				174BB88B1DC69E3300CDAE86 /* Aguda Bold.ttf in Resources */,
 				17A8D5A01E75580A00CE82C7 /* ContactUs.txt in Resources */,
 				1754899F1DC5222300993344 /* Assets.xcassets in Resources */,
+				7891EF3E1F080C760090D508 /* FalkinSansPERSONAL.ttf in Resources */,
 				17DE96C31DD51CF600FA5C43 /* TypePriceQuantityView.xib in Resources */,
 				17F705891E45584600B33D39 /* LiquorView.xib in Resources */,
-				174959D71DC9ED760004903D /* FalkinSansPERSONAL.ttf in Resources */,
 				1785053B1DD25A1B00D5BD79 /* EventTableViewCell.xib in Resources */,
 				174BB8891DC691C900CDAE86 /* Aguda Regular.ttf in Resources */,
 				174BB8871DC683D000CDAE86 /* Sugar Plums.ttf in Resources */,
@@ -1044,14 +992,6 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/WebImage.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxAlamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 			);
 			outputPaths = (
 			);
@@ -1306,7 +1246,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 24D54SZRL9;
+				DEVELOPMENT_TEAM = 4ZMR62ZPC8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1337,7 +1277,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 24D54SZRL9;
+				DEVELOPMENT_TEAM = 4ZMR62ZPC8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

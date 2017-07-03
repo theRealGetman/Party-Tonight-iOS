@@ -36,12 +36,12 @@ class Transaction : Mappable {
     }
     
     func mapping(map: Map) {
-        id                       <- map["id_transaction"]
-        payKey                   <- map["pay_key"]
-        customerBillingEmail     <- map["customer_billing_email"]
-        serviceBillingEmail      <- map["service_billing_email"]
-        order                    <- map["order"]
-        serviceTax               <- map["service_tax"]
+        id                       <- map["id"]
+        payKey                   <- map["payKey"]
+        customerBillingEmail     <- map["customerEmail"]
+        serviceBillingEmail      <- map["serviceBillingEmail"]
+        order                    <- map["orders"]
+        serviceTax               <- map["serviceTax"]
 
     }
     

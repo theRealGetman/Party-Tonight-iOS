@@ -33,7 +33,7 @@ class GoerRegistrationViewModel {
                     return Observable.just(Result.Failure(ValidationResult.failed(message: "Incorrect email")));
                 }
                 
-                return API.signup(goer: User(username: username, address: address, birthday: birthday, phone: nil, email: email, billingInfo: nil, emergencyContact: nil, password: password))
+            return API.signup(goer: User(username: username, address: address, birthday: birthday, phone: nil, email: email,  billingInfo: nil, emergencyContact: nil, emergencyNumber: nil, password: password))
                     .observeOn(MainScheduler.instance)
             }).shareReplay(1)
     }

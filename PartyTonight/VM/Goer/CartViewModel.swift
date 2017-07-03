@@ -27,8 +27,72 @@ class CartViewModel {
     
     init(input:(payWithPaypalTap:Observable<Void>,clearCartTap:Observable<Void>),API: APIManager) {
         
+        //        input.payWithPaypalTap.withLatestFrom(transaction.asObservable()).flatMapLatest { (t) -> Observable<Result<Transaction>> in
+        //            return API.transaction(bookings: t.order)
+        //            }.subscribe(onNext: { (t) in
+        //
+        //                switch t {
+        //                case .Success(let trans):
+        //
+        //                    self.transaction.value = trans
+        //
+        //                    do{
+        //                        try self.payWithPayPal(transaction: trans)
+        //                    } catch {
+        //                        DefaultWireframe.presentAlert(error.localizedDescription)
+        //                    }
+        //
+        //                case .Failure(let error):
+        //                    print(error)
+        //                    if let e = error as? APIError{
+        //                        DefaultWireframe.presentAlert(e.description)
+        //                    } else if let e = error as? ValidationResult{
+        //                        DefaultWireframe.presentAlert(e.description)
+        //                    }
+        //                }
+        //
+        //            }, onError: { (err) in
+        //                DefaultWireframe.presentAlert(err.localizedDescription)
+        //            }, onCompleted: {
+        //
+        //            }) {
+        //
+        //            }.addDisposableTo(disposeBag)
+        API.validate(bookings: transaction.value.order).subscribe(onNext: { (bookings) in
+            
+            switch bookings {
+            case .Success(let b):
+                print("#reload")
+                self.transaction.value.order = b;
+                self.transaction.value = self.transaction.value;
+            case .Failure(let err):
+                DefaultWireframe.presentAlert(err.localizedDescription)
+                
+            }
+        }, onError: { (error) in
+            
+        }, onCompleted: {
+            
+        }, onDisposed: {
+            
+        }).addDisposableTo(disposeBag)
+        
+        
+        
         input.payWithPaypalTap.withLatestFrom(transaction.asObservable()).flatMapLatest { (t) -> Observable<Result<Transaction>> in
-            return API.transaction(bookings: t.order)
+            return API.validate(bookings: t.order).flatMapLatest({ (bookings) -> Observable<Result<Transaction>> in
+                
+                switch bookings {
+                case .Success(let b):
+                    
+                    return API.transaction(bookings: b)
+                case .Failure(let error):
+                    return Observable.just(Result.Failure(APIError.BadStatusCode(error.localizedDescription)))
+                    
+                }
+                
+                //                    return API.transaction(bookings: bookings)
+            })
             }.subscribe(onNext: { (t) in
                 
                 switch t {
@@ -50,6 +114,10 @@ class CartViewModel {
                         DefaultWireframe.presentAlert(e.description)
                     }
                 }
+                
+                
+                
+                
                 
             }, onError: { (err) in
                 DefaultWireframe.presentAlert(err.localizedDescription)
@@ -109,6 +177,8 @@ class CartViewModel {
         
         for booking in order {
             
+           // booking.sellerBillingEmail = "test@mail.ru"
+            
             if let sellerBillingEmail = booking.sellerBillingEmail, let subtotal = booking.subtotal{
                 
                 let details: PayPalReceiverPaymentDetails = PayPalReceiverPaymentDetails()
@@ -128,7 +198,7 @@ class CartViewModel {
                         item.itemId = String(bottle.id)
                         item.name = bottle.type
                         item.itemCount = NSNumber(value: bottle.booked)
-                        item.itemPrice = NSDecimalNumber(string: bottle.price)
+                        item.itemPrice = NSDecimalNumber(value: bottle.price)
                         items.append(item)
                     }
                 }
@@ -138,7 +208,7 @@ class CartViewModel {
                     item.itemId = String(table.id)
                     item.name = table.type
                     item.itemCount = NSNumber(value: table.booked)
-                    item.itemPrice = NSDecimalNumber(string: table.price)
+                    item.itemPrice = NSDecimalNumber(value: table.price)
                     items.append(item)
                 }
                 
@@ -153,9 +223,13 @@ class CartViewModel {
                     }
                 }
                 
-                for item in items{
-                    details.invoiceData.invoiceItems.add(item)
-                }
+//                for item in items{
+//                    details.invoiceData.invoiceItems.add(item)
+//                }
+                
+                details.invoiceData.invoiceItems = items as? NSMutableArray;
+                
+                
                 details.subTotal = NSDecimalNumber(value:subtotal);
                 
                 detailsList.append(details)

@@ -32,7 +32,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CartCell", for: indexPath) as! CartTableViewCell
         if (indexPath.row < carts[indexPath.section].bookedTables.count){
             cell.titleLabel.text = "Table (\(carts[indexPath.section].bookedTables[indexPath.row].type ))"
-            
+            print("#table c \(carts[indexPath.section].bookedTables.count)")
             let priceForBookedItems = (Double(carts[indexPath.section].bookedTables[indexPath.row].price) ?? 0) * (Double(carts[indexPath.section].bookedTables[indexPath.row].booked) ?? 0 )
             
             cell.priceLabel.text = "$\(priceForBookedItems)"

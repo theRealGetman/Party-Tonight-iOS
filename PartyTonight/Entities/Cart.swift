@@ -34,19 +34,20 @@ class BookedBottle: Mappable {
     required init?(map: Map){
         
     }
+    var price = 0.0,type = "", booked = 0
+    var id:Int = 0
     
     func mapping(map: Map) {
         price    <- map["price"]
         type     <- map["title"]
         booked   <- map["amount"]
-        id       <- map["id"]
+        id       <- map["id_bottle"]
         
     }
     
-    var price = "0",type = "", booked = 0
-    var id:Int = 0
+   
     
-    init(id:Int, price:String, type:String,booked:Int) {
+    init(id:Int, price:Double, type:String,booked:Int) {
         self.id = id
         self.price = price
         self.type = type
@@ -55,7 +56,7 @@ class BookedBottle: Mappable {
     
     convenience init?(bottle:Bottle) {
         if let id = bottle.id, let price = bottle.price, let type = bottle.type, let booked = Int(bottle.booked ?? "0") {
-            self.init(id: id,price: price,type: type,booked: booked)
+            self.init(id: id,price: Double(price) ?? 0,type: type,booked: booked)
         }else {
             return nil
         }
@@ -63,7 +64,7 @@ class BookedBottle: Mappable {
 }
 
 class BookedTable: Mappable{
-    var price = "0",type = "", booked = 0
+    var price = 0.0,type = "", booked = 0
     var id:Int = 0
     
     required init?(map: Map){
@@ -73,13 +74,14 @@ class BookedTable: Mappable{
     func mapping(map: Map) {
         price    <- map["price"]
         type     <- map["type"]
-        id       <- map["id"]
+        id       <- map["id_table"]
+        booked = 1
         
     }
     
     
     
-    init(id:Int, price:String, type:String,booked:Int) {
+    init(id:Int, price:Double, type:String,booked:Int) {
         self.id = id
         self.price = price
         self.type = type
@@ -88,7 +90,7 @@ class BookedTable: Mappable{
     
     convenience init?(table:Table) {
         if let id = table.id, let price = table.price, let type = table.type, let booked = Int(table.booked ?? "0") {
-            self.init(id: id,price: price,type: type,booked: booked)
+            self.init(id: id,price: Double(price) ?? 0,type: type,booked: booked)
         }else {
             return nil
         }
@@ -213,7 +215,7 @@ class Cart {
             return bookedTicket
         }
         set(newVal){
-            if let booked = newVal?.booked , let available = newVal?.available{
+            if let booked = newVal?.booked , let available = newVal?.available, let price = newVal?.price{
                 if let booked = Int(booked), let available = Int(available){
                     if (available - booked > 0){
                         let newTicket = Ticket(id: newVal?.id, price: newVal?.price, type: newVal?.type, available: newVal?.available, booked: newVal?.booked)

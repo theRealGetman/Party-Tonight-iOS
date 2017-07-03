@@ -36,9 +36,9 @@ class Booking : Mappable {
     func mapping(map: Map) {
         idEvent     <- map["id_event"]
         bottles     <- map["bottles"]
-        ticket      <- map["table"]
-        table       <- map["ticket"]
-        sellerBillingEmail       <- map["seller_billing_email"]
+        ticket      <- map["ticket"]
+        table       <- map["table"]
+        sellerBillingEmail       <- map["sellerBillingEmail"]
         subtotal                 <- map["subtotal"]
        
     }

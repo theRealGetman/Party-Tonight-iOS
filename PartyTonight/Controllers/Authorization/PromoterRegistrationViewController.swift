@@ -23,6 +23,7 @@ class PromoterRegistrationViewController: UIViewController {
     
     @IBOutlet weak var emergencyContactTextField: UITextField!
     
+    @IBOutlet weak var emergencyNumber: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var signupButton: UIButton!
@@ -40,6 +41,7 @@ class PromoterRegistrationViewController: UIViewController {
                 email: emailTextField.rx.text.orEmpty.asObservable(),
                 billingInfo: billingInfoTextField.rx.text.orEmpty.asObservable(),
                 emergencyContact: emergencyContactTextField.rx.text.orEmpty.asObservable(),
+                emergencyNumber: emergencyNumber.rx.text.orEmpty.asObservable(),
                 password: passwordTextField.rx.text.orEmpty.asObservable(),
                 signupTaps: signupButton.rx.tap.asObservable()
             ),
@@ -124,9 +126,12 @@ class PromoterRegistrationViewController: UIViewController {
         
         emailTextField.attributedPlaceholder = NSAttributedString(string:"E-mail", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
         
-        billingInfoTextField.attributedPlaceholder = NSAttributedString(string:"Billing info", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
+        billingInfoTextField.attributedPlaceholder = NSAttributedString(string:"PayPal email", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
         
-        emergencyContactTextField.attributedPlaceholder = NSAttributedString(string:"Emergency contact", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
+        emergencyContactTextField.attributedPlaceholder = NSAttributedString(string:"Emergency name", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
+        
+        
+        emergencyNumber.attributedPlaceholder = NSAttributedString(string:"Emergency phone", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
         
         passwordTextField.attributedPlaceholder = NSAttributedString(string:"Password", attributes:[NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Aguda-Regular2", size: 18.0)! ])
     }

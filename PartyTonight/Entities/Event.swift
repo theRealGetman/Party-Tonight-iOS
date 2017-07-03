@@ -30,6 +30,7 @@ class Event : Mappable {
         self.zipCode = zipCode;
         self.clubCapacity = clubCapacity;
         let t = Ticket(price: ticketsPrice)
+        t.type = partyName;
         t.available = clubCapacity
         self.tickets = [t]
         self.partyName = partyName;
@@ -112,6 +113,7 @@ class Ticket:Mappable{
     func mapping(map: Map) {
         id        <- map["id_ticket"]
         price     <- map["price"]
+        type      <- map["type"]
         available <- map["available"]
         booked    <- map["booked"]
     }

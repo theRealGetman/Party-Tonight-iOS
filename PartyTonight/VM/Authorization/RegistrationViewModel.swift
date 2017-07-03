@@ -21,15 +21,16 @@ class RegistrationViewModel{
         email: Observable<String>,
         billingInfo: Observable<String>,
         emergencyContact: Observable<String>,
+        emergencyNumber: Observable<String>,
         password: Observable<String>,
         signupTaps: Observable<Void>
         
         ), API: (APIManager)) {
         
-        let signupCredentials = Observable.combineLatest(input.username, input.birthday, input.phone, input.email, input.billingInfo, input.emergencyContact, input.password) { ($0, $1, $2, $3, $4, $5, $6) }
+        let signupCredentials = Observable.combineLatest(input.username, input.birthday, input.phone, input.email, input.billingInfo, input.emergencyContact, input.emergencyNumber, input.password) { ($0, $1, $2, $3, $4, $5, $6, $7) }
         
         userToken = input.signupTaps.withLatestFrom(signupCredentials)
-            .flatMapLatest ({ (username, birthday, phone, email, billingInfo, emergencyContact, password) -> Observable<Result<Token>> in
+            .flatMapLatest ({ (username, birthday, phone, email, billingInfo, emergencyContact,emergencyNumber, password) -> Observable<Result<Token>> in
                 
                 let validatedPassword = ValidationService.validate(password: password);
                 if(!validatedPassword.isValid){
@@ -38,8 +39,12 @@ class RegistrationViewModel{
                 if(!ValidationService.validate(email: email)){
                     return Observable.just(Result.Failure(ValidationResult.failed(message: "Incorrect email")));
                 }
+                if(!ValidationService.validate(email: billingInfo)){
+                    return Observable.just(Result.Failure(ValidationResult.failed(message: "Incorrect billing email")));
+                }
+
                 
-                return API.signup(promoter: User(username: username, address: nil, birthday: birthday, phone: phone, email: email, billingInfo: BillingInfo(cardNumber: billingInfo), emergencyContact: emergencyContact, password: password))
+                return API.signup(promoter: User(username: username, address: nil, birthday: birthday, phone: phone, email: email,  billingInfo: BillingInfo(cardNumber: "", billingEmail: billingInfo), emergencyContact: emergencyContact, emergencyNumber: emergencyNumber, password: password))
                     .observeOn(MainScheduler.instance)
             }).shareReplay(1)
     }
